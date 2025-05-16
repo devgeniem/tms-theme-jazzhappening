@@ -1,0 +1,84 @@
+
+    <div class="events__item entry mb-6 has-width-100 has-height-100">
+        <div class="image is-5by3 mb-3">
+            {?primary_keyword}
+                <span href="{category.permalink|url}" class="pill is-absolute has-top-0 has-left-0 m-4 is-family-secondary {category_link_classes|attr}">
+                    {primary_keyword|html}
+                </span>
+            {/primary_keyword}
+
+            {?image}
+                <a href="{url|url}" aria-hidden="true" tabindex="-1"
+                   class="is-block is-absolute has-top-0 has-right-0 has-bottom-0 has-left-0">
+                    <img src="{image|url}" loading="lazy" alt="" class="objectfit-image">
+                </a>
+            {/image}
+        </div>
+
+        <div class="events__item-inner p-3">
+            <h2 class="is-family-secondary h5 mt-0 mb-3">
+                <a href="{url|url}">
+                    {name|html}
+                </a>
+            </h2>
+
+            <p class="has-text-small">
+                {short_description|s}
+            </p>
+
+            <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
+                <span class="is-flex" aria-label="{Strings.s.event.date|attr}">
+                    {>"ui/icon" icon="date" class="icon--large is-primary mr-4" /}
+                </span>
+
+                <p class="m-0 is-family-secondary">
+                    {date|kses}
+                </p>
+            </div>
+
+            <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
+                <span class="is-flex" aria-label="{Strings.s.event.time|attr}">
+                    {>"ui/icon" icon="time" class="icon--large is-primary mr-4" /}
+                </span>
+
+                <p class="m-0 is-family-secondary">
+                    {time|kses}
+                </p>
+            </div>
+
+            {?location.name}
+                <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
+                    <span class="is-flex" aria-label="{Strings.s.event.location|attr}">
+                        {>"ui/icon" icon="location" class="icon--large is-primary mr-4" /}
+                    </span>
+
+                <p class="m-0 is-family-secondary">
+                    {location.name|html}
+                    {?location_count.other_locations_string}
+                        {location_count.other_locations_string|html}
+                    {/location_count.other_locations_string}
+                </p>
+
+                </div>
+            {/location.name}
+
+            {#price}
+                {?is_free}
+                    <div class="is-flex is-align-items-center mt-2 mb-2 {classes.event_item_text|attr}">
+                        <span class="is-flex" aria-label="{Strings.s.event.price|attr}">
+                            {>"ui/icon" icon="euro" class="icon--large is-primary mr-2" /}
+                        </span>
+                        <p class="m-0 is-family-secondary">
+                            {price|html}
+                        </p>
+                    </div>
+                {/is_free}
+            {/price}
+
+            {?url}
+                <a href="{url|url}" class="button is-primary is-outlined is-small is-hidden-desktop mt-4">
+                    {Strings.s.common.read_more|html}
+                </a>
+            {/url}
+        </div>
+    </div>

@@ -1,0 +1,164 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
+"POT-Creation-Date: 2025-02-26 16:42+0200\n"
+"PO-Revision-Date: 2025-02-26 16:42+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: assets/dist/vendor.js:1
+msgid "entries"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "values"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "keys"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong index!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong offset!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong length!"
+msgstr ""
+
+#: lib/ThemeCustomizationController.php:135
+msgid "Send Comment"
+msgstr ""
+
+#: models/page-combined-events-list.php:61
+msgid "No results"
+msgstr "Ei hakutuloksia"
+
+#: models/page-combined-events-list.php:249
+msgid "Filter by day"
+msgstr "Rajaa päivän mukaan"
+
+#: models/page-combined-events-list.php:250
+msgid "Change order"
+msgstr "Muuta järjestystä"
+
+#: models/page-combined-events-list.php:251
+msgid "Order:"
+msgstr "Järjestys:"
+
+#: models/page-combined-events-list.php:307
+msgid "All days"
+msgstr "Kaikki päivät"
+
+#: models/page-combined-events-list.php:346
+msgid "All"
+msgstr "Kaikki"
+
+#: models/page-combined-events-list.php:374
+msgid "Date"
+msgstr "Päivämäärä"
+
+#: models/page-combined-events-list.php:379
+msgid "Alphabetical"
+msgstr "Aakkosjärjestys"
+
+#: models/single-manual-event-cpt.php:113
+msgid "Buy ticket"
+msgstr "Osta lippu"
+
+#: models/single-manual-event-cpt.php:114
+msgid "at"
+msgstr "klo"
+
+#: models/single-manual-event-cpt.php:115
+msgid "Programme"
+msgstr "Ohjelma"
+
+#: models/single-manual-event-cpt.php:116
+msgid "Artists"
+msgstr "Esiintyjät"
+
+#: models/single-manual-event-cpt.php:117
+msgid "Links"
+msgstr "Linkit"
+
+#: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
+#: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
+msgid "Add Row"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisitePostObject.php:24
+msgid "Multisite Post Object"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteRelationship.php:24
+msgid "Multisite Relationship"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/MultisiteTaxonomy.php:23
+msgid "Multisite taxonomy"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:23
+msgid "Multitaxonomy"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/Multitaxonomy.php:516
+#, php-format
+msgctxt "No terms"
+msgid "No %s"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:18
+msgid "PHP"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:48
+msgid "Instructions"
+msgstr ""
+
+#: wp-content/mu-plugins/acf-codifier/src/Fields/PHP.php:50
+msgid ""
+"This field can only be used with ACF Codifier. Doesn't do anything if "
+"defined in the admin side."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "TMS Theme Tampere Jazz Happening"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Tampere Multisite Jazz Happening Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Hion Digital"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://hiondigital.com"
+msgstr ""
+
+#~ msgid "At"
+#~ msgstr "Klo"

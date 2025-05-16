@@ -1,0 +1,37 @@
+<div {?anchor}id="{anchor|attr}"{/anchor} class="section content-columns">
+    <div class="container keep-vertical-spacing">
+        {#rows}
+            <div class="content-columns__item mt-6 mb-6 columns {item_class|s}">
+                {?image}
+                    <div class="column p-0 {img_col_class|attr}">
+                        <div class="image has-height-100">
+                            {@image id=image.id size="large" class="objectfit-image" /}
+                        </div>
+
+                        {@isset key1=display_caption key2=image.caption method="AND" }
+                            {>"ui/image/image-caption"  /}
+                        {/isset}
+
+                        {?display_artist}
+                            {>"ui/image/image-meta-minimal" /}
+                        {/display_artist}
+                    </div>
+                {/image}
+
+                <div class="column p-5 background-gradient-jazzhappening {text_col_class|attr}">
+                    {?title}
+                        <h2 class="content-columns__title h4 mt-0-desktop mb-0">
+                            {title|html}
+                        </h2>
+                    {/title}
+
+                    {?description}
+                        <div class="content-columns__description mt-6 keep-vertical-spacing">
+                            {description|kses}
+                        </div>
+                    {/description}
+                </div>
+            </div>
+        {/rows}
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<section class="page__hero section is-relative pt-0 pb-0 has-width-100">
+    <div class="image-container">
+        {@image id=Page.hero_image size="large" /}
+    </div>
+</section>

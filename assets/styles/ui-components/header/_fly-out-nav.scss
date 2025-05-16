@@ -1,0 +1,81 @@
+.fly-out-nav {
+    &__trigger {
+        &:hover {
+            .icon {
+                fill: $white;
+            }
+        }
+    }
+
+    &__primary {
+        margin-bottom: $theme-spacing-half;
+    }
+
+    &__inner {
+        position: fixed;
+        background-color: $color-jazzhappening-green !important;
+        box-shadow: 0 .0588rem .5rem rgba($black, .1);
+    }
+
+    .dropdown-toggler:focus {
+        outline: 2px dotted $black;
+    }
+
+    .navbar-item {
+        letter-spacing: .01em;
+        font-family: $family-primary;
+
+        a {
+            font-size: 1.25rem !important;
+        }
+
+        &.has-dropdown.is-active::after {
+            background-color: $white !important;
+        }
+    }
+
+    .secondary-menu {
+        margin: 0 $theme-spacing-two;
+        padding-top: 0;
+        border-top: none;
+
+        .menu-item-secondary {
+            &__link {
+                font-size: 1.25rem !important;
+            }
+        }
+    }
+
+    .navbar-dropdown {
+        @include keep-vertical-spacing;
+
+        > .navbar-item {
+            margin: 0 $theme-spacing-oneandhalf;
+            padding-right: 0;
+            padding-left: 0;
+            border-bottom: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: none !important;
+            }
+        }
+    }
+
+    .search-form {
+        align-items: normal !important;
+
+        &__input {
+            height: 100%;
+            border: 1px solid $black !important;
+            background-color: $white !important;
+        }
+
+        .button {
+            &:hover,
+            &:focus {
+                border-color: $white !important;
+            }
+        }
+    }
+}

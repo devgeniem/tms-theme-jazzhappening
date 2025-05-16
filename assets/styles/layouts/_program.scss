@@ -1,0 +1,121 @@
+.program {
+    max-width: 1344px;
+    width: 100%;
+    justify-self: center;
+    scroll-behavior: smooth;
+
+    &__anchors {
+        .program-anchor {
+            position: relative;
+
+            &:not(:first-child):not(:only-child)::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -$theme-spacing-three-quarters;
+                display: inline-block;
+                width: 1px;
+                height: 100%;
+                background-color: $primary;
+            }
+        }
+    }
+
+    &__text h2,
+    .program-anchor {
+        text-transform: capitalize;
+    }
+
+    &__images {
+        display: grid;
+        gap: $theme-spacing-quarter;
+        grid-template-columns: 50% 1fr 1fr;
+        grid-auto-rows: 1fr;
+
+        .event-info {
+            top: 0;
+            right: 0;
+            font-size: 1rem;
+            text-shadow: 2px 2px 2px rgba($black, .6);
+            background-color: rgba(0, 0, 0, .3);
+            z-index: 1;
+        }
+
+        a {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($black, 0);
+                pointer-events: none;
+                transition: background-color 0.2s ease;
+            }
+
+            &:hover,
+            &:focus {
+                &::after {
+                    background-color: rgba($black, .2);
+                }
+            }
+        }
+
+        // Masonry layout styles
+        @include until($tablet) {
+            a {
+                grid-column: 1 / -1;
+                max-height: 280px;
+            }
+        }
+
+        @include from($tablet) {
+            &.event-count--1 {
+                a {
+                    grid-column: 1 / -1;
+                    grid-row: 1 / -1;
+                    max-height: 450px;
+                }
+            }
+
+            &:not(.event-count--1) {
+                a:first-of-type {
+                    grid-column-start: 1;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                    min-height: 450px;
+                }
+            }
+
+            &.event-count--2 {
+                grid-template-columns: 50% 1fr;
+
+                a:nth-of-type(2) {
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
+            }
+
+            &.event-count--3 {
+                grid-template-columns: 60% 1fr;
+
+                a:nth-of-type(2) {
+                    grid-column-start: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+            }
+
+            &.event-count--4 {
+                grid-auto-rows: 1fr;
+
+                a:nth-of-type(2) {
+                    grid-column: span 2;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
+                }
+            }
+        }
+    }
+}

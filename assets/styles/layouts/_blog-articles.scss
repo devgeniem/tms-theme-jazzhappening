@@ -1,0 +1,25 @@
+.layout-articles,
+.layout-blog-articles,
+.related-posts,
+.blog,
+.events.section {
+    .entry {
+        background-color: $color-jazzhappening-lightgreen;
+
+        .pill {
+            z-index: 2;
+        }
+    }
+
+    &__read-more {
+        color: $primary !important;
+        font-size: 1.2rem;
+        font-weight: $weight-normal !important;
+        text-transform: uppercase;
+        letter-spacing: .06rem;
+
+        .icon {
+            vertical-align: middle;
+        }
+    }
+}

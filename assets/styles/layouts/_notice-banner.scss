@@ -1,0 +1,41 @@
+.site-header-notice,
+.notice-banner {
+    .notice-banner__content {
+        a {
+            font-weight: $weight-normal !important;
+        }
+    }
+
+    h2 {
+        color: currentColor;
+    }
+
+    &.has-background-primary {
+        background-color: $color-jazzhappening-darkgreen !important;
+        color: $white !important;
+    }
+
+    &.has-background-secondary {
+        background-color: $color-jazzhappening-darkblue !important;
+        color: $white !important;
+        border: 1px solid $primary;
+    }
+
+    .icon {
+        fill: currentColor !important;
+    }
+}
+
+.notice-banner {
+    &.has-background-primary {
+        .icon.is-large {
+           fill: $white !important;
+        }
+    }
+
+    &.has-background-secondary {
+        .icon.is-large {
+            fill: $color-white !important;
+        }
+    }
+}

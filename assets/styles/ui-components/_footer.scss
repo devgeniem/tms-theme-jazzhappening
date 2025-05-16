@@ -1,0 +1,75 @@
+/*!
+ *  Copyright (c) 2021. Geniem Oy
+ */
+
+// stylelint-disable declaration-no-important
+
+$footer-copy-link-border-color: $white;
+
+.site-footer {
+    position: relative;
+    background: linear-gradient(275deg, $color-jazzhappening-brown 0%, $color-jazzhappening-light-brown 100%);
+    color: $white !important;
+    margin-top: 6rem !important;
+    padding-top: 6rem !important;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -75px;
+        left: 10%;
+        height: 150px;
+        width: 80%;
+        background-image: url('../images/confetti-footer.svg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__logo {
+        max-height: 120px;
+        object-position: left;
+        object-fit: contain;
+    }
+
+    &__copy-links {
+        li:not(:last-child)::after {
+            background-color: $white;
+        }
+    }
+
+    &__tampere-vaakuna {
+        color: $white !important;
+    }
+
+    a.has-text-paragraph {
+        font-family: $family-primary;
+        color: $white !important;
+
+        .icon {
+            fill: currentColor !important;
+        }
+    }
+
+    h2 {
+        font-family: $family-secondary;
+        font-style: normal;
+        text-transform: uppercase;
+        font-size: 1.125rem !important;
+    }
+
+    img,
+    .button {
+        &,
+        &:focus,
+        &:hover {
+            color: $white !important;
+            outline-color: $white !important;
+        }
+    }
+
+    h2 {
+        color: $white !important;
+    }
+}

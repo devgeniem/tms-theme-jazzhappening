@@ -1,0 +1,21 @@
+// sass-lint:disable no-important
+
+.has-text-primary-invert {
+    color: $primary-invert !important;
+}
+
+.has-text-secondary-invert {
+    color: $secondary-invert !important;
+}
+
+.has-text-black-invert {
+    color: $primary-invert !important;
+}
+
+.has-text-white-invert {
+    color: $primary !important;
+}
+
+strong {
+    color: inherit;
+}

@@ -1,0 +1,60 @@
+/*!
+ *  Copyright (c) 2022. Geniem Oy
+ */
+
+// stylelint-disable declaration-no-important
+
+.key-figures {
+    &__number p,
+    &__description p {
+        font-weight: $weight-bold !important;
+        font-family: $family-secondary;
+        font-style: normal;
+        word-break: break-all;
+    }
+
+    &__number {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &.is-text-big {
+            @include from($tablet) {
+                font-size: 6rem;
+            }
+        }
+    }
+
+    &__row {
+        position: relative;
+
+        .column {
+            background-color: $color-jazzhappening-lightgreen;
+
+            &.has-bg p {
+                color: $white;
+            }
+        }
+
+        &:not(:last-child)::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 2;
+            bottom: -40px;
+            left: 0;
+            height: 80px;
+            width: 100%;
+            background-image: url('../images/confetti.svg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        @include from($desktop) {
+            &:not(:last-child)::after {
+                bottom: -75px;
+                height: 150px;
+            }
+        }
+    }
+}

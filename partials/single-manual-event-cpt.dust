@@ -1,0 +1,90 @@
+{>"shared/base" /}
+
+{<content}
+    {#SingleManualEventCpt}
+        <main class="main-content" id="main-content">
+            <article class="entry">
+                <section class="section pb-6">
+                    <div class="container">
+                        <h1 class="entry__title mt-8 mb-8 has-text-centered">
+                            {event.normalized.name|html}
+                        </h1>
+                        <div class="columns m-0">
+                            <div class="column m-0 p-0">
+                                {?hero_image}
+                                    <div class="is-flex is-flex-direction-column is-relative has-height-100">
+                                        <img class="entry__hero-image has-height-100" src="{hero_image|url}" alt=""
+                                            aria-hidden="true"
+                                            tabindex="-1" />
+                                        {?hero_image_credits}
+                                            <div class="entry__hero-image-credits">
+                                                {hero_image_credits|kses}
+                                            </div>
+                                        {/hero_image_credits}
+                                    </div>
+                                {/hero_image}
+                            </div>
+                            <div class="column p-0">
+                                <div class="entry__hero-info background-gradient-jazzhappening section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
+                                    {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section pt-0">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column">
+                                {?event.normalized.short_description}
+                                    <div class="entry__content is-content-grid has-text-centered">
+                                        <p class="mt-6 mb-6 has-text-large">
+                                            {event.normalized.short_description|kses}
+                                        </p>
+                                    </div>
+                                {/event.normalized.short_description}
+
+                                <div class="entry__info-group pt-5 pb-5 mt-10">
+                                    {>"views/single-dynamic-event/single-dynamic-event-info" /}
+                                </div>
+
+                                <div class="entry__description column is-6-desktop is-offset-3-desktop mt-5 mb-5">
+                                    {event.normalized.description|kses}
+                                </div>
+
+                                {?event.orig.event_video.video}
+                                    <div
+                                        class="video column {@eq key=event.orig.event_video.align value="default"}is-8-desktop is-offset-2-desktop{/eq} mt-4 mb-4 mt-8-tablet mb-8-tablet is-relative">
+
+                                        {?event.orig.event_video.alt_text}
+                                            <span class="is-sr-only">{event.orig.event_video.alt_text|html}</span>
+                                        {/event.orig.event_video.alt_text}
+
+                                        <div class="image is-16by9 is-embed-container">
+                                            {event.orig.event_video.video|s}
+                                        </div>
+                                    </div>
+                                {/event.orig.event_video.video}
+
+                                {?share_links}
+                                    <div class="columns is-variable is-8-desktop">
+                                        <div class="column is-offset-1-desktop">
+                                            <div class="entry__share-links">
+                                                <h2 class="h6 mt-6 mb-6 has-text-left has-text-secondary-invert">
+                                                    {Strings.s.share.share_to_social_media|html}
+                                                </h2>
+
+                                                {>"ui/share-links" ul_class="is-justify-content-flex-start" li_class="mr-4" /}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {/share_links}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+    {/SingleManualEventCpt}
+{/content}

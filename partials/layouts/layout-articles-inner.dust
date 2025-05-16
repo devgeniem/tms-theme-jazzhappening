@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="columns">
+        <div class="column is-8">
+            {?title}
+                <h2 class="layout-articles__title mt-0 mb-3 has-text-weight-bold is-italic">
+                    {title|html}
+                </h2>
+            {/title}
+
+            {?description}
+                <div class="layout-articles__description">
+                    <p class="mt-0 ml-0 mr-0 mb-3">
+                        {description|kses}
+                    </p>
+                </div>
+            {/description}
+        </div>
+
+        <div class="column is-4 is-flex is-align-items-end is-justify-content-end">
+            {?link.url}
+                {?link.title}
+                    <div class="has-text-right">
+                        <a href="{link.url|url}" target="{link.target|attr}" class="button button--icon icon-arrow-right-alt is-outlined mb-3">
+                            <span>{link.title|html}</span>
+                        </a>
+                    </div>
+                {/link.title}
+            {/link.url}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {?highlight}
+        {#highlight}
+            {>"views/home/home-highlight" category_link_classes="is-primary-invert" /}
+        {/highlight}
+    {/highlight}
+
+    {?posts}
+        <div class="columns is-multiline mt-4">
+            {#posts}
+                {>"views/home/home-grid-item" category_link_classes="is-primary-invert" /}
+            {/posts}
+        </div>
+    {/posts}
+</div>

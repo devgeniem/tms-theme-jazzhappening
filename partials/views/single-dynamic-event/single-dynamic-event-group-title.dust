@@ -1,0 +1,3 @@
+<p class="info-group__label h2 is-relative m-0 pt-3 pr-4 pb-3 pl-4 is-italic">
+    {title|html}
+</p>

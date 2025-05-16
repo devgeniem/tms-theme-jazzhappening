@@ -1,0 +1,16 @@
+.sibling-navigation {
+    &__items {
+        margin: 0 !important;
+        gap: $theme-spacing;
+
+        @include from($desktop) {
+            gap: $theme-spacing-oneandhalf;
+        }
+    }
+
+    &__item {
+        &:hover {
+            color: $sibling-navigation-item-color;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.pill {
+    border-width: 0 !important;
+    background: linear-gradient( $color-jazzhappening-green, $color-jazzhappening-darkgreen ) !important;
+    color: $white !important;
+    font-family: $family-secondary !important;
+    font-size: 1rem !important;
+    letter-spacing: .06rem;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    font-weight: $weight-bold !important;
+    padding: .25rem .5rem !important;
+    border-radius: .5rem;
+    z-index: 1;
+
+    .icon {
+        fill: currentColor !important;
+        color: inherit !important;
+    }
+
+    &:not(span) {
+        &:hover,
+        &:focus {
+            text-decoration: underline !important;
+            color: $white !important;
+            background: linear-gradient( $color-jazzhappening-green, $color-jazzhappening-darkgreen ) !important;
+            border-color: transparent !important;
+        }
+    }
+
+    &.is-active {
+        &:not(span) {
+            &:hover,
+            &:focus {
+                background-color: $primary-invert !important;
+                color: $primary !important;
+            }
+        }
+    }
+}

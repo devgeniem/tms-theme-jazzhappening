@@ -1,0 +1,36 @@
+.secondary-menu {
+    .menu-item-secondary {
+        &__link {
+            position: relative;
+            display: inline-block;
+            font-size: 1rem !important;
+            font-weight: $weight-bold !important;
+            color: $navbar-item-navbar-link-color !important;
+            text-transform: none;
+            letter-spacing: .05rem;
+
+            &:hover,
+            &:focus {
+                color: $navbar-item-navbar-link-color !important;
+            }
+
+            &[target="_blank"] {
+                padding: 0 1.5rem 0 0;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 1.25rem;
+                    height: $theme-spacing;
+                    bottom: $theme-spacing-half;
+                    right: 0;
+                    background-image: url('../images/arrow-outward.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}

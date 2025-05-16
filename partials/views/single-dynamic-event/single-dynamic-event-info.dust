@@ -1,0 +1,47 @@
+{?event.orig.event_custom_program}
+    <div class="info-group column is-8 is-offset-2 has-border-none">
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.program_title template_classes=template_classes.info_group_title icon="location" /}
+
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {event.orig.event_custom_program|kses}
+        </div>
+    </div>
+{/event.orig.event_custom_program}
+
+{?event.orig.event_custom_artists}
+    <div class="info-group column is-8 is-offset-2 has-border-none">
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.artists_title template_classes=template_classes.info_group_title icon="location" /}
+
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {event.orig.event_custom_artists|kses}
+        </div>
+    </div>
+{/event.orig.event_custom_artists}
+
+{?event.orig.event_custom_price}
+    <div class="info-group column is-8 is-offset-2 has-border-none">
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.normalized.price_title template_classes=template_classes.info_group_title icon="euro" /}
+
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            {event.orig.event_custom_price|kses}
+        </div>
+    </div>
+{/event.orig.event_custom_price}
+
+{?event.orig.event_custom_links}
+    <div class="info-group column is-8 is-offset-2 has-border-none">
+        {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.links_title template_classes=template_classes.info_group_title icon="euro" /}
+
+        <div class="info-group__description pt-1 pr-4 pb-2 pl-4">
+            <ul class="is-unstyled">
+                {#event.orig.event_custom_links}
+                    <li>
+                        <a href="{event_custom_link.url|url}" target="{event_custom_link.target|attr}">
+                            {event_custom_link.title|html}
+                        </a>
+                    </li>
+                {/event.orig.event_custom_links}
+            </ul>
+        </div>
+    </div>
+{/event.orig.event_custom_links}

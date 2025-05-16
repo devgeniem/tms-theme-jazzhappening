@@ -1,0 +1,46 @@
+<div class="section program">
+    <div class="program__anchors mt-4 has-text-centered">
+        {#day_names}
+            <a href="#program-{day_name|attr}" class="program-anchor h5 mr-3 ml-3 has-text-weight-medium" aria-label="{full_day_name|html}">{day_name|html}</a>
+        {/day_names}
+    </div>
+    <div {?anchor}id="{anchor|attr}"{/anchor} class="mt-6 mb-6 mt-8-desktop mb-8-desktop">
+        {#repeater}
+            <div id="program-{day_name|attr}" class="program__row columns is-flex-wrap-wrap">
+                <div class="program__text column is-12 is-3-desktop is-flex is-flex-direction-column is-align-items-flex-start">
+                    <h2 class="mb-4">{formatted_date|html}</h2>
+                    <p class="mt-0 mb-0">{location_and_time}</p>
+                    <p class="mt-0">{price}</p>
+                    {#events}
+                        <a href="{link|url}" class="mb-2">
+                            {>"ui/icon" icon="chevron-right" class="icon--medium is-primary mr-1" /}
+                            {title|html}
+                        </a>
+                    {/events}
+                    {?ticket_link}
+                        <a href="{ticket_link.url|url}" target="{ticket_link.target|attr}" class="button is-primary mt-4">
+                            {ticket_link.title|html}
+                        </a>
+                    {/ticket_link}
+                </div>
+                <div class="program__images {events_class|attr} column is-12 is-9-desktop has-height-100">
+                    {#events}
+                        <a href="{link|url}" class="is-block is-relative">
+                            <div class="event-info is-absolute p-2 has-text-right has-text-white">
+                                <p class="m-0">
+                                    {title|html}
+                                </p>
+                                <p class="m-0">
+                                    {datetime|html}
+                                </p>
+                            </div>
+                            {?image_id}
+                                {@image id=image_id size="large" class="objectfit-image" /}
+                            {/image_id}
+                        </a>
+                    {/events}
+                </div>
+            </div>
+        {/repeater}
+    </div>
+</div>

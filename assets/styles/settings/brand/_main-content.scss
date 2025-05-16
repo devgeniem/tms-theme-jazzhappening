@@ -1,0 +1,22 @@
+main.main-content {
+    p > a,
+    a.has-text-paragraph {
+        color: $color-jazzhappening-darkblue;
+        text-decoration: underline;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-image: url('../images/confetti-grey-large.svg');
+        background-position: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,0 +1,34 @@
+@import "functions";
+
+// All Tampere brand colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Override Bulma
+$white: $color-white;
+$black: $color-black;
+
+$color-jazzhappening-darkgreen: #032502;
+$color-jazzhappening-darkblue: #1C232D;
+$color-jazzhappening-green: #276634;
+$color-jazzhappening-lightgreen: #E4FFE9;
+$color-jazzhappening-white: #F6F7F9;
+$color-jazzhappening-lightgray: #E5E7EB;
+$color-jazzhappening-blue: #1C6DCF;
+$color-jazzhappening-light-blue: #39B6F6;
+$color-jazzhappening-brown: #1F0202;
+$color-jazzhappening-light-brown: #5F3326;
+$jazzhappening-gradient-green: linear-gradient( 315deg, $color-jazzhappening-darkgreen 0%, $color-jazzhappening-green 100% );
+
+$color-jazzhappening-button: $color-jazzhappening-darkgreen;
+$color-jazzhappening-button-hover: bulmaLighten($color-jazzhappening-darkgreen, 10);
+
+$color-tekstin-vari: #212936;
+$color-ui-border: #414141;
+$color-gray: #a6a7ac;
+
+$color-vaalean-harmaa: #A6A7AC;
+$color-tumma-harmaa: #585857;
+$color-ui-border: #414141;
+$color-gray: #a6a7ac;
+$color-ui-border-light: #767676;

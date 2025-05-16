@@ -1,0 +1,78 @@
+<form class="events-list-filters" action="{search.action|url}" method="get" role="search">
+
+    <div class="archive-filters columns mt-2">
+        <nav class="column has-text-centered is-12" aria-labelledby="filter">
+            {?categories}
+                <div class="h6 mb-4" id="filter">
+                    {Strings.s.home.filter_by_category|html}
+                </div>
+
+                <fieldset class="event-categories">
+                    {#categories}
+                        <input class="js-trigger-form-submit"
+                            type="radio"
+                            id="{?value}category-{value|attr}{:else}category-all{/value}"
+                            name="event-category"
+                            value="{value|attr}"
+                            {?is_active}checked{/is_active} />
+                        <label
+                            class="has-text-weight-bold"
+                            for="{?value}category-{value|attr}{:else}category-all{/value}">
+                                {name|html}
+                        </label>
+                    {/categories}
+                </fieldset>
+            {/categories}
+        </nav>
+    </div>
+
+    <div class="columns is-multiline">
+        <div class="column">
+            <div class="pb-4">
+                <div class="columns filters">
+                    {?days}
+                        <div class="column is-6-tablet is-3-desktop is-offset-3-desktop">
+                            <div class="event-filter-wrapper mr-3">
+                                <label for="event-day" class="is-block h6 mb-1 is-sr-only">
+                                    {filter_strings.day|html}
+                                </label>
+
+                                <select name="event-day"
+                                    id="event-day"
+                                    class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-border-1">
+                                    {#days}
+                                        <option value="{value|attr}" {is_selected|attr}>
+                                            {label|html}
+                                        </option>
+                                    {/days}
+                                </select>
+                                {>"ui/icon" icon="chevron-down" class="icon--medium is-absolute" /}
+                            </div>
+                        </div>
+                    {/days}
+
+                    {?event_order}
+                        <div class="column is-6-tablet is-3-desktop">
+                            <div class="event-filter-wrapper mr-3">
+                                <label for="event-order" class="is-block h6 mb-1 is-sr-only">
+                                    {filter_strings.change_order|html}
+                                </label>
+
+                                <select name="event-order"
+                                    id="event-order"
+                                    class="js-trigger-form-submit has-width-100 p-2 pt-3-desktop pb-3-desktop has-border-1">
+                                    {#event_order}
+                                        <option value="{value|attr}" {is_selected|attr}>
+                                            {filter_strings.order|html} {label|html}
+                                        </option>
+                                    {/event_order}
+                                </select>
+                                {>"ui/icon" icon="chevron-down" class="icon--medium is-absolute" /}
+                            </div>
+                        </div>
+                    {/event_order}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

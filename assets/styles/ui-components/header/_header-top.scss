@@ -1,0 +1,84 @@
+.site-header {
+    position: sticky;
+    top: $theme-spacing-half;
+    z-index: 6;
+    background: linear-gradient( 178deg, $color-jazzhappening-green 25%, $color-jazzhappening-darkgreen 100% );
+    color: $navbar-item-navbar-link-color;
+    margin: 0 $theme-spacing-half;
+    border-radius: $theme-spacing-three-quarters;
+    padding: $theme-spacing 0;
+
+    @include from($tablet) {
+        margin: 0 $theme-spacing-oneandhalf;
+        padding: $theme-spacing;
+    }
+
+    @include from($widescreen) {
+        padding: 0;
+    }
+
+    .button {
+        outline-color: $white !important;
+    }
+
+    &__wrapper {
+        max-width: $container-max-width;
+        margin: 0 auto;
+    }
+
+    &__logo-image {
+        padding-top: $theme-spacing-three-quarters;
+
+        > a {
+            img {
+                max-height: 80px;
+                object-fit: contain;
+                object-position: left;
+            }
+
+            &:focus {
+                outline-offset: .2rem;
+                outline: .125rem dotted $white !important;
+            }
+        }
+    }
+
+    #js-search-toggle {
+        margin-right: $theme-spacing-oneandhalf !important;
+        margin-left: $theme-spacing-oneandhalf !important;
+        border: none;
+        padding: .5rem;
+
+        .icon {
+            margin: 0 !important;
+            color: $color-jazzhappening-white !important;
+        }
+    }
+
+    &__popup {
+        bottom: -$theme-spacing-quarter !important;
+        border-radius: $theme-spacing-three-quarters;
+        box-shadow: 0 .0588rem .5rem rgba($black, .1);
+        background: linear-gradient( 178deg, $color-jazzhappening-green 25%, $color-jazzhappening-darkgreen 100% );
+    }
+
+    .search-form {
+        align-items: normal !important;
+
+        &__input {
+            height: 100%;
+            background-color: transparent !important;
+            border-color: $white !important;
+            color: $white !important;
+            font-size: $body-font-size;
+        }
+    }
+
+    &__popup {
+        background-color: $color-jazzhappening-green;
+    }
+
+    .popup__label {
+        color: $white;
+    }
+}

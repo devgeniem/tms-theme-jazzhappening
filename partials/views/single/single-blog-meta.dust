@@ -1,0 +1,40 @@
+<div class="entry__meta {spacing_class|attr}">
+    <div class="is-flex is-flex-wrap-wrap">
+        <p class="m-0">
+            {@strtodate value=content.post_date /}
+        </p>
+
+        <div
+            class="is-flex is-flex-direction-column has-width-100-until-tablet mt-3 mt-0-tablet ml-auto-tablet has-text-right">
+            {?content.fields.writing_credits}
+                <div>
+                    <p class="m-0">{Strings.s.single.writing_credits|html}</p>
+                    <p class="m-0">{content.fields.writing_credits|html}</p>
+                </div>
+            {/content.fields.writing_credits}
+
+            {?content.fields.image_credits}
+                <div>
+                    <p class="m-0">{Strings.s.single.image_credits|html}</p>
+                    <p class="m-0">{content.fields.image_credits|html}</p>
+                </div>
+            {/content.fields.image_credits}
+        </div>
+    </div>
+
+    {?content.categories}
+        <div class="is-flex is-flex-wrap-wrap mt-6">
+            {#content.categories}
+                <a href="{permalink|url}" class="pill is-primary-invert mr-2 mb-2">{name|html}</a>
+            {/content.categories}
+        </div>
+    {/content.categories}
+
+    {?content.tags}
+        <div class="is-flex is-flex-wrap-wrap mt-4">
+            {#content.tags}
+                <a href="{permalink}" class="pill is-primary-invert mr-2 mb-2">{name|html}</a>
+            {/content.tags}
+        </div>
+    {/content.tags}
+</div>

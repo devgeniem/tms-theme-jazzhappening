@@ -1,0 +1,19 @@
+.content-columns {
+
+    &__item {
+        .column {
+            &,
+            p,
+            h2 {
+                color: $white;
+            }
+
+            &:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background: $jazzhappening-gradient-green;
+            }
+        }
+    }
+}

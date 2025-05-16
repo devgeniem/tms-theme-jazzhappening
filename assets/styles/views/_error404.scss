@@ -1,0 +1,11 @@
+.error404 {
+    .entry {
+        &__content {
+            color: $color-tekstin-vari;
+
+            &:not(.has-text-left) {
+                text-align: center;
+            }
+        }
+    }
+}

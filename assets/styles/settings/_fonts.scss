@@ -1,0 +1,60 @@
+// Font families
+@font-face {
+    font-family: "GauthierFY";
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+    src: url("./../fonts/GauthierFY-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GauthierFY";
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+    src: url("./../fonts/GauthierFY-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GauthierFY";
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    src: url("./../fonts/GauthierFY-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GauthierFY";
+    font-weight: 700;
+    font-style: italic;
+    src: url("./../fonts/GauthierFY-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GauthierFY";
+    font-weight: 500;
+    font-display: swap;
+    font-style: italic;
+    src: url("./../fonts/GauthierFY-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GauthierFY";
+    font-weight: 400;
+    font-display: swap;
+    font-style: italic;
+    src: url("./../fonts/GauthierFY-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 1 999;
+    src: url("../fonts/Montserrat-VariableFont.ttf") format("truetype-variations");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 1 999;
+    font-style: italic;
+    src: url("../fonts/Montserrat-Italic-VariableFont.ttf") format("truetype-variations");
+}

@@ -1,0 +1,27 @@
+<section {?anchor}id="{anchor|attr}"{/anchor}
+         class="section hero hero__carousel splide has-background-secondary-dark-invert pt-0">
+         <h1 class="is-sr-only">{main_title|html}</h1>
+        <div class="splide__track">
+            <ul class="splide__list">
+                {#carousel_repeater}
+                    <li class="hero__carousel__item splide__slide" id="{hero_carousel_item_id|attr}">
+                        {@image id=slide_image.id alt=slide_image.alt title=slide_image.alt size="fullhd" class="" loading="" /}
+                        <div class="has-width-100 has-text-centered mr-2 ml-2">
+                            {?slide_title}
+                                <h2 class="h1 mt-0 mb-4">{slide_title|html}</h2>
+                            {/slide_title}
+                            {?slide_subtitle}
+                                <p class="h4 mt-0 mb-0">{slide_subtitle|html}</p>
+                            {/slide_subtitle}
+                            {?slide_description}
+                                {slide_description|kses}
+                            {/slide_description}
+                            {?slide_link}
+                                <a href="{slide_link.url|url}" class="button is-primary mt-5" target="{slide_link.target|attr}">{slide_link.title|html}</a>
+                            {/slide_link}
+                        </div>
+                    </li>
+                {/carousel_repeater}
+            </ul>
+        </div>
+</section>

@@ -1,0 +1,13 @@
+ <div class="navbar-dropdown is-hidden-touch" id="js-navbar-menu-item-dropdown-{$idx}">
+    <div class="container">
+        <div class="navbar-dropdown-items">
+            <ul class="p-0 is-unstyled">
+                {#sub_menu}
+                    <li>
+                        {>"ui/menu/menu-item-simple" icon="chevron-right" /}
+                    </li>
+                {/sub_menu}
+            </ul>
+        </div>
+    </div>
+</div>

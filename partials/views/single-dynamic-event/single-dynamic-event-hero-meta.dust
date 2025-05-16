@@ -1,0 +1,40 @@
+<div class="has-text-centered has-height-100 is-flex is-flex-direction-column is-justify-content-center">
+    <div class="is-flex is-flex-direction-row is-justify-content-center">
+        <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
+            {?event.normalized.date}
+                {?event.weekday_prefix}
+                    <span class="is-capitalized">{event.weekday_prefix|html}</span>
+                {/event.weekday_prefix}
+                {event.normalized.date|html}
+            {/event.normalized.date}
+
+            {?event.normalized.time}
+                {event.time_prefix|html}
+                {event.normalized.time|html}
+            {/event.normalized.time}
+        </p>
+    </div>
+
+    {?event.normalized.location}
+        <p class="mt-0 mb-2 has-text-white is-family-secondary">
+            {event.normalized.location.name|html}{event.location_price_separator|html}
+
+            {?event.normalized.price}
+                {#event.normalized.price}
+                    {price|html}
+                {/event.normalized.price}
+            {/event.normalized.price}
+        </p>
+    {/event.normalized.location}
+
+    {?event.normalized.price}
+        {#event.normalized.price}
+            {?.info_url.url}
+            <a href="{.info_url.url|url}" target="_blank"
+                class="is-inline-block is-align-self-center button is-outlined-invert mt-3">
+                {event.buy_ticket_string|html}
+            </a>
+            {/.info_url.url}
+        {/event.normalized.price}
+    {/event.normalized.price}
+</div>

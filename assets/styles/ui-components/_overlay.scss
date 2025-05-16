@@ -1,0 +1,7 @@
+// sass-lint:disable no-color-literals
+
+.overlay {
+    &--dark-gradient {
+        background: linear-gradient(rgba($black, 0), rgba($black, .7));
+    }
+}

@@ -1,0 +1,56 @@
+.single-post {
+
+    .main-content {
+        overflow-x: hidden;
+    }
+
+    .entry {
+        &__share-links {
+            h2 {
+                text-align: left !important;
+            }
+
+            .share-links {
+                justify-content: flex-start !important;
+            }
+        }
+
+        &__figure {
+            position: relative;
+
+            img {
+                width: auto;
+                max-height: $image-max-height;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -80px;
+                right: -80px;
+                height: 200px;
+                width: 200px;
+                background-image: url('../images/confetti.svg');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .related-posts {
+
+        &__read-more {
+            font-size: 1.2rem;
+            font-family: $family-secondary;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+
+            &:not(:hover) {
+                color: inherit !important;
+            }
+        }
+    }
+}

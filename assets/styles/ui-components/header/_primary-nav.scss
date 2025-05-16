@@ -1,0 +1,107 @@
+.site-header__nav {
+    border-top: 0px;
+    border-bottom: 0 !important;
+}
+
+.primary-nav {
+    justify-content: center;
+    padding: .5rem 0 1.25rem 0 !important;
+    gap: $theme-spacing;
+
+    > li {
+        @include from($desktop) {
+            padding-bottom: 0 !important;
+        }
+    }
+
+    .navbar-item {
+        position: relative;
+        padding: 0;
+        border-width: 0;
+
+        .navbar-link.dropdown-trigger {
+            padding-right: .25rem !important;
+        }
+
+        &.current-menu-item,
+        &.current-menu-parent {
+            background: $navbar-item-navbar-active-bg-color !important;
+            border-bottom-color: rgba(255, 255, 255, .6);
+            border-width: 3px !important;
+            margin-bottom: -3px !important;
+        }
+
+        .dropdown-toggler {
+            padding: 0 $theme-spacing-half !important;
+        }
+    }
+
+    > .navbar-item a,
+    > .has-dropdown > div > .navbar-link {
+        font-weight: $weight-bold !important;
+        color: $navbar-item-navbar-link-color !important;
+        font-size: 1rem !important;
+        font-family: $family-primary;
+        text-transform: none;
+
+        &:hover,
+        &:focus {
+            color: $navbar-item-navbar-link-color !important;
+        }
+    }
+
+    > .has-dropdown > div > .navbar-link {
+        padding: 0;
+    }
+
+    .navbar-dropdown {
+        width: 220px !important;
+        margin-top: $theme-spacing-half !important;
+        min-width: auto !important;
+        border-top: none !important;
+        background-color: $white !important;
+        border-radius: .75rem;
+
+        @include from($desktop) {
+            padding: $theme-spacing !important;
+        }
+
+        a {
+            font-family: $family-primary;
+            color: $color-jazzhappening-darkgreen !important;
+            font-size: 1rem !important;
+            font-weight: $weight-bold !important;
+
+            &:hover,
+            &:focus {
+                color: $color-jazzhappening-darkgreen !important;
+            }
+        }
+
+
+        &__parent-link {
+            display: none !important;
+        }
+    }
+
+    li {
+        text-decoration: none !important;
+    }
+
+    .icon {
+        fill: currentColor !important;
+    }
+
+    .navbar-dropdown-items {
+        .navbar-item {
+            background-color: transparent !important;
+            border-bottom: none !important;
+            padding: $theme-spacing-half !important;
+
+            .icon {
+                width: $theme-spacing-half !important;
+                height: $theme-spacing-half !important;
+            }
+        }
+    }
+}

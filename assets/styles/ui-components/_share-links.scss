@@ -1,0 +1,31 @@
+.share-links,
+.entry__share-links {
+    h2 {
+        text-transform: none;
+        font-weight: 400;
+    }
+
+    a {
+        background-color: $link;
+        border: 1px solid $link;
+
+        .icon {
+            fill: $white !important;
+        }
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+            background-color: $white !important;
+
+            .icon {
+                fill: $link !important;
+            }
+        }
+    }
+
+    .icon {
+        fill: $link !important;
+    }
+}

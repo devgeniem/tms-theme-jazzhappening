@@ -1,0 +1,24 @@
+<section class="entry__hero section pb-6">
+    <div class="container">
+        <h1 class="entry__title mt-8 mb-8 has-text-centered">
+            {@title /}
+        </h1>
+    </div>
+
+    <div class="columns m-0">
+        <div class="column m-0 p-0">
+            {?hero_image_url}
+                <div class="is-flex is-flex-direction-column is-relative has-height-100">
+                    <img class="entry__hero-image has-height-100" src="{hero_image_url|url}" alt=""
+                        aria-hidden="true"
+                        tabindex="-1" />
+                </div>
+            {/hero_image_url}
+        </div>
+        <div class="column p-0">
+            <div class="entry__hero-info background-gradient-jazzhappening section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
+                {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
+            </div>
+        </div>
+    </div>
+</section>

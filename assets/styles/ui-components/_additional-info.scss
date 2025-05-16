@@ -1,0 +1,12 @@
+.info-row {
+    &--title {
+        color: $primary;
+        letter-spacing: .06rem;
+        line-height: 1.75;
+    }
+
+    &--text {
+        color: $color-tekstin-vari;
+        line-height: 1.75;
+    }
+}

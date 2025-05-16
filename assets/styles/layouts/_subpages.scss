@@ -1,0 +1,21 @@
+.subpages {
+    .post-link {
+        border: 1px solid $primary;
+
+        &:not(.has-background-image) {
+            background: $jazzhappening-gradient-green !important;
+            color: $white !important;
+        }
+
+        .icon {
+            fill: currentColor !important;
+        }
+
+        .h5 {
+            color: currentColor !important;
+            letter-spacing: .01em;
+            line-height: 141%;
+            text-transform: none;
+        }
+    }
+}

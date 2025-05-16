@@ -1,0 +1,159 @@
+// stylelint-disable declaration-no-important
+
+$button-primary-border-color: $color-jazzhappening-darkgreen;
+$button-secondary-border-color: $button-primary-border-color;
+
+
+.button {
+    font-size: 1.15rem !important;
+    font-weight: $weight-bold !important;
+    font-family: $family-primary !important;
+    letter-spacing: .06rem !important;
+    border-color: $primary !important;
+    padding: .5rem 1.5rem;
+
+    &:hover,
+    &.is-hovered,
+    &:focus,
+    &.is-focused,
+    &:active {
+        outline: none !important;
+        box-shadow: 0 .125rem .375rem rgba(0, 0, 0, .15);
+        color: $primary !important;
+        text-decoration: underline !important;
+
+        .icon {
+            fill: currentColor !important;
+        }
+    }
+
+    .icon {
+        fill: currentColor !important;
+        color: inherit;
+    }
+
+    &:focus,
+    &.is-focused {
+        border-color: $button-primary-border-color !important;
+        outline: .125rem dotted $black !important;
+        outline-offset: .25rem !important;
+    }
+
+    &.is-primary {
+        background-color: $color-jazzhappening-button !important;
+        border-color: $color-jazzhappening-button !important;
+        color: $white !important;
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused,
+        &:active {
+            background-color: $color-jazzhappening-button-hover !important;
+            border-color: $color-jazzhappening-button-hover !important;
+            color: $white !important;
+
+            &,
+            .icon {
+                fill: $white !important;
+            }
+        }
+
+        &.is-outlined {
+            &:hover,
+            &:focus {
+                border-color: $primary !important;
+            }
+        }
+    }
+
+    &.is-primary.is-inverted,
+    &.is-primary-invert {
+
+        &,
+        &:hover,
+        &:focus {
+            border-color: $color-jazzhappening-button !important;
+            background-color: $primary-invert !important;
+            color: $color-jazzhappening-button !important;
+
+            .icon {
+                fill: $color-jazzhappening-button !important;
+            }
+        }
+
+        &:active {
+            background-color: $white !important;
+            color: $color-jazzhappening-button !important;
+        }
+
+        .icon {
+            fill: $color-jazzhappening-button !important;
+        }
+    }
+
+    &.is-secondary {
+        background-color: $secondary !important;
+        color: $secondary-invert !important;
+
+        .icon {
+            fill: currentColor !important;
+        }
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+            border-color: $color-jazzhappening-darkblue !important;
+            background-color: $color-jazzhappening-darkblue !important;
+            color: $primary-invert !important;
+
+            .icon {
+                fill: currentColor !important;
+            }
+        }
+    }
+
+    &.is-outlined {
+        border-color: $border-light !important;
+        background-color: transparent !important;
+        color: $color-jazzhappening-darkblue;
+
+        &:hover,
+        &:focus {
+            background-color: transparent !important;
+            color: $color-jazzhappening-darkblue !important;
+        }
+    }
+
+    &.is-outlined-invert {
+        border-color: $border-light !important;
+        background-color: transparent !important;
+        color: $white;
+
+        &:hover,
+        &:focus {
+            background-color: transparent !important;
+            color: $white !important;
+        }
+    }
+
+    &--icon {
+        &.icon-arrow-right-alt {
+            padding-right: 2.5rem !important;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1.5rem;
+                height: 100%;
+                bottom: 0;
+                right: .75rem;
+                background-image: url('../images/arrow-right-alt.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+}
