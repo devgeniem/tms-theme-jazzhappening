@@ -24,11 +24,13 @@ export default class HeroCarousel {
         };
 
         Splide.defaults = {
-            type: 'loop',
+            type: 'fade',
+            rewind: true,
             arrows: false,
             pagination: false,
             autoplay: true,
             speed: 600,
+            pauseOnHover: false,
             i18n: {
                 prev: translations.previous,
                 next: translations.next,

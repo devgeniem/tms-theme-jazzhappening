@@ -128,6 +128,7 @@ class HeroLayout extends Layout {
             ->set_key( "{$key}_main_title" )
             ->set_name( 'main_title' )
             ->set_wrapper_width( 50 )
+            ->set_required()
             ->set_instructions( $strings['main_title']['instructions'] );
 
         try {

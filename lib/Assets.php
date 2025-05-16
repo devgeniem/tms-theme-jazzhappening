@@ -91,7 +91,7 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
     private function enqueue_splide_styles(): void {
         \wp_enqueue_style(
             'splide-style',
-            \get_stylesheet_directory_uri() . '/node_modules/@splidejs/splide/dist/css/splide-core.min.css',
+            'https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide-core.min.css',
             [],
             '1.0.0'
         );
