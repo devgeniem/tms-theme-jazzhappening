@@ -1,5 +1,5 @@
 <section {?anchor}id="{anchor|attr}"{/anchor}
-         class="section hero hero__carousel splide has-background-secondary-dark-invert pt-0">
+         class="hero hero__carousel splide has-background-secondary-dark-invert pt-0">
          <h1 class="is-sr-only">{main_title|html}</h1>
         <div class="splide__track">
             <ul class="splide__list">

@@ -1,7 +1,5 @@
 .hero {
     height: auto !important;
-    max-width: $container-max-width;
-    margin: 0 auto;
 
     @include until($tablet) {
         padding-left: 0;

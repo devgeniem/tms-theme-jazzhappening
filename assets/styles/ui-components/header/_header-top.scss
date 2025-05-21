@@ -4,12 +4,9 @@
     z-index: 6;
     background: linear-gradient( 178deg, $color-jazzhappening-green 25%, $color-jazzhappening-darkgreen 100% );
     color: $navbar-item-navbar-link-color;
-    margin: 0 $theme-spacing-half;
-    border-radius: $theme-spacing-three-quarters;
     padding: $theme-spacing 0;
 
     @include from($tablet) {
-        margin: 0 $theme-spacing-oneandhalf;
         padding: $theme-spacing;
     }
 
