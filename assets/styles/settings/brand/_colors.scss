@@ -8,9 +8,10 @@ $color-black: #000000;
 $white: $color-white;
 $black: $color-black;
 
+$color-jazzhappening-green: #1E841E;
+
 $color-jazzhappening-darkgreen: #032502;
 $color-jazzhappening-darkblue: #1C232D;
-$color-jazzhappening-green: #276634;
 $color-jazzhappening-lightgreen: #E4FFE9;
 $color-jazzhappening-white: #F6F7F9;
 $color-jazzhappening-lightgray: #E5E7EB;
@@ -20,10 +21,10 @@ $color-jazzhappening-brown: #1F0202;
 $color-jazzhappening-light-brown: #5F3326;
 $jazzhappening-gradient-green: linear-gradient( 315deg, $color-jazzhappening-darkgreen 0%, $color-jazzhappening-green 100% );
 
-$color-jazzhappening-button: $color-jazzhappening-darkgreen;
-$color-jazzhappening-button-hover: bulmaLighten($color-jazzhappening-darkgreen, 10);
+$color-jazzhappening-button: $color-jazzhappening-green;
+$color-jazzhappening-button-hover: bulmaDarken($color-jazzhappening-green, 10);
 
-$color-tekstin-vari: #212936;
+$color-tekstin-vari: #333333;
 $color-ui-border: #414141;
 $color-gray: #a6a7ac;
 
