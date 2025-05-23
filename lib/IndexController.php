@@ -3,7 +3,7 @@
  * Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 use Geniem\RediPress\Entity\TextField;
 use TMS\Theme\Base\Interfaces\Controller;
@@ -11,7 +11,7 @@ use TMS\Theme\Base\Interfaces\Controller;
 /**
  * Class IndexController
  *
- * @package TMS\Theme\jazzhappening
+ * @package TMS\Theme\Jazzhappening
  */
 class IndexController implements Controller {
     /**

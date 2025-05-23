@@ -1,13 +1,13 @@
 <?php
 
-namespace TMS\Theme\jazzhappening\ACF;
+namespace TMS\Theme\Jazzhappening\ACF;
 
 use TMS\Theme\Base\Logger;
 
 /**
  * Class AlterImageCarousel
  *
- * @package TMS\Theme\jazzhappening\ACF
+ * @package TMS\Theme\Jazzhappening\ACF
  */
 class AlterImageCarousel {
     /**

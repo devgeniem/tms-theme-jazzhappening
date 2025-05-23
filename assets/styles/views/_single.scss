@@ -22,20 +22,6 @@
                 width: auto;
                 max-height: $image-max-height;
             }
-
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                top: -80px;
-                right: -80px;
-                height: 200px;
-                width: 200px;
-                background-image: url('../images/confetti.svg');
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
         }
     }
 

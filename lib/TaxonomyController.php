@@ -1,11 +1,11 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 /**
  * Class TaxonomyController
  *
- * @package TMS\Theme\jazzhappening
+ * @package TMS\Theme\Jazzhappening
  */
 class TaxonomyController extends \TMS\Theme\Base\TaxonomyController implements \TMS\Theme\Base\Interfaces\Controller {
 

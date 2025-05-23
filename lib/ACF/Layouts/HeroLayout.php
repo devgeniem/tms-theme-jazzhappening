@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening\ACF\Layouts;
+namespace TMS\Theme\Jazzhappening\ACF\Layouts;
 
 use Geniem\ACF\Exception;
 use Geniem\ACF\Field;
@@ -10,7 +10,7 @@ use TMS\Theme\Base\Logger;
 /**
  * Class HeroLayout
  *
- * @package TMS\Theme\jazzhappening\ACF\Layouts
+ * @package TMS\Theme\Jazzhappening\ACF\Layouts
  */
 class HeroLayout extends Layout {
 

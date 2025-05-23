@@ -1,36 +1,5 @@
 .page {
-    // Remove paddings for first component
-    &__hero-section:has(+ .call-to-action),
-    &__hero-section:has(+ .section) {
-        padding-bottom: 0 !important;
-    }
-
-    &__hero-section + .section {
-        padding-top: 0;
-    }
-
     &__hero {
-        display: flex;
-        justify-content: center;
-        height: auto !important;
-
-        .image-container {
-            max-width: 860px;
-
-            &::after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: -10%;
-                left: 50%;
-                transform: translateX(-50%);
-                height: 50%;
-                width: 50%;
-                background-image: url('../images/confetti.svg');
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-        }
+        background-position: top center;
     }
 }

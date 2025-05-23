@@ -2,7 +2,7 @@
     position: sticky;
     top: $theme-spacing-half;
     z-index: 6;
-    background: linear-gradient( 178deg, $color-jazzhappening-green 25%, $color-jazzhappening-darkgreen 100% );
+    background-color: $color-jazzhappening-green;
     color: $navbar-item-navbar-link-color;
     padding: $theme-spacing 0;
 
@@ -53,10 +53,9 @@
     }
 
     &__popup {
-        bottom: -$theme-spacing-quarter !important;
-        border-radius: $theme-spacing-three-quarters;
+        bottom: 0 !important;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
-        background: linear-gradient( 178deg, $color-jazzhappening-green 25%, $color-jazzhappening-darkgreen 100% );
+        background-color: $color-jazzhappening-green;
     }
 
     .search-form {

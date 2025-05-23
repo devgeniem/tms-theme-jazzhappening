@@ -10,11 +10,11 @@ class AlterPageSettingsFields {
      * Constructor
      */
     public function __construct() {
-        \add_filter(
-            'tms/acf/group/fg_page_settings',
-            [ $this, 'remove_hero_overlay_setting' ],
-            100
-        );
+        // \add_filter(
+        //     'tms/acf/group/fg_page_settings',
+        //     [ $this, 'remove_hero_overlay_setting' ],
+        //     100
+        // );
     }
 
 

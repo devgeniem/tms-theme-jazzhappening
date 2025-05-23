@@ -28,26 +28,11 @@
         position: relative;
 
         .column {
-            background-color: $color-jazzhappening-lightgreen;
+            background-color: $color-jazzhappening-green;
 
             &.has-bg p {
                 color: $white;
             }
-        }
-
-        &:not(:last-child)::after {
-            content: '';
-            display: block;
-            position: absolute;
-            z-index: 2;
-            bottom: -40px;
-            left: 0;
-            height: 80px;
-            width: 100%;
-            background-image: url('../images/confetti.svg');
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
         }
 
         @include from($desktop) {

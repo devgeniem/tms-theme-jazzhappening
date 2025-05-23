@@ -1,11 +1,11 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 /**
  * Class Assets
  *
- * @package TMS\Theme\jazzhappening
+ * @package TMS\Theme\Jazzhappening
  */
 class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interfaces\Controller {
 

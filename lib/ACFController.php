@@ -1,12 +1,12 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 use TMS\Theme\Base;
 /**
  * Class ACFController
  *
- * @package TMS\Theme\jazzhappening
+ * @package TMS\Theme\Jazzhappening
  */
 class ACFController extends Base\ACFController implements Base\Interfaces\Controller {
 

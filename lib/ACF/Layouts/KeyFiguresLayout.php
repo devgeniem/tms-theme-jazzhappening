@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening\ACF\Layouts;
+namespace TMS\Theme\Jazzhappening\ACF\Layouts;
 
 use Geniem\ACF\Exception;
 use Geniem\ACF\Field;
@@ -11,7 +11,7 @@ use TMS\Theme\Base\ACF\Fields\KeyFiguresFields;
 /**
  * Class KeyFiguresLayout
  *
- * @package TMS\Theme\jazzhappening\ACF\Layouts
+ * @package TMS\Theme\Jazzhappening\ACF\Layouts
  */
 class KeyFiguresLayout extends Layout {
 

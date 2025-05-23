@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 use WP_post;
 use function add_filter;

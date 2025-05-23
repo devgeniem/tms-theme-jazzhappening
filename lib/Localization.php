@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 /**
  * Class Localization
@@ -22,5 +22,24 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
             'tms-theme-jazzhappening',
             \get_stylesheet_directory() . '/lang'
         );
+    }
+
+    /**
+     * This adds the CPTs that are not public to Polylang translation.
+     *
+     * @param array   $post_types  The post type array.
+     * @param boolean $is_settings A not used boolean flag to see if we're in settings.
+     *
+     * @return array The modified post_types -array.
+     */
+    protected function add_cpts_to_polylang( $post_types, $is_settings ) { // phpcs:ignore
+        if ( ! DPT_PLL_ACTIVE ) {
+            return $post_types;
+        }
+
+        $post_types[ PostType\Artist::SLUG ]   = PostType\Artist::SLUG;
+        $post_types[ PostType\Festival::SLUG ] = PostType\Festival::SLUG;
+
+        return $post_types;
     }
 }

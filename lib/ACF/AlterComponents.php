@@ -3,9 +3,9 @@
  *  Copyright (c) 2021. Geniem Oy
  */
 
-namespace TMS\Theme\jazzhappening\ACF;
+namespace TMS\Theme\Jazzhappening\ACF;
 
-use TMS\Theme\jazzhappening\ACF\Layouts\ProgramLayout;
+use TMS\Theme\Jazzhappening\ACF\Layouts\ProgramLayout;
 
 /**
  * AlterComponents

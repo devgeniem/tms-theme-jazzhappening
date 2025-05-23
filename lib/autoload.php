@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 /**
  * Autoloader for theme library classes.
@@ -12,7 +12,7 @@ namespace TMS\Theme\jazzhappening;
 function theme_library_loader( $class = '' ) {
 
     // Theme namespace prefix.
-    $prefix = 'TMS\\Theme\\jazzhappening\\';
+    $prefix = 'TMS\\Theme\\Jazzhappening\\';
 
     // Does the class use the namespace prefix?
     $len = strlen( $prefix );

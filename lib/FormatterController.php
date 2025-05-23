@@ -1,13 +1,13 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 use TMS\Theme\Base\Formatters\HeroFormatter;
 
 /**
  * Class FormatterController
  *
- * @package TMS\Theme\jazzhappening
+ * @package TMS\Theme\Jazzhappening
  */
 class FormatterController extends \TMS\Theme\Base\FormatterController implements \TMS\Theme\Base\Interfaces\Controller {
 

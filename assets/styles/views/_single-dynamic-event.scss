@@ -20,21 +20,6 @@
                 position: relative;
                 z-index: 3;
             }
-
-            &::before {
-                content: '';
-                display: block;
-                position: absolute;
-                z-index: 0;
-                bottom: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                background-image: url('../images/circle-lines.svg');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
         }
 
         &__info-group {
@@ -45,21 +30,6 @@
                 > p:first-of-type {
                     margin-top: 0;
                 }
-            }
-
-            &::before {
-                content: '';
-                display: block;
-                position: absolute;
-                z-index: 2;
-                top: -80px;
-                left: -40px;
-                height: 140px;
-                width: 140px;
-                background-image: url('../images/confetti.svg');
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
             }
         }
     }

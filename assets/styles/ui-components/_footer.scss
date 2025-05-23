@@ -8,24 +8,10 @@ $footer-copy-link-border-color: $white;
 
 .site-footer {
     position: relative;
-    background: linear-gradient(275deg, $color-jazzhappening-brown 0%, $color-jazzhappening-light-brown 100%);
+    background: $color-jazzhappening-green;
     color: $white !important;
     margin-top: 6rem !important;
     padding-top: 6rem !important;
-
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: -75px;
-        left: 10%;
-        height: 150px;
-        width: 80%;
-        background-image: url('../images/confetti-footer.svg');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
 
     &__logo {
         max-height: 120px;

@@ -1,10 +1,10 @@
 <?php
 
-namespace TMS\Theme\jazzhappening\ACF;
+namespace TMS\Theme\Jazzhappening\ACF;
 
 use Geniem\ACF\Field;
 use TMS\Theme\Base\ACF\Layouts\HeroLayout as BaseThemeHeroLayout;
-use TMS\Theme\jazzhappening\ACF\Layouts;
+use TMS\Theme\Jazzhappening\ACF\Layouts;
 
 /**
  * Class AlterPageFrontPageGroup

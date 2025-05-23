@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening\ACF;
+namespace TMS\Theme\Jazzhappening\ACF;
 
 use Closure;
 use Geniem\ACF\Field;

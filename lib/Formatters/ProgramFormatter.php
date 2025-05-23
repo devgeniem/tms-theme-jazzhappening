@@ -1,6 +1,6 @@
 <?php
 
-namespace TMS\Theme\jazzhappening\Formatters;
+namespace TMS\Theme\Jazzhappening\Formatters;
 
 use TMS\Plugin\ManualEvents\PostType;
 

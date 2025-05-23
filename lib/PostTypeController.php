@@ -1,13 +1,13 @@
 <?php
 
-namespace TMS\Theme\jazzhappening;
+namespace TMS\Theme\Jazzhappening;
 
 use TMS\Theme\Base\Interfaces\PostType;
 
 /**
  * Class PostTypeController
  *
- * @package TMS\Theme\jazzhappening
+ * @package TMS\Theme\Jazzhappening
  */
 class PostTypeController extends \TMS\Theme\Base\PostTypeController implements PostType {
 

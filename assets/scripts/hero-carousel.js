@@ -18,11 +18,6 @@ export default class HeroCarousel {
             return;
         }
 
-        const translations = window.s.gallery || {
-            next: 'Next',
-            previous: 'Previous',
-        };
-
         Splide.defaults = {
             type: 'fade',
             rewind: true,
@@ -31,14 +26,12 @@ export default class HeroCarousel {
             autoplay: true,
             speed: 600,
             pauseOnHover: false,
-            i18n: {
-                prev: translations.previous,
-                next: translations.next,
-            },
             role: 'group',
         };
 
-        new Splide( '.hero__carousel' ).mount();
+        for ( let i = 0; i < this.carousels.length; i++ ) {
+            new Splide( this.carousels[ i ] ).mount();
+        }
     }
 
     /**
