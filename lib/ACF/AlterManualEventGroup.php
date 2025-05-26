@@ -4,8 +4,6 @@ namespace TMS\Theme\Jazzhappening\ACF;
 
 use Closure;
 use Geniem\ACF\Field;
-use TMS\Theme\Base\ACF\Fields\ImageCarouselFields;
-use TMS\Theme\Base\ACF\Fields\LogoWallFields;
 
 /**
  * Class AlterManualEventGroup
@@ -72,8 +70,8 @@ class AlterManualEventGroup {
                 'label'        => 'Sitaatti',
                 'instructions' => '',
             ],
-            'image_carousel' => [
-                'label'        => 'Kuvakaruselli',
+            'image_gallery' => [
+                'label'        => 'Kuvagalleria',
                 'instructions' => '',
                 'button'       => 'Lisää kuva',
             ],
@@ -125,11 +123,11 @@ class AlterManualEventGroup {
                 ->disable_media_upload()
                 ->set_instructions( $strings['main_content']['instructions'] );
 
-            $event_image_carousel_field = ( new Field\Repeater( $strings['image_carousel']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_image_carousel' )
-                ->set_name( 'event_custom_image_carousel' )
-                ->set_button_label( $strings['image_carousel']['button'] )
-                ->set_instructions( $strings['image_carousel']['instructions'] );
+            $event_image_gallery_field = ( new Field\Repeater( $strings['image_gallery']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_image_gallery' )
+                ->set_name( 'event_custom_image_gallery' )
+                ->set_button_label( $strings['image_gallery']['button'] )
+                ->set_instructions( $strings['image_gallery']['instructions'] );
 
             $event_image_field = ( new Field\Image( $strings['image']['label'] ) )
                 ->set_key( 'fg_manual_event_fields_event_custom_image' )
@@ -177,7 +175,7 @@ class AlterManualEventGroup {
                 ->set_name( 'event_custom_spotify_embed' )
                 ->set_instructions( $strings['spotify_embed']['instructions'] );
 
-            $event_image_carousel_field->add_field( $event_image_field );
+            $event_image_gallery_field->add_field( $event_image_field );
             $event_logo_wall_field->add_fields( [
                 $event_logo_field,
                 $event_logo_link_field,
@@ -187,7 +185,7 @@ class AlterManualEventGroup {
             $tab->add_fields( [
                 // $event_excerpt_field,
                 $event_main_content_field,
-                $event_image_carousel_field,
+                $event_image_gallery_field,
                 $event_composition_field,
                 $event_links_field,
                 $event_logo_wall_field,

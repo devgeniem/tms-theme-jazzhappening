@@ -137,7 +137,7 @@ class PageFestival extends PageArtist {
         array_unshift(
             $categories,
             [
-                'name'      => __( 'All', 'tms-theme-base' ),
+                'name'      => \__( 'All', 'tms-theme-base' ),
                 'url'       => $base_url,
                 'is_active' => null === self::get_filter_query_var(),
             ]
@@ -154,7 +154,23 @@ class PageFestival extends PageArtist {
     public function results() {
         $args = [
             'post_type' => Festival::SLUG,
+            'orderby'   => 'title',
+            'order'     => 'DESC',
             'paged'     => ( \get_query_var( 'paged' ) ) ? \get_query_var( 'paged' ) : 1,
+        ];
+
+        $categories = self::get_filter_query_var();
+
+        if ( empty( $categories ) ) {
+            $categories = \get_field( 'festival_categories' );
+            $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
+        }
+
+        $args['tax_query'] = [
+            [
+                'taxonomy' => FestivalCategory::SLUG,
+                'terms'    => $categories,
+            ],
         ];
 
         $s = self::get_search_query_var();

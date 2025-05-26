@@ -24,6 +24,7 @@
                             {/Page.use_overlay}
 
                             <div class="entry__content section pb-0 is-content-grid keep-vertical-spacing">
+                                {>"ui/entry-title" class="mt-0 has-text-centered" hero_image=Page.hero_image /}
                                 {@content /}
                             </div>
                         </article>
