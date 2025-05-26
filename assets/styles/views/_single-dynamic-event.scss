@@ -22,13 +22,24 @@
             }
         }
 
-        &__info-group {
-            position: relative;
-            background-color: $color-jazzhappening-lightgreen;
+        .info-group__main-content {
+            @include from($tablet) {
+                column-count: 2;
+            }
 
-            .info-group__description {
-                > p:first-of-type {
-                    margin-top: 0;
+            > p:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        .image-gallery {
+            gap: 0;
+        }
+
+        .logo-wall {
+            &__item {
+                @include from($tablet) {
+                    max-width: 10rem !important;
                 }
             }
         }

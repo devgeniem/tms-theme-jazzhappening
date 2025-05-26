@@ -1,0 +1,36 @@
+.single-festival {
+    &__artist-link {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        color: $primary;
+
+        &:hover,
+        &:focus {
+            color: $link;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $theme-spacing-three-quarters;
+        }
+
+        .icon {
+            width: $theme-spacing-three-quarters !important;
+            height: $theme-spacing-three-quarters !important;
+        }
+    }
+
+    &__artist-links {
+        margin-top: $theme-spacing-oneandhalf;
+
+        @include from($desktop) {
+            margin-top: $theme-spacing-three;
+        }
+    }
+
+    .entry {
+        &__content {
+            color: $color-tekstin-vari;
+        }
+    }
+}

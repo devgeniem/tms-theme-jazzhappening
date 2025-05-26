@@ -16,7 +16,7 @@
             {/hero_image_url}
         </div>
         <div class="column p-0">
-            <div class="entry__hero-info background-gradient-jazzhappening section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
+            <div class="entry__hero-info section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
                 {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
             </div>
         </div>

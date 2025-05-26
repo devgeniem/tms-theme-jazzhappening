@@ -32,10 +32,6 @@
                                     </div>
                                 {/event.normalized.short_description}
 
-                                <div class="entry__info-group pt-5 pb-5">
-                                    {>"views/single-dynamic-event/single-dynamic-event-info" /}
-                                </div>
-
                                 <div class="entry__description column is-6-desktop is-offset-3-desktop mt-5 mb-5">
                                     {event.normalized.description|kses}
                                 </div>

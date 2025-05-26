@@ -1,0 +1,31 @@
+<div class="image-gallery is-align-full gallery gallery-columns-2 gallery-columns-4-tablet gallery-columns-8-desktop js-image-gallery mt-1 mb-4 mb-9-desktop"
+     data-next="{gallery_data.translations.next|attr}"
+     data-previous="{gallery_data.translations.previous|attr}"
+>
+    {#gallery_data.rows}
+        <a href="{sizes.fullhd|url}"
+           data-preview="{sizes.medium|attr}"
+           data-gallery="{gallery_data.gallery_id|attr}"
+           data-modal-button
+           aria-controls="{gallery_data.gallery_id|attr}"
+           data-caption="{caption|attr}"
+           data-author="{meta.author_name|attr}"
+           class="image-gallery__image image-gallery__link image is-16by9"
+           aria-expanded="false"
+           aria-label="{gallery_data.translations.open|attr}"
+        >
+            {@image id=ID size="medium" alt=alt title=description /}
+        </a>
+    {/gallery_data.rows}
+
+    <!-- Markup of the modal -->
+    <div role="dialog" id="{gallery_data.gallery_id|attr}" class="modal" aria-modal="true"
+         aria-labelledby="{gallery_data.gallery_id|attr}">
+        <div class="modal-background"></div>
+        <button class="button is-white is-outlined modal-close-button" aria-controls="{gallery_data.gallery_id|attr}">
+            {gallery_data.translations.close|html}
+            {>"ui/icon" icon="close" class="icon--medium" /}
+        </button>
+        <div class="modal-content"></div>
+    </div>
+</div>

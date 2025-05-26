@@ -1,0 +1,53 @@
+{>"shared/base" /}
+
+{<content}
+    {#PageArtist}
+        <main class="main-content section" id="main-content">
+            <div class="container">
+                {>"shared/archive-view-title" /}
+                {>"shared/archive-filters" filters_container_classes="is-12-tablet is-4-desktop" /}
+
+                {?results.summary}
+                    <p role="status">{results.summary|html}</p>
+                {/results.summary}
+
+                <div class="columns is-multiline is-variable is-6-desktop">
+                    {#results.posts}
+                        <div class="column is-12 is-6-desktop">
+                            <div class="columns is-mobile is-variable is-4-desktop">
+                                <div class="column">
+                                    <div
+                                        class="inner p-4 p-5-desktop keep-vertical-spacing has-border has-border-1 has-border-gray">
+                                        <h2 class="h4 mt-4 mb-1 has-line-height-tight">
+                                            {?link}
+                                                <a href="{link.url|url}" class="has-text-black">
+                                                    {post_title|html}
+                                                </a>
+                                            {:else}
+                                                {post_title|html}
+                                            {/link}
+                                        </h2>
+
+                                        {?years}
+                                            <div class="mt-1 has-text-small has-text-primary">
+                                                {years|html}
+                                            </div>
+                                        {/years}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {:else}
+                        <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                            <h2 class="no-results-title">
+                                {Strings.s.home.no_results|html}
+                            </h2>
+                        </div>
+                    {/results.posts}
+                </div>
+
+                {>"shared/archive-pagination" /}
+            </div>
+        </main>
+    {/PageArtist}
+{/content}

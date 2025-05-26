@@ -53,10 +53,6 @@
                                     <div class="column is-5-desktop is-offset-1-desktop keep-vertical-spacing">
                                         {event.normalized.description|kses}
                                     </div>
-
-                                    <div class="column is-5-desktop">
-                                        {>"views/single-dynamic-event/single-dynamic-event-info" /}
-                                    </div>
                                 </div>
 
                                 {?share_links}

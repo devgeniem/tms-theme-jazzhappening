@@ -2,14 +2,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2025-02-26 16:42+0200\n"
-"PO-Revision-Date: 2025-02-26 16:42+0200\n"
+"POT-Creation-Date: 2025-05-26 16:55+0300\n"
+"PO-Revision-Date: 2025-05-26 16:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -23,37 +24,95 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:1
-msgid "entries"
+#: assets/dist/vendor.js:4630
+msgctxt "text direction"
+msgid "ltr"
 msgstr ""
 
-#: assets/dist/vendor.js:1
-msgid "values"
+#: lib/PostType/Artist.php:56 lib/PostType/Artist.php:98
+msgctxt "theme CPT"
+msgid "Artists"
+msgstr "Artistit"
+
+#: lib/PostType/Artist.php:191 lib/PostType/Festival.php:211
+msgctxt "Breadcrumbs"
+msgid "Home"
 msgstr ""
 
-#: assets/dist/vendor.js:1
-msgid "keys"
+#: lib/PostType/Festival.php:57 lib/PostType/Festival.php:116
+msgctxt "theme CPT"
+msgid "Festival"
 msgstr ""
 
-#: assets/dist/vendor.js:1
-msgid "Wrong index!"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "Wrong offset!"
-msgstr ""
-
-#: assets/dist/vendor.js:1
-msgid "Wrong length!"
-msgstr ""
-
-#: lib/ThemeCustomizationController.php:135
+#: lib/ThemeCustomizationController.php:142
 msgid "Send Comment"
 msgstr ""
 
-#: models/page-combined-events-list.php:61
+#: models/page-artist.php:111
+msgid "Search for artist"
+msgstr "Etsi artistia"
+
+#: models/page-artist.php:112 models/page-festival.php:64
+msgid "Search"
+msgstr "Hae"
+
+#: models/page-artist.php:113 models/page-festival.php:65
+msgid "Search query"
+msgstr "Hakusana"
+
+#: models/page-artist.php:116 models/page-festival.php:68
+msgid "Show All"
+msgstr "Näyät kaikki"
+
+#: models/page-artist.php:118 models/page-combined-events-list.php:61
+#: models/page-festival.php:70
 msgid "No results"
 msgstr "Ei hakutuloksia"
+
+#: models/page-artist.php:119 models/page-festival.php:71
+msgid "Filter"
+msgstr "Rajaa"
+
+#: models/page-artist.php:120 models/page-festival.php:72
+msgid "Sort"
+msgstr "Järjestä"
+
+#: models/page-artist.php:121 models/page-festival.php:73
+msgid "Categories"
+msgstr "Kategoriat"
+
+#: models/page-artist.php:185 models/page-combined-events-list.php:346
+#: models/page-festival.php:140
+msgid "All"
+msgstr "Kaikki"
+
+#: models/page-artist.php:204
+msgid "Name"
+msgstr "Nimi"
+
+#: models/page-artist.php:208
+msgid "Name, descending"
+msgstr "Nimi, laskeva"
+
+#: models/page-artist.php:266
+msgid "View artist"
+msgstr "Katso artisti"
+
+#: models/page-artist.php:306
+#, php-format
+msgctxt "filter with search clause results summary"
+msgid "%1$1s result found for \"%2$2s\""
+msgid_plural "%1$1s results found for \"%2$2s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: models/page-artist.php:320
+#, php-format
+msgctxt "filter results summary"
+msgid "%1$1s result found"
+msgid_plural "%1$1s results found"
+msgstr[0] ""
+msgstr[1] ""
 
 #: models/page-combined-events-list.php:249
 msgid "Filter by day"
@@ -71,10 +130,6 @@ msgstr "Järjestys:"
 msgid "All days"
 msgstr "Kaikki päivät"
 
-#: models/page-combined-events-list.php:346
-msgid "All"
-msgstr "Kaikki"
-
 #: models/page-combined-events-list.php:374
 msgid "Date"
 msgstr "Päivämäärä"
@@ -83,23 +138,45 @@ msgstr "Päivämäärä"
 msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
-#: models/single-manual-event-cpt.php:113
+#: models/page-festival.php:63
+msgid "Search for festival"
+msgstr "Etsi festivaalia"
+
+#: models/single-artist.php:48
+msgid "Festivals"
+msgstr "Festivaalit"
+
+#: models/single-festival.php:89
+msgctxt "theme-frontend"
+msgid "Artists"
+msgstr "Artistit"
+
+#: models/single-festival.php:90
+msgctxt "theme-frontend"
+msgid "Artist"
+msgstr "Artisti"
+
+#: models/single-festival.php:108
+msgid "Year"
+msgstr "Vuosi"
+
+#: models/single-manual-event-cpt.php:111
+msgid "Free"
+msgstr "Ilmainen"
+
+#: models/single-manual-event-cpt.php:122
 msgid "Buy ticket"
 msgstr "Osta lippu"
 
-#: models/single-manual-event-cpt.php:114
+#: models/single-manual-event-cpt.php:123
 msgid "at"
 msgstr "klo"
 
-#: models/single-manual-event-cpt.php:115
-msgid "Programme"
-msgstr "Ohjelma"
+#: models/single-manual-event-cpt.php:124
+msgid "Composition"
+msgstr "Kokoonpano"
 
-#: models/single-manual-event-cpt.php:116
-msgid "Artists"
-msgstr "Esiintyjät"
-
-#: models/single-manual-event-cpt.php:117
+#: models/single-manual-event-cpt.php:125
 msgid "Links"
 msgstr "Linkit"
 
@@ -159,6 +236,12 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://hiondigital.com"
 msgstr ""
+
+#~ msgid "Programme"
+#~ msgstr "Ohjelma"
+
+#~ msgid "Artists"
+#~ msgstr "Esiintyjät"
 
 #~ msgid "At"
 #~ msgstr "Klo"

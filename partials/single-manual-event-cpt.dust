@@ -25,7 +25,7 @@
                                 {/hero_image}
                             </div>
                             <div class="column p-0">
-                                <div class="entry__hero-info background-gradient-jazzhappening section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
+                                <div class="entry__hero-info section pt-6 pb-6 has-height-100 {template_classes.hero_info|attr}">
                                     {>"views/single-dynamic-event/single-dynamic-event-hero-meta" /}
                                 </div>
                             </div>
@@ -45,33 +45,50 @@
                                     </div>
                                 {/event.normalized.short_description}
 
-                                <div class="entry__info-group pt-5 pb-5 mt-10">
-                                    {>"views/single-dynamic-event/single-dynamic-event-info" /}
-                                </div>
-
-                                <div class="entry__description column is-6-desktop is-offset-3-desktop mt-5 mb-5">
-                                    {event.normalized.description|kses}
-                                </div>
-
-                                {?event.orig.event_video.video}
-                                    <div
-                                        class="video column {@eq key=event.orig.event_video.align value="default"}is-8-desktop is-offset-2-desktop{/eq} mt-4 mb-4 mt-8-tablet mb-8-tablet is-relative">
-
-                                        {?event.orig.event_video.alt_text}
-                                            <span class="is-sr-only">{event.orig.event_video.alt_text|html}</span>
-                                        {/event.orig.event_video.alt_text}
-
-                                        <div class="image is-16by9 is-embed-container">
-                                            {event.orig.event_video.video|s}
-                                        </div>
+                                <div class="columns">
+                                    <div class="info-group column is-8 mt-4 has-border-none">
+                                        {?event.orig.event_custom_main_content}
+                                            <div class="info-group__main-content">
+                                                {event.orig.event_custom_main_content|kses}
+                                            </div>
+                                        {/event.orig.event_custom_main_content}
                                     </div>
-                                {/event.orig.event_video.video}
+                                    <div class="info-group column is-4 mt-4 has-border-none">
+                                        {?event.orig.event_custom_composition}
+                                            <div class="mb-4">
+                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.composition_title template_classes=template_classes.info_group_title /}
+                                                {event.orig.event_custom_composition|kses}
+                                            </div>
+                                        {/event.orig.event_custom_composition}
+                                        {?event.orig.event_custom_links}
+                                            <div>
+                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.links_title template_classes=template_classes.info_group_title /}
+                                                <div class="is-flex is-flex-direction-column is-align-items-flex-start">
+                                                    {#event.orig.event_custom_links}
+                                                        <a href="{event_custom_link.url|url}" target="{event_custom_link.target|attr}">
+                                                            {event_custom_link.title|html}
+                                                        </a>
+                                                    {/event.orig.event_custom_links}
+                                                </div>
+                                            </div>
+                                        {/event.orig.event_custom_links}
+                                    </div>
+                                </div>
+
+                                {>"views/single-dynamic-event/single-dynamic-event-image-gallery" /}
+                                {>"views/single-dynamic-event/single-dynamic-event-logo-wall" /}
+
+                                {?event.orig.event_custom_spotify_embed}
+                                    <div class="column is-6 is-offset-3 mt-6 mb-6 has-text-centered">
+                                        {event.orig.event_custom_spotify_embed|s}
+                                    </div>
+                                {/event.orig.event_custom_spotify_embed}
 
                                 {?share_links}
                                     <div class="columns is-variable is-8-desktop">
                                         <div class="column is-offset-1-desktop">
                                             <div class="entry__share-links">
-                                                <h2 class="h6 mt-6 mb-6 has-text-left has-text-secondary-invert">
+                                                <h2 class="h6 mt-6 mb-6 has-text-left">
                                                     {Strings.s.share.share_to_social_media|html}
                                                 </h2>
 

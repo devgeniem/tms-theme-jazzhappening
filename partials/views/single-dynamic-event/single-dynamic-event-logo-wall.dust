@@ -1,0 +1,20 @@
+{?event.orig.event_custom_logo_wall}
+<div class="section logo-wall layout-logo-wall p-4">
+    <div class="container keep-vertical-spacing">
+        <div class="logo-wall__items-wrapper is-align-full is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly is-align-content-center is-align-items-center has-text-centered">
+            {#event.orig.event_custom_logo_wall}
+                <div class="logo-wall__item m-3 m-5-tablet is-inline-flex">
+                    {?event_custom_logo_link.url}
+                        <a href="{event_custom_logo_link.url|url}" target="{event_custom_logo_link.target|attr}" class="logo-wall__link is-block">
+                            {@image id=event_custom_logo.id size="small" class="is-block" /}
+                        </a>
+                    {:else}
+                        {@image id=event_custom_logo.id size="small" class="is-block" /}
+                    {/event_custom_logo_link.url}
+                </div>
+
+            {/event.orig.event_custom_logo_wall}
+        </div>
+    </div>
+</div>
+{/event.orig.event_custom_logo_wall}

@@ -1,0 +1,46 @@
+{>"shared/base" /}
+
+{<content}
+    {#PageFestival}
+        <main class="main-content section" id="main-content">
+            <div class="container">
+                {>"shared/archive-view-title" /}
+                {>"shared/archive-filters" filters_container_classes="is-12-tablet is-6-desktop" /}
+
+                {?results.summary}
+                    <p role="status">{results.summary|html}</p>
+                {/results.summary}
+
+                <div class="columns is-multiline is-variable is-6-desktop">
+                    {#results.posts}
+                        <div class="column is-6 is-3-desktop">
+                            {?image}
+                                <div class="image is-4by3">
+                                    <a href="{permalink|url}" aria-hidden="true" tabindex="-1">
+                                        {@image id=image size="large" class="objectfit-image" /}
+                                    </a>
+                                </div>
+                            {/image}
+
+                            <h2 class="h4 mt-6 mb-4 has-line-height-tight">
+                                <a href="{permalink|url}" class="has-text-paragraph">
+                                    {post_title|html}
+                                </a>
+                            </h2>
+                        </div>
+                    {:else}
+                        {?is_filtered}
+                            <div class="column pt-8 pb-8 is-text-centered is-size-5">
+                                <h2 class="no-results-title">
+                                    {Strings.s.home.no_results|html}
+                                </h2>
+                            </div>
+                        {/is_filtered}
+                    {/results.posts}
+                </div>
+
+                {>"shared/archive-pagination" /}
+            </div>
+        </main>
+    {/PageFestival}
+{/content}

@@ -2,6 +2,9 @@
 
 namespace TMS\Theme\Jazzhappening;
 
+use TMS\Theme\Jazzhappening\Taxonomy\ArtistCategory;
+use TMS\Theme\Jazzhappening\Taxonomy\FestivalCategory;
+
 /**
  * Class Localization
  *
@@ -41,5 +44,20 @@ class Localization extends \TMS\Theme\Base\Localization implements \TMS\Theme\Ba
         $post_types[ PostType\Festival::SLUG ] = PostType\Festival::SLUG;
 
         return $post_types;
+    }
+
+    /**
+     * This adds the taxonomies that are not public to Polylang translation.
+     *
+     * @param array   $tax_types   The taxonomy type array.
+     * @param boolean $is_settings A not used boolean flag to see if we're in settings.
+     *
+     * @return array The modified tax_types -array.
+     */
+    protected function add_tax_to_polylang( $tax_types, $is_settings ): array { // phpcs:ignore
+        $tax_types[ ArtistCategory::SLUG ]   = ArtistCategory::SLUG;
+        $tax_types[ FestivalCategory::SLUG ] = FestivalCategory::SLUG;
+
+        return $tax_types;
     }
 }

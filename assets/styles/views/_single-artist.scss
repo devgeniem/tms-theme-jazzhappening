@@ -1,0 +1,17 @@
+.single-artist {
+    article {
+        .entry__content--description {
+            @include from($desktop) {
+                min-height: 550px;
+            }
+        }
+    }
+
+    &__image-wrapper {
+        @include from($desktop) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}

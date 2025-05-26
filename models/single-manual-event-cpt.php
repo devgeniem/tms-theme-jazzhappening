@@ -121,11 +121,12 @@ class SingleManualEventCpt extends PageEvent {
             'orig'                     => $event,
             'buy_ticket_string'        => \__( 'Buy ticket', 'tms-theme-jazzhappening' ),
             'time_prefix'              => \__( 'at', 'tms-theme-jazzhappening' ),
-            'program_title'            => \__( 'Programme', 'tms-theme-jazzhappening' ),
-            'artists_title'            => \__( 'Artists', 'tms-theme-jazzhappening' ),
+            'composition_title'        => \__( 'Composition', 'tms-theme-jazzhappening' ),
             'links_title'              => \__( 'Links', 'tms-theme-jazzhappening' ),
             'weekday_prefix'           => $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
+            'gallery_id'               => \wp_unique_id( 'image-gallery-' ),
+            'translations'             => ( new \Strings() )->s()['gallery'] ?? [],
         ];
     }
 }

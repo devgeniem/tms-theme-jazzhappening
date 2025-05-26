@@ -1,5 +1,5 @@
-<div class="has-text-centered has-height-100 is-flex is-flex-direction-column is-justify-content-center">
-    <div class="is-flex is-flex-direction-row is-justify-content-center">
+<div class="has-text-left has-height-100 is-flex is-flex-direction-column is-justify-content-start">
+    <div class="is-flex is-flex-direction-row is-justify-content-start">
         <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
             {?event.normalized.date}
                 {?event.weekday_prefix}
@@ -17,15 +17,17 @@
 
     {?event.normalized.location}
         <p class="mt-0 mb-2 has-text-white is-family-secondary">
-            {event.normalized.location.name|html}{event.location_price_separator|html}
-
-            {?event.normalized.price}
-                {#event.normalized.price}
-                    {price|html}
-                {/event.normalized.price}
-            {/event.normalized.price}
+            {event.normalized.location.name|html}
         </p>
     {/event.normalized.location}
+
+    {?event.normalized.price}
+        {#event.normalized.price}
+            <p class="mt-0 mb-2 has-text-white is-family-secondary">
+                {price|html}
+            </p>
+        {/event.normalized.price}
+    {/event.normalized.price}
 
     {?event.normalized.price}
         {#event.normalized.price}
@@ -37,4 +39,8 @@
             {/.info_url.url}
         {/event.normalized.price}
     {/event.normalized.price}
+
+    {?event.normalized.description}
+        {event.normalized.description|kses}
+    {/event.normalized.description}
 </div>

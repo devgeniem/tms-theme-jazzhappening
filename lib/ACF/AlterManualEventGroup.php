@@ -4,7 +4,8 @@ namespace TMS\Theme\Jazzhappening\ACF;
 
 use Closure;
 use Geniem\ACF\Field;
-use TMS\Theme\Base\ACF\Fields\VideoFields;
+use TMS\Theme\Base\ACF\Fields\ImageCarouselFields;
+use TMS\Theme\Base\ACF\Fields\LogoWallFields;
 
 /**
  * Class AlterManualEventGroup
@@ -58,29 +59,52 @@ class AlterManualEventGroup {
     public function add_event_fields( $fields ) {
 
         $strings = [
-            'tab'           => 'Tapahtuman lisätietoja',
-            'event_program' => [
-                'label'        => 'Ohjelma',
+            'tab'            => 'Tapahtuman lisätietoja',
+            'excerpt'        => [
+                'label'        => 'Sitaatti',
                 'instructions' => '',
             ],
-            'event_artists' => [
-                'label'        => 'Esiintyjät',
+            'main_content'   => [
+                'label'        => 'Pääsisältö',
                 'instructions' => '',
             ],
-            'event_price'   => [
-                'label'        => 'Hinta',
+            'excerpt'        => [
+                'label'        => 'Sitaatti',
                 'instructions' => '',
             ],
-            'event_links'   => [
+            'image_carousel' => [
+                'label'        => 'Kuvakaruselli',
+                'instructions' => '',
+                'button'       => 'Lisää kuva',
+            ],
+            'image' => [
+                'label'        => 'Kuva',
+                'instructions' => '',
+            ],
+            'composition'    => [
+                'label'        => 'Kokoonpano',
+                'instructions' => '',
+            ],
+            'links'          => [
                 'label'        => 'Linkit',
                 'instructions' => '',
+                'button'       => 'Lisää linkki',
             ],
-            'event_link'    => [
+            'link'           => [
                 'label'        => 'Linkki',
                 'instructions' => '',
             ],
-            'event_video'   => [
-                'label'        => 'Videoupotus',
+            'spotify_embed'  => [
+                'label'        => 'Spotify-upotus',
+                'instructions' => 'Syötä tähän kenttään Spotify-upotuksen iframe-koodi',
+            ],
+            'logo_wall'      => [
+                'label'        => 'Logoseinä',
+                'instructions' => '',
+                'button'       => 'Lisää logo',
+            ],
+            'logo'           => [
+                'label'        => 'Logo',
                 'instructions' => '',
             ],
         ];
@@ -89,51 +113,85 @@ class AlterManualEventGroup {
             $tab = ( new Field\Tab( $strings['tab'] ) )
                 ->set_placement( 'left' );
 
-            $event_program_field = ( new Field\Wysiwyg( $strings['event_program']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_program' )
-                ->set_name( 'event_custom_program' )
+            $event_excerpt_field = ( new Field\Textarea( $strings['excerpt']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_excerpt' )
+                ->set_name( 'event_custom_excerpt' )
+                ->set_instructions( $strings['excerpt']['instructions'] );
+
+            $event_main_content_field = ( new Field\Wysiwyg( $strings['main_content']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_main_content' )
+                ->set_name( 'event_custom_main_content' )
                 ->set_toolbar( [ 'bold', 'italic', 'link' ] )
                 ->disable_media_upload()
-                ->set_instructions( $strings['event_program']['instructions'] );
+                ->set_instructions( $strings['main_content']['instructions'] );
 
-            $event_artists_field = ( new Field\Wysiwyg( $strings['event_artists']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_artists' )
-                ->set_name( 'event_custom_artists' )
+            $event_image_carousel_field = ( new Field\Repeater( $strings['image_carousel']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_image_carousel' )
+                ->set_name( 'event_custom_image_carousel' )
+                ->set_button_label( $strings['image_carousel']['button'] )
+                ->set_instructions( $strings['image_carousel']['instructions'] );
+
+            $event_image_field = ( new Field\Image( $strings['image']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_image' )
+                ->set_name( 'event_custom_image' )
+                ->set_instructions( $strings['image']['instructions'] );
+
+            $event_composition_field = ( new Field\Wysiwyg( $strings['composition']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_composition' )
+                ->set_name( 'event_custom_composition' )
                 ->set_toolbar( [ 'bold', 'italic', 'link' ] )
                 ->disable_media_upload()
-                ->set_instructions( $strings['event_artists']['instructions'] );
+                ->set_instructions( $strings['composition']['instructions'] );
 
-            $event_price_field = ( new Field\Wysiwyg( $strings['event_price']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_price' )
-                ->set_name( 'event_custom_price' )
-                ->set_toolbar( [ 'bold', 'italic', 'link' ] )
-                ->disable_media_upload()
-                ->set_instructions( $strings['event_price']['instructions'] );
-
-            $event_links_field = ( new Field\Repeater( $strings['event_links']['label'] ) )
+            $event_links_field = ( new Field\Repeater( $strings['links']['label'] ) )
                 ->set_key( 'fg_manual_event_fields_event_custom_links' )
                 ->set_name( 'event_custom_links' )
-                ->set_instructions( $strings['event_links']['instructions'] );
+                ->set_button_label( $strings['links']['button'] )
+                ->set_instructions( $strings['links']['instructions'] );
 
-            $event_link_field = ( new Field\Link( $strings['event_link']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_link' )
+            $event_link_field = ( new Field\Link( $strings['link']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_link' )
                 ->set_name( 'event_custom_link' )
-                ->set_instructions( $strings['event_link']['instructions'] );
+                ->set_instructions( $strings['link']['instructions'] );
 
+            $event_logo_wall_field = ( new Field\Repeater( $strings['logo_wall']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_logo_wall' )
+                ->set_name( 'event_custom_logo_wall' )
+                ->set_button_label( $strings['logo_wall']['button'] )
+                ->set_instructions( $strings['logo_wall']['instructions'] );
+
+            $event_logo_field = ( new Field\Image( $strings['logo']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_logo' )
+                ->set_name( 'event_custom_logo' )
+                ->set_wrapper_width( 50 )
+                ->set_instructions( $strings['logo']['instructions'] );
+
+            $event_logo_link_field = ( new Field\Link( $strings['link']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_logo_link' )
+                ->set_name( 'event_custom_logo_link' )
+                ->set_wrapper_width( 50 )
+                ->set_instructions( $strings['link']['instructions'] );
+
+            $event_spotify_embed_field = ( new Field\Textarea( $strings['spotify_embed']['label'] ) )
+                ->set_key( 'fg_manual_event_fields_event_custom_spotify_embed' )
+                ->set_name( 'event_custom_spotify_embed' )
+                ->set_instructions( $strings['spotify_embed']['instructions'] );
+
+            $event_image_carousel_field->add_field( $event_image_field );
+            $event_logo_wall_field->add_fields( [
+                $event_logo_field,
+                $event_logo_link_field,
+            ] );
             $event_links_field->add_field( $event_link_field );
 
-            $video_fields = new VideoFields(
-                'Videoupotus',
-                'fg_manual_event_fields_event_video',
-                'event_video'
-            );
-
             $tab->add_fields( [
-                $event_program_field,
-                $event_artists_field,
-                $event_price_field,
+                // $event_excerpt_field,
+                $event_main_content_field,
+                $event_image_carousel_field,
+                $event_composition_field,
                 $event_links_field,
-                $video_fields,
+                $event_logo_wall_field,
+                $event_spotify_embed_field,
             ] );
 
             $fields[] = $tab;

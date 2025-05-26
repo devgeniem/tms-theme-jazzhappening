@@ -1,0 +1,81 @@
+{>"shared/base" /}
+
+{<content}
+    <main class="main-content" id="main-content">
+        {#SingleArtist}
+            <section class="section pb-6 pb-8-desktop">
+                <div class="container">
+                    <header class="entry__header">
+                        <h1 class="entry__title mt-0 mb-6 has-line-height-tight">
+                            {@title /}
+                        </h1>
+                    </header>
+
+                    <article class="entry columns is-desktop is-flex-wrap-wrap">
+                        <div class="column is-6-desktop entry__content entry__content--description keep-vertical-spacing">
+                            {?content.fields.date}
+                                <p>
+                                    {content.fields.date|html}
+                                </p>
+                            {/content.fields.date}
+
+                            {?content.fields.short_description}
+                                <p>
+                                    {content.fields.short_description|html}
+                                </p>
+                            {/content.fields.short_description}
+
+                            {?SingleArtist.additional_information}
+                                {>"shared/additional-info-list" list_class="mt-6" data=SingleArtist.additional_information /}
+                            {/SingleArtist.additional_information}
+                        </div>
+
+                        <div class="column is-4-desktop is-offset-2-desktop single-artist__image-wrapper">
+                            {?content.image}
+                                <div class="entry__figure image">
+                                    {@image id=content.image.id size="large" /}
+                                </div>
+                            {/content.image}
+
+                            {?share_links}
+                                <div class="entry__share-links has-text-right">
+                                    <h2 class="h6 mt-6 mb-6 mt-8-desktop">
+                                        {Strings.s.share.share_to_social_media|html}
+                                    </h2>
+
+                                    {>"ui/share-links" ul_class="is-justify-content-flex-end" li_class="ml-4" /}
+                                </div>
+                            {/share_links}
+                        </div>
+
+                        <div
+                            class="column is-8-desktop is-offset-2-desktop entry__content keep-vertical-spacing">
+                            {?content.post_excerpt}
+                                <p>
+                                    {content.post_excerpt|html}
+                                </p>
+                            {/content.post_excerpt}
+
+                            {@content /}
+                        </div>
+                    </article>
+
+                    {?festival_links}
+                        <div class="columns">
+                            <div class="column is-10 is-offset-1">
+                                <h2>
+                                    {festivals_string|html}
+                                </h2>
+                                <div class="single-festival__artists columns is-multiline mt-4">
+                                    {#festival_links}
+                                        {>"shared/festival-artist-item" data=. /}
+                                    {/festival_links}
+                                </div>
+                            </div>
+                        </div>
+                    {/festival_links}
+                </div>
+            </section>
+        {/SingleArtist}
+    </main>
+{/content}

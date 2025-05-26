@@ -47,6 +47,12 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
             'wp_footer',
             \Closure::fromCallable( [ $this, 'include_jazzhappening_svg_icons' ] )
         );
+
+        // Enqueue editor modifications
+        \add_action(
+            'enqueue_block_editor_assets',
+            \Closure::fromCallable( [ $this, 'modify_editor' ] )
+        );
     }
 
     /**
@@ -106,5 +112,43 @@ class Assets extends \TMS\Theme\Base\Assets implements \TMS\Theme\Base\Interface
         if ( is_file( $svg_icons_path ) ) {
             include_once $svg_icons_path;
         }
+    }
+
+    /**
+     * Add assets to gutenberg in admin.
+     *
+     * @return void
+     */
+    private function modify_editor() {
+        $js_mod_time  = static::get_theme_asset_mod_time( 'editor.js' );
+
+        \wp_enqueue_script(
+            'editor-js',
+            DPT_ASSETS_URI . '/scripts/editor.js',
+            [
+                'wp-i18n',
+                'wp-blocks',
+                'wp-dom-ready',
+                'wp-edit-post',
+            ],
+            $js_mod_time,
+            true
+        );
+    }
+
+
+    /**
+     * This enables cache busting for theme CSS and JS files by
+     * returning a microtime timestamp for the given files.
+     * If the file is not found for some reason, it uses the theme version.
+     *
+     * @param string $filename The file to check.
+     *
+     * @return int|string A microtime amount or the theme version.
+     */
+    protected static function get_theme_asset_mod_time( $filename = '' ) {
+        return file_exists( DPT_ASSET_CACHE_URI . '/' . $filename )
+            ? filemtime( DPT_ASSET_CACHE_URI . '/' . $filename )
+            : DPT_THEME_VERSION;
     }
 }

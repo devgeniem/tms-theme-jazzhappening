@@ -4,6 +4,8 @@ namespace TMS\Theme\Jazzhappening;
 
 use Closure;
 use PageCombinedEventsList;
+use PageArtist;
+use PageFestival;
 use TMS\Theme\Base\Interfaces\Controller;
 
 /**
@@ -43,6 +45,13 @@ class ThemeSupports implements Controller {
         $vars[] = PageCombinedEventsList::DAY_QUERY_VAR;
         $vars[] = PageCombinedEventsList::CATEGORY_QUERY_VAR;
         $vars[] = PageCombinedEventsList::ORDER_QUERY_VAR;
+
+        $vars[] = PageArtist::SEARCH_QUERY_VAR;
+        $vars[] = PageArtist::FILTER_QUERY_VAR;
+        $vars[] = PageArtist::ORDERBY_QUERY_VAR;
+
+        $vars[] = PageFestival::SEARCH_QUERY_VAR;
+        $vars[] = PageFestival::FILTER_QUERY_VAR;
 
         return $vars;
     }

@@ -18,7 +18,7 @@
                     </div>
                 {/image}
 
-                <div class="column p-5 background-gradient-jazzhappening {text_col_class|attr}">
+                <div class="column p-5 {text_col_class|attr}">
                     {?title}
                         <h2 class="content-columns__title h4 mt-0-desktop mb-0">
                             {title|html}

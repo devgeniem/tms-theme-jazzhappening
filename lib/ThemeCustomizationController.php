@@ -4,6 +4,8 @@ namespace TMS\Theme\Jazzhappening;
 
 use WP_post;
 use function add_filter;
+use TMS\Theme\Base\PostType\Page;
+use TMS\Theme\Base\PostType\Post;
 
 /**
  * Class ThemeCustomizationController
@@ -57,6 +59,11 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         \add_filter(
             'tms/theme/event/hero_info_classes',
             fn() => 'has-colors-primary'
+        );
+
+        \add_filter(
+            'tms/gutenberg/blocks',
+            [ $this, 'alter_blocks' ]
         );
     }
 
@@ -228,5 +235,23 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
         $link['classes'] = '';
 
         return $link;
+    }
+
+    /**
+     * Alter theme blocks
+     *
+     * @param array $blocks Theme blocks.
+     *
+     * @return array
+     */
+    public function alter_blocks( $blocks ) {
+        $blocks['core/embed'] = [
+            'post_types' => [
+                Post::SLUG,
+                Page::SLUG,
+            ],
+        ];
+
+        return $blocks;
     }
 }
