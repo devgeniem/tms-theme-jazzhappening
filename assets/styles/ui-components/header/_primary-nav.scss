@@ -4,8 +4,8 @@
 }
 
 .primary-nav {
-    justify-content: center;
-    padding: .5rem 0 .5rem 0 !important;
+    justify-content: flex-start;
+    padding: $theme-spacing-half 0 $theme-spacing-half $theme-spacing-two !important;
     gap: $theme-spacing;
 
     > li {

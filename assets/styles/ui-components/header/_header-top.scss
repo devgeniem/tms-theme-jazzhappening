@@ -4,29 +4,29 @@
     z-index: 6;
     background-color: $color-jazzhappening-red;
     color: $navbar-item-navbar-link-color;
-    padding: $theme-spacing 0;
-
-    @include from($tablet) {
-        padding: $theme-spacing;
-    }
-
-    @include from($widescreen) {
-        padding: 0;
-    }
+    padding: 0;
 
     .button {
         outline-color: $white !important;
     }
 
     &__wrapper {
+        width: 95%;
         max-width: $container-max-width;
         margin: 0 auto;
     }
 
+    &__logo {
+        flex-grow: 0;
+    }
+
     &__logo-image {
+        min-width: auto !important;
+
         > a {
             img {
                 max-height: 80px;
+                max-width: 80px;
                 object-fit: contain;
                 object-position: left;
             }

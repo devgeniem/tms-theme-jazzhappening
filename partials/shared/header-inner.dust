@@ -3,7 +3,7 @@
         {>"shared/header-logo" /}
 
         {^Header.hide_main_nav}
-            <div class="site-header__nav column is-6-desktop is-relative is-hidden-touch is-hidden-desktop-only {Header.colors.nav|attr}">
+            <div class="site-header__nav column is-6-desktop pr-0 is-relative is-hidden-touch is-hidden-desktop-only {Header.colors.nav|attr}">
                 <nav class="pt-0 pb-0" aria-label="{Strings.s.header.main_navigation|attr}">
                     {?Header.limit_nav_depth}
                         {@menu menu_name="primary" depth="1" ul_classes="bulmally-navbar primary-nav primary-nav--simple" menuitem_partial="ui/menu/menu-item-single" /}
@@ -14,7 +14,7 @@
             </div>
         {/Header.hide_main_nav}
 
-        <div class="site-header__end column ml-auto">
+        <div class="site-header__end column ml-auto pl-0">
             {^Header.hide_secondary_nav}
                 <nav class="is-hidden-touch is-hidden-desktop-only"  aria-label="{Strings.s.header.frequently_searched_pages|attr}">
                     {@menu menu_name="secondary" ul_classes="secondary-menu is-flex is-unstyled" menuitem_partial="ui/menu/menuitem-secondary" /}
