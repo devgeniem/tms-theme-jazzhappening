@@ -87,7 +87,7 @@ a .icon.icon--medium.ml-1 {
     }
 
     .has-text-lead {
-        color: $color-jazzhappening-darkgreen;
+        color: $text;
         font-size: map-get($calculated_sizes, "h6") !important;
         font-weight: 500;
         line-height: 153%;
@@ -172,7 +172,7 @@ main {
 
         &:active {
             outline: none !important;
-            color: $color-jazzhappening-darkblue !important;
+            color: $black !important;
             text-decoration: none;
         }
     }
@@ -183,7 +183,7 @@ main {
         > p,
         > ul li {
             > a {
-                color: $color-jazzhappening-darkblue;
+                color: $black;
                 text-decoration: underline;
             }
         }

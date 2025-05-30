@@ -1,6 +1,6 @@
 // stylelint-disable declaration-no-important
 
-$button-primary-border-color: $color-jazzhappening-darkgreen;
+$button-primary-border-color: $primary;
 $button-secondary-border-color: $button-primary-border-color;
 
 
@@ -104,9 +104,9 @@ $button-secondary-border-color: $button-primary-border-color;
         &.is-hovered,
         &:focus,
         &.is-focused {
-            border-color: $color-jazzhappening-darkblue !important;
-            background-color: $color-jazzhappening-darkblue !important;
-            color: $primary-invert !important;
+            border-color: $secondary !important;
+            background-color: $white !important;
+            color: $secondary-invert !important;
 
             .icon {
                 fill: currentColor !important;
@@ -115,14 +115,14 @@ $button-secondary-border-color: $button-primary-border-color;
     }
 
     &.is-outlined {
-        border-color: $border-light !important;
+        border-color: $primary !important;
         background-color: transparent !important;
-        color: $color-jazzhappening-darkblue;
+        color: $text;
 
         &:hover,
         &:focus {
             background-color: transparent !important;
-            color: $color-jazzhappening-darkblue !important;
+            color: $text !important;
         }
     }
 
