@@ -1,5 +1,5 @@
 <section {?anchor}id="{anchor|s}"{/anchor}
-         class="icon-links section pt-12 pb-7 has-background-primary-light--opaque-light has-text-centered">
+         class="icon-links section pt-12 pb-7 has-text-centered">
     <div class="container">
         <div class="columns columns is-centered is-multiline has-background-white has-border-primary has-border-1">
             <div class="column is-flex is-flex-direction-column has-height-100 p-6">
@@ -7,7 +7,7 @@
                     {#rows}
                         <div class="icon-links__item mt-5 keep-vertical-spacing">
                             {?icon}
-                                {>"ui/icon" class="icon--xxxlarge is-primary-invert mb-4 is-accent-invert" /}
+                                {>"ui/icon" class="icon--xxxlarge is-primary mb-4" /}
                             {/icon}
 
                             {?title}

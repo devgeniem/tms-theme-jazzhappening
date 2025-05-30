@@ -2,7 +2,7 @@
     position: sticky;
     top: $theme-spacing-half;
     z-index: 6;
-    background-color: $color-jazzhappening-green;
+    background-color: $color-jazzhappening-red;
     color: $navbar-item-navbar-link-color;
     padding: $theme-spacing 0;
 
@@ -24,8 +24,6 @@
     }
 
     &__logo-image {
-        padding-top: $theme-spacing-three-quarters;
-
         > a {
             img {
                 max-height: 80px;
@@ -52,10 +50,14 @@
         }
     }
 
+    &__end {
+        justify-content: flex-end;
+    }
+
     &__popup {
         bottom: 0 !important;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
-        background-color: $color-jazzhappening-green;
+        background-color: $color-jazzhappening-red;
     }
 
     .search-form {
@@ -71,7 +73,7 @@
     }
 
     &__popup {
-        background-color: $color-jazzhappening-green;
+        background-color: $color-jazzhappening-red;
     }
 
     .popup__label {

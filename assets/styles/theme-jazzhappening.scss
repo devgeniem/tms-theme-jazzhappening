@@ -4,29 +4,29 @@
 
 @import "themes/includes";
 
-$primary: $color-jazzhappening-green;
+$primary: $color-jazzhappening-red;
 $primary-invert: $color-jazzhappening-white;
 $primary-light: bulmaLighten($primary, 15);
 $primary-light-invert: $color-white;
 $primary-dark: $color-black;
 $primary-dark-invert: $color-white;
 
-$secondary: $color-black;
-$secondary-invert: $color-jazzhappening-white;
+$secondary: $color-jazzhappening-yellow;
+$secondary-invert: $color-black;
 $secondary-light: $white;
 $secondary-light-invert: $color-black;
 $secondary-dark: $color-black;
 $secondary-dark-invert: $color-jazzhappening-white;
 
-$accent: $color-jazzhappening-green;
-$accent-invert: $color-jazzhappening-white;
+$accent: $color-jazzhappening-yellow;
+$accent-invert: $color-black;
 $accent-light: $white;
 $accent-light-invert: $black;
 $accent-dark: $color-black;
 $accent-dark-invert: $white;
 
-$light: $color-jazzhappening-green;
-$light-invert: $black;
+$light: $color-jazzhappening-red;
+$light-invert: $color-jazzhappening-white;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
 $border-light: $color-jazzhappening-lightgray;
@@ -108,4 +108,12 @@ $duet-color-border: $color-vaalean-harmaa;
 .objecfit-image {
     object-fit: contain;
     height: auto !important;
+}
+
+.section {
+    padding: $theme-spacing-two $theme-spacing-oneandhalf;
+
+    @include from($desktop) {
+        padding: $theme-spacing-two;
+    }
 }

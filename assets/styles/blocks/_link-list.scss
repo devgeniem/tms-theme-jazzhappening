@@ -5,8 +5,8 @@
         @include from($desktop) {
             top: 175px;
         }
-        
-        &.align-before {    
+
+        &.align-before {
             transform: translateX(-10%) translateY(-30%);
 
             @include from($desktop) {
@@ -14,7 +14,7 @@
                 transform: translateX(-80%) translateY(-50%);
             }
         }
-    
+
         &.align-after {
             transform: translateX(10%) translateY(-30%);
 

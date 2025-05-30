@@ -8,6 +8,8 @@ $color-black: #000000;
 $white: $color-white;
 $black: $color-black;
 
+$color-jazzhappening-red: #C83E36;
+$color-jazzhappening-yellow: #E8B455;
 $color-jazzhappening-green: #1E841E;
 
 $color-jazzhappening-darkgreen: #032502;
@@ -20,8 +22,8 @@ $color-jazzhappening-light-blue: #39B6F6;
 $color-jazzhappening-brown: #1F0202;
 $color-jazzhappening-light-brown: #5F3326;
 
-$color-jazzhappening-button: $color-jazzhappening-green;
-$color-jazzhappening-button-hover: bulmaDarken($color-jazzhappening-green, 10);
+$color-jazzhappening-button: $color-jazzhappening-red;
+$color-jazzhappening-button-hover: bulmaDarken($color-jazzhappening-red, 10);
 
 $color-tekstin-vari: #333333;
 $color-ui-border: #414141;

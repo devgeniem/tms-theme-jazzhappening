@@ -11,11 +11,12 @@ $base-sizes: (
     "desktop": ("base_size": 18px, "scale_value": 1.1875, "break_point": $desktop)
 ) !default;
 
+$family-heading: "Special Elite", serif;
 $family-serif: "Changa", serif;
 $family-secondary: $family-serif;
 $family-primary: "Space Grotesk", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
-$font-family-header: $family-secondary;
+$font-family-header: $family-heading;
 $font-family-text: $family-primary;
 
 $sizes-desktop: map-get($base-sizes, "desktop");
@@ -114,7 +115,7 @@ a .icon.icon--medium.ml-1 {
 
     h2,
     .h2 {
-        font-family: $font-family-header;
+        font-family: $family-secondary;
         font-size: map-get($calculated_sizes, "h2") !important;
         line-height: 1.2;
         hyphens: auto;
@@ -122,7 +123,7 @@ a .icon.icon--medium.ml-1 {
 
     h3,
     .h3 {
-        font-family: $font-family-header;
+        font-family: $family-secondary;
         font-size: map-get($calculated_sizes, "h3") !important;
         line-height: 1.22;
         hyphens: auto;
@@ -130,7 +131,7 @@ a .icon.icon--medium.ml-1 {
 
     h4,
     .h4 {
-        font-family: $font-family-header;
+        font-family: $family-secondary;
         font-size: map-get($calculated_sizes, "h4") !important;
         line-height: 1.22;
         hyphens: auto;
@@ -138,7 +139,7 @@ a .icon.icon--medium.ml-1 {
 
     h5,
     .h5 {
-        font-family: $font-family-header;
+        font-family: $family-secondary;
         font-size: map-get($calculated_sizes, "h5") !important;
         line-height: 1.22;
         hyphens: auto;
@@ -146,7 +147,7 @@ a .icon.icon--medium.ml-1 {
 
     h6,
     .h6 {
-        font-family: $font-family-header;
+        font-family: $family-secondary;
         font-size: map-get($calculated_sizes, "h6") !important;
         line-height: 1.22;
         hyphens: auto;

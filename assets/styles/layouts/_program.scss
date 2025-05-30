@@ -29,7 +29,7 @@
     &__images {
         display: grid;
         gap: $theme-spacing-quarter;
-        grid-template-columns: 50% 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-auto-rows: 1fr;
 
         .event-info {
@@ -71,49 +71,17 @@
         }
 
         @include from($tablet) {
+            a {
+                grid-column: span 1;
+                grid-row: span 1;
+                min-height: auto;
+            }
+
             &.event-count--1 {
                 a {
                     grid-column: 1 / -1;
                     grid-row: 1 / -1;
                     max-height: 450px;
-                }
-            }
-
-            &:not(.event-count--1) {
-                a:first-of-type {
-                    grid-column-start: 1;
-                    grid-row-start: 1;
-                    grid-row-end: 3;
-                    min-height: 450px;
-                }
-            }
-
-            &.event-count--2 {
-                grid-template-columns: 50% 1fr;
-
-                a:nth-of-type(2) {
-                    grid-row-start: 1;
-                    grid-row-end: 3;
-                }
-            }
-
-            &.event-count--3 {
-                grid-template-columns: 60% 1fr;
-
-                a:nth-of-type(2) {
-                    grid-column-start: 2;
-                    grid-row-start: 1;
-                    grid-row-end: 2;
-                }
-            }
-
-            &.event-count--4 {
-                grid-auto-rows: 1fr;
-
-                a:nth-of-type(2) {
-                    grid-column: span 2;
-                    grid-column-start: 2;
-                    grid-column-end: 4;
                 }
             }
         }

@@ -4,7 +4,7 @@
             {#numbers}
                 <div
                     class="column {column_class|attr} {?background_image}has-bg {/background_image}is-flex is-align-items-center is-justify-content-center is-flex-direction-column"
-                    {?background_image}style="background: linear-gradient(180deg, rgba(15, 56, 23, 0.00) 0%, #0F3817 100%), url({background_image.url|url}) lightgray 50% / cover no-repeat;"{/background_image}>
+                    {?background_image}style="background: linear-gradient(180deg, rgba(000, 000, 000, 0.00) 0%, #000000 100%), url({background_image.url|url}) lightgray 50% / cover no-repeat;"{/background_image}>
                     <div class="key-figures__item is-flex pt-9 pb-9 pr-4 pl-4 is-align-items-center is-justify-content-center is-flex-direction-column">
                         <div
                             class="key-figures__number {num_class|attr} has-line-height-tight"

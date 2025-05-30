@@ -28,9 +28,9 @@
         position: relative;
 
         .column {
-            background-color: $color-jazzhappening-green;
+            background-color: $color-jazzhappening-red;
 
-            &.has-bg p {
+            p {
                 color: $white;
             }
         }

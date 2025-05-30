@@ -6,7 +6,7 @@
                 {#carousel_repeater}
                     <li class="hero__carousel__item splide__slide" id="{hero_carousel_item_id|attr}">
                         {@image id=slide_image.id alt=slide_image.alt title=slide_image.alt size="fullhd" class="" loading="" /}
-                        <div class="has-width-100 has-text-centered mr-2 ml-2">
+                        <div class="hero__content has-width-100 has-text-centered">
                             {?slide_title}
                                 <h2 class="h1 mt-0 mb-4">{slide_title|html}</h2>
                             {/slide_title}

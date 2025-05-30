@@ -5,7 +5,7 @@
 
 .primary-nav {
     justify-content: center;
-    padding: .5rem 0 1.25rem 0 !important;
+    padding: .5rem 0 .5rem 0 !important;
     gap: $theme-spacing;
 
     > li {
@@ -40,7 +40,7 @@
     > .has-dropdown > div > .navbar-link {
         font-weight: $weight-bold !important;
         color: $navbar-item-navbar-link-color !important;
-        font-size: 1rem !important;
+        font-size: 1.25rem !important;
         font-family: $family-primary;
         text-transform: none;
 

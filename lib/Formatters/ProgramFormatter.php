@@ -56,7 +56,7 @@ class ProgramFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
             if ( ! empty( $item['manual_events'] ) ) {
                 foreach ( $item['manual_events'] as $event_id ) {
                     $start_datetime = \get_field( 'start_datetime', $event_id );
-                    $formatted_time = $start_datetime ? \date_i18n( 'D H:i', strtotime( $start_datetime ) ) : '';
+                    $formatted_time = $start_datetime ? \date_i18n( 'D H.i', strtotime( $start_datetime ) ) : '';
 
                     $item['events'][] = [
                         'id'       => $event_id,
@@ -76,7 +76,7 @@ class ProgramFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
 
             // Format the date field
             if ( $date ) {
-                $item['formatted_date'] = $timestamp ? \date_i18n( 'D, d.m.', $timestamp->getTimestamp() ) : '';
+                $item['formatted_date'] = $timestamp ? \date_i18n( 'D j.n.', $timestamp->getTimestamp() ) : '';
             }
 
             return $item;
