@@ -95,7 +95,7 @@ class Artist implements PostType {
      */
     private function register() {
         $labels = [
-            'name'                  => _x( 'Artists', 'theme CPT', 'tms-theme-jazzhappening' ),
+            'name'                  => \_x( 'Artists', 'theme CPT', 'tms-theme-jazzhappening' ),
             'singular_name'         => 'Artisti',
             'menu_name'             => 'Artistit',
             'name_admin_bar'        => 'Artistit',
@@ -246,64 +246,6 @@ class Artist implements PostType {
         }
 
         return $this->get_breadcrumbs_base( true );
-    }
-
-    /**
-     * Update related festival for search results
-     *
-     * @param int $post_id \WP_Post ID.
-     */
-    public function update_related_festival( $post_id ) {
-        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
-            return;
-        }
-
-        $festivals = \get_field( 'festivals', $post_id );
-
-        if ( empty( $festivals ) ) {
-            return;
-        }
-
-        $artist_name = \get_the_title( $post_id );
-
-        foreach ( $festivals as $festival ) {
-            $artist_field = \get_post_meta( $festival->ID, 'festivals', true );
-
-            if ( false === strpos( $artist_field, $artist_name ) ) {
-                $artist_field = $artist_field . ' ' . $artist_name;
-
-                \update_post_meta( $festival->ID, 'artists', $artist_field );
-                \do_action( 'redipress/index_post', $festival->ID, $festival );
-            }
-        }
-    }
-
-    /**
-     * Delete related festival from search results
-     *
-     * @param int $post_id \WP_Post ID.
-     */
-    public function delete_related_festival( $post_id ) {
-        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
-            return;
-        }
-
-        $festivals = \get_field( 'festivals', $post_id );
-
-        if ( empty( $festivals ) ) {
-            return;
-        }
-
-        $artist_name = \get_the_title( $post_id );
-
-        foreach ( $festivals as $festival ) {
-            $artist_field = \get_post_meta( $festival->ID, 'artists' );
-
-            if ( false !== strpos( $artist_field, $artist_name ) ) {
-                $artist_field = str_replace( $artist_name, ' ', $artist_field );
-                \update_post_meta( $festival->ID, 'artists', $artist_field );
-            }
-        }
     }
 
     /**

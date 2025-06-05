@@ -31,42 +31,19 @@
                     <form class="filters--search pt-2 is-pulled-right-desktop" action="{search.action|attr}" method="get"
                           role="search">
                         <div class="filters-wrapper">
-                            {?sort_options}
-                                <div class="filters--sort-by-container mb-2">
-                                    <label for="artist-sort" class="is-block h6 mb-3">
-                                        {strings.sort|html}
-                                    </label>
+                            <label for="filters-search" class="h6 is-block mb-3">
+                                {strings.search.label|html}
+                            </label>
+                            <div class="filters--inputs mb-2">
+                                <input id="filters-search"
+                                        class="p-3 has-text-small"
+                                        type="text" name="{search.input_search_name|attr}"
+                                        value="{search.current_search|attr}"
+                                        placeholder="{strings.search.input_placeholder|attr}">
 
-                                    <select name="artist-sort" id="artist-sort"
-                                            class="js-trigger-form-submit has-width-100 has-text-small">
-                                        {#sort_options}
-                                            <option value="{value|attr}" {is_selected|attr}>
-                                                {label|html}
-                                            </option>
-                                        {/sort_options}
-                                    </select>
-                                </div>
-                            {/sort_options}
-
-                            <div class="filters--text mb-2">
-                                <label for="filters-search" class="h6 is-block mb-3">
-                                    {strings.search.label|html}
-                                </label>
-
-                                <div class="filters--search-container">
-                                    <input id="filters-search"
-                                           class="p-2 pt-3-desktop pb-3-desktop has-text-small"
-                                           type="text" name="{search.input_search_name|attr}"
-                                           value="{search.current_search|attr}"
-                                           placeholder="{strings.search.input_placeholder|attr}">
-                                </div>
-                            </div>
-
-                            <div class="filters--submit mb-2">
                                 <button class="button is-primary button--icon {class|attr}"
-                                        type="submit">
+                                    type="submit">
                                     {strings.search.submit_value|html}
-
                                     {>"ui/icon" icon="search" class="icon--medium" /}
                                 </button>
                             </div>

@@ -60,7 +60,7 @@ class PageFestival extends PageArtist {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => __( 'Search for festival', 'tms-theme-jazzhappening' ),
+                'label'             => __( 'Search for festival or artist', 'tms-theme-jazzhappening' ),
                 'submit_value'      => __( 'Search', 'tms-theme-jazzhappening' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-jazzhappening' ),
             ],
@@ -176,8 +176,16 @@ class PageFestival extends PageArtist {
         $s = self::get_search_query_var();
 
         if ( ! empty( $s ) ) {
-            $args['s'] = $s;
+            $args['meta_query'] = [
+                'search_clause' => [
+                    'key'     => 'artists_and_title',
+                    'value'   => $s,
+                    'compare' => 'LIKE',
+                ],
+            ];
         }
+
+        var_dump(get_post_meta(67));
 
         $the_query = new \WP_Query( $args );
 

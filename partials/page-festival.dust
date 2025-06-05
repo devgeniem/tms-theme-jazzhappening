@@ -5,7 +5,7 @@
         <main class="main-content section" id="main-content">
             <div class="container">
                 {>"shared/archive-view-title" /}
-                {>"shared/archive-filters" filters_container_classes="is-12-tablet is-6-desktop" /}
+                {>"shared/festival-archive-filters" filters_container_classes="is-12-tablet is-6-desktop" /}
 
                 {?results.summary}
                     <p role="status">{results.summary|html}</p>

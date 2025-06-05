@@ -95,6 +95,8 @@ class Festival implements PostType {
 
             return $fields;
         } );
+
+        \add_action( 'acf/save_post', [ $this, 'update_related_artists' ] );
     }
 
     /**
@@ -267,5 +269,43 @@ class Festival implements PostType {
         ] );
 
         return $the_query->posts;
+    }
+
+    /**
+     * Update related festival for search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function update_related_artists( $post_id ) {
+        // Ensure this is a festival post type.
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        // Get the artists field (relationship field).
+        $artists        = \get_field( 'artists', $post_id );
+        $festival_title = \get_the_title( $post_id );
+
+        if ( empty( $artists ) ) {
+            return;
+        }
+
+        // Initialize an empty string for the selected artists and festival title.
+        $artists_and_title_meta = '';
+
+        foreach ( $artists as $artist ) {
+            $artist_title = \get_the_title( $artist->ID );
+
+            // Append the artist title to the meta field, separated by commas.
+            if ( false === strpos( $artists_and_title_meta, $artist_title ) ) {
+                $artists_and_title_meta .= $artist_title . ' ';
+            }
+        }
+
+        // Append the festival title to the meta field.
+        $artists_and_title_meta .= $festival_title . ' ';
+
+        // Save the concatenated string to the meta field.
+        \update_post_meta( $post_id, 'artists_and_title', $artists_and_title_meta );
     }
 }
