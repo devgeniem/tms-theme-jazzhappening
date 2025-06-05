@@ -23,6 +23,7 @@ class ThemeController extends \TMS\Theme\Base\ThemeController {
             FormatterController::class,
             ThemeCustomizationController::class,
             ThemeSupports::class,
+            RolesController::class,
         ];
 
         array_walk( $classes, function ( $class ) {
