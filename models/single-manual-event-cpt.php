@@ -113,6 +113,7 @@ class SingleManualEventCpt extends PageEvent {
                 'info_url' => [
                     'url' => $event->price['price_info_url']['url'] ?? '',
                 ],
+                'description' => $event->price['price_description'] ?? '',
             ],
         ];
 
@@ -123,6 +124,8 @@ class SingleManualEventCpt extends PageEvent {
             'time_prefix'              => \__( 'at', 'tms-theme-jazzhappening' ),
             'composition_title'        => \__( 'Composition', 'tms-theme-jazzhappening' ),
             'links_title'              => \__( 'Links', 'tms-theme-jazzhappening' ),
+            'video_title'              => \__( 'Watch', 'tms-theme-jazzhappening' ),
+            'spotify_title'            => \__( 'Listen', 'tms-theme-jazzhappening' ),
             'weekday_prefix'           => $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
             'gallery_id'               => \wp_unique_id( 'image-gallery-' ),

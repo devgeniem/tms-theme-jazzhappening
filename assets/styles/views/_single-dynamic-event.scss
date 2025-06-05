@@ -25,6 +25,7 @@
         .info-group__main-content {
             @include from($tablet) {
                 column-count: 2;
+                gap: $theme-spacing-two;
             }
 
             > p:first-of-type {

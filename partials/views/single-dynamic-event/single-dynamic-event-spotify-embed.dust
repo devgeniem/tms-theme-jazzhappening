@@ -1,0 +1,6 @@
+{?event.orig.event_custom_spotify_embed}
+    <div class="column is-8 is-offset-2 mt-6 mb-6 has-text-centered">
+        <h2>{event.spotify_title|html}</h2>
+        {event.orig.event_custom_spotify_embed|s}
+    </div>
+{/event.orig.event_custom_spotify_embed}

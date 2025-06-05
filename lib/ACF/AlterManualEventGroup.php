@@ -4,6 +4,7 @@ namespace TMS\Theme\Jazzhappening\ACF;
 
 use Closure;
 use Geniem\ACF\Field;
+use TMS\Theme\Base\ACF\Fields\VideoFields;
 
 /**
  * Class AlterManualEventGroup
@@ -111,11 +112,6 @@ class AlterManualEventGroup {
             $tab = ( new Field\Tab( $strings['tab'] ) )
                 ->set_placement( 'left' );
 
-            $event_excerpt_field = ( new Field\Textarea( $strings['excerpt']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_excerpt' )
-                ->set_name( 'event_custom_excerpt' )
-                ->set_instructions( $strings['excerpt']['instructions'] );
-
             $event_main_content_field = ( new Field\Wysiwyg( $strings['main_content']['label'] ) )
                 ->set_key( 'fg_manual_event_fields_event_custom_main_content' )
                 ->set_name( 'event_custom_main_content' )
@@ -175,6 +171,12 @@ class AlterManualEventGroup {
                 ->set_name( 'event_custom_spotify_embed' )
                 ->set_instructions( $strings['spotify_embed']['instructions'] );
 
+            $event_video_embed_field = new VideoFields(
+                'Videoupotus',
+                'fg_manual_event_fields_event_custom_video_embed',
+                'event_custom_video_embed'
+            );
+
             $event_image_gallery_field->add_field( $event_image_field );
             $event_logo_wall_field->add_fields( [
                 $event_logo_field,
@@ -183,13 +185,13 @@ class AlterManualEventGroup {
             $event_links_field->add_field( $event_link_field );
 
             $tab->add_fields( [
-                // $event_excerpt_field,
                 $event_main_content_field,
-                $event_image_gallery_field,
                 $event_composition_field,
                 $event_links_field,
-                $event_logo_wall_field,
+                $event_video_embed_field,
                 $event_spotify_embed_field,
+                $event_logo_wall_field,
+                $event_image_gallery_field,
             ] );
 
             $fields[] = $tab;

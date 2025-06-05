@@ -46,14 +46,14 @@
                                 {/event.normalized.short_description}
 
                                 <div class="columns">
-                                    <div class="info-group column is-8 mt-4 has-border-none">
+                                    <div class="info-group column is-8 mt-4 pr-0-desktop has-border-none">
                                         {?event.orig.event_custom_main_content}
                                             <div class="info-group__main-content">
                                                 {event.orig.event_custom_main_content|kses}
                                             </div>
                                         {/event.orig.event_custom_main_content}
                                     </div>
-                                    <div class="info-group column is-4 mt-4 has-border-none">
+                                    <div class="info-group column is-4 mt-4 pl-6-desktop has-border-none">
                                         {?event.orig.event_custom_composition}
                                             <div class="mb-4">
                                                 {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.composition_title template_classes=template_classes.info_group_title /}
@@ -75,14 +75,10 @@
                                     </div>
                                 </div>
 
-                                {>"views/single-dynamic-event/single-dynamic-event-image-gallery" /}
+                                {>"views/single-dynamic-event/single-dynamic-event-video-embed" /}
+                                {>"views/single-dynamic-event/single-dynamic-event-spotify-embed" /}
                                 {>"views/single-dynamic-event/single-dynamic-event-logo-wall" /}
-
-                                {?event.orig.event_custom_spotify_embed}
-                                    <div class="column is-6 is-offset-3 mt-6 mb-6 has-text-centered">
-                                        {event.orig.event_custom_spotify_embed|s}
-                                    </div>
-                                {/event.orig.event_custom_spotify_embed}
+                                {>"views/single-dynamic-event/single-dynamic-event-image-gallery" /}
 
                                 {?share_links}
                                     <div class="columns is-variable is-8-desktop">

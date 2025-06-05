@@ -31,11 +31,18 @@
 
     {?event.normalized.price}
         {#event.normalized.price}
+            {?.description}
+                <p class="mt-2 mb-0 has-text-white is-family-secondary">
+                    {.description|html}
+                </p>
+            {/.description}
             {?.info_url.url}
-            <a href="{.info_url.url|url}" target="_blank"
-                class="is-inline-block is-align-self-center button is-outlined-invert mt-3">
-                {event.buy_ticket_string|html}
-            </a>
+            <div class="is-flex mb-2">
+                <a href="{.info_url.url|url}" target="_blank"
+                    class="is-inline-block is-align-self-start button is-outlined-invert mt-3">
+                    {event.buy_ticket_string|html}
+                </a>
+            </div>
             {/.info_url.url}
         {/event.normalized.price}
     {/event.normalized.price}

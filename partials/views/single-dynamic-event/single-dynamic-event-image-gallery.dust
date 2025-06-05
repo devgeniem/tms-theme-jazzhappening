@@ -1,6 +1,6 @@
 {?event.orig.event_custom_image_gallery}
 <div
-     class="image-gallery gallery js-image-gallery columns is-flex-wrap-wrap mt-8 mb-8 mt-11-desktop mb-11-desktop"
+     class="image-gallery gallery js-image-gallery columns is-flex-wrap-wrap mt-6 mb-6"
      data-next="{event.translations.next|attr}"
      data-previous="{event.translations.previous|attr}">
     {#event.orig.event_custom_image_gallery}
