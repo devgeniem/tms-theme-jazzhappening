@@ -87,7 +87,7 @@ a .icon.icon--medium.ml-1 {
     }
 
     .has-text-lead {
-        color: $color-tekstin-vari;
+        color: $text;
         font-size: map-get($calculated_sizes, "h6") !important;
         font-weight: 500;
         line-height: 153%;
@@ -200,7 +200,7 @@ main {
         > h3 + h4,
         > h4 + h5,
         > h5 + h6 {
-            margin-top: $theme-spacing;
+            margin-top: 1em;
         }
     }
 }
