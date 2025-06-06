@@ -13,4 +13,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
     - Jazz Happening theme modified from tms-theme-savel
     - New program-component
     - New Hero-carousel component
+    - Festival & Artist post-types and archive-pages
 

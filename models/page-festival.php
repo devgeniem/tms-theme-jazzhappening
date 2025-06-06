@@ -185,8 +185,6 @@ class PageFestival extends PageArtist {
             ];
         }
 
-        var_dump(get_post_meta(67));
-
         $the_query = new \WP_Query( $args );
 
         $this->set_pagination_data( $the_query );
