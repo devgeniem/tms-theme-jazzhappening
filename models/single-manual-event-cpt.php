@@ -4,6 +4,7 @@ use TMS\Theme\Base\Logger;
 use TMS\Theme\Base\Settings;
 use TMS\Theme\Base\Formatters\ImageFormatter;
 use TMS\Plugin\ManualEvents\PostType\ManualEvent;
+use TMS\Plugin\ManualEvents\Taxonomy\ManualEventCategory;
 
 /**
  * The SingleManualEventCpt class.
@@ -126,10 +127,61 @@ class SingleManualEventCpt extends PageEvent {
             'links_title'              => \__( 'Links', 'tms-theme-jazzhappening' ),
             'video_title'              => \__( 'Watch', 'tms-theme-jazzhappening' ),
             'spotify_title'            => \__( 'Listen', 'tms-theme-jazzhappening' ),
+            'related_events_title'     => \__( 'Related events', 'tms-theme-jazzhappening' ),
             'weekday_prefix'           => $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
             'gallery_id'               => \wp_unique_id( 'image-gallery-' ),
             'translations'             => ( new \Strings() )->s()['gallery'] ?? [],
         ];
+    }
+
+    /**
+     * Related events by category
+     *
+     * @return array
+     */
+    public function related_events() : ?array {
+        $category_ids = \wp_get_object_terms( $this->get_event_id(), ManualEventCategory::SLUG, ['fields' => 'ids'] );
+
+        if ( empty( $category_ids ) ) {
+            return [];
+        }
+
+        $args = [
+            'post_type'      => ManualEvent::SLUG,
+            'posts_per_page' => -1,
+            'post__not_in'   => [ $this->get_event_id() ],
+            'tax_query'      => [
+                [
+                    'taxonomy' => ManualEventCategory::SLUG,
+                    'field'    => 'id',
+                    'terms'    => $category_ids,
+                ],
+            ],
+        ];
+
+        $query = new \WP_Query( $args );
+
+        if ( ! $query->have_posts() ) {
+            return null;
+        }
+
+        $related_events = [];
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+
+            $id                  = \get_the_ID();
+            $event               = (object) \get_fields( $id );
+            $event->id           = $id;
+            $event->title        = \get_the_title( $id );
+            $event->url          = \get_permalink( $id );
+            $event->image        = \has_post_thumbnail( $id ) ? \get_the_post_thumbnail_url( $id, 'medium_large' ) : null;
+            $event->end_datetime = null;
+            $related_events[]    = ManualEvent::normalize_event( $event );
+        }
+        \wp_reset_postdata();
+
+        return $related_events;
     }
 }

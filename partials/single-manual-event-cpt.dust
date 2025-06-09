@@ -80,6 +80,21 @@
                                 {>"views/single-dynamic-event/single-dynamic-event-logo-wall" /}
                                 {>"views/single-dynamic-event/single-dynamic-event-image-gallery" /}
 
+                                {?related_events}
+                                    <div class="mt-6 mb-6">
+                                        <h2 class="has-text-left">
+                                            {event.related_events_title|html}
+                                        </h2>
+                                        <div class="columns is-multiline">
+                                            {#related_events}
+                                                <div class="column is-6 is-4-desktop">
+                                                    {>"views/page-events-calendar/page-events-calendar-item-grid" /}
+                                                </div>
+                                            {/related_events}
+                                        </div>
+                                    </div>
+                                {/related_events}
+
                                 {?share_links}
                                     <div class="columns is-variable is-8-desktop">
                                         <div class="column is-offset-1-desktop">

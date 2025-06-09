@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2025-06-05 20:11+0300\n"
+"POT-Creation-Date: 2025-06-09 12:03+0300\n"
 "PO-Revision-Date: 2022-01-12 16:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Show All"
 msgstr ""
 
-#: models/page-artist.php:118 models/page-combined-events-list.php:61
+#: models/page-artist.php:118 models/page-combined-events-list.php:57
 #: models/page-festival.php:70
 msgid "No results"
 msgstr ""
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: models/page-artist.php:185 models/page-combined-events-list.php:330
+#: models/page-artist.php:185 models/page-combined-events-list.php:317
 #: models/page-festival.php:140
 msgid "All"
 msgstr ""
@@ -136,27 +136,27 @@ msgid_plural "%1$1s results found"
 msgstr[0] ""
 msgstr[1] ""
 
-#: models/page-combined-events-list.php:233
+#: models/page-combined-events-list.php:220
 msgid "Filter by day"
 msgstr ""
 
-#: models/page-combined-events-list.php:234
+#: models/page-combined-events-list.php:221
 msgid "Change order"
 msgstr ""
 
-#: models/page-combined-events-list.php:235
+#: models/page-combined-events-list.php:222
 msgid "Order:"
 msgstr ""
 
-#: models/page-combined-events-list.php:291
+#: models/page-combined-events-list.php:278
 msgid "All days"
 msgstr ""
 
-#: models/page-combined-events-list.php:358
+#: models/page-combined-events-list.php:345
 msgid "Date"
 msgstr ""
 
-#: models/page-combined-events-list.php:363
+#: models/page-combined-events-list.php:350
 msgid "Alphabetical"
 msgstr ""
 
@@ -182,32 +182,36 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:111
+#: models/single-manual-event-cpt.php:112
 msgid "Free"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:123
+#: models/single-manual-event-cpt.php:124
 msgid "Buy ticket"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:124
+#: models/single-manual-event-cpt.php:125
 msgid "at"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:125
+#: models/single-manual-event-cpt.php:126
 msgid "Composition"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:126
+#: models/single-manual-event-cpt.php:127
 msgid "Links"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:127
+#: models/single-manual-event-cpt.php:128
 msgid "Watch"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:128
+#: models/single-manual-event-cpt.php:129
 msgid "Listen"
+msgstr ""
+
+#: models/single-manual-event-cpt.php:130
+msgid "Related events"
 msgstr ""
 
 #: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67

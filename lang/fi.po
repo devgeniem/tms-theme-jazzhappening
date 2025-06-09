@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2025-06-05 20:11+0300\n"
-"PO-Revision-Date: 2025-06-05 20:12+0300\n"
+"POT-Creation-Date: 2025-06-09 12:03+0300\n"
+"PO-Revision-Date: 2025-06-09 12:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -87,7 +87,7 @@ msgstr "Hakusana"
 msgid "Show All"
 msgstr "Näyät kaikki"
 
-#: models/page-artist.php:118 models/page-combined-events-list.php:61
+#: models/page-artist.php:118 models/page-combined-events-list.php:57
 #: models/page-festival.php:70
 msgid "No results"
 msgstr "Ei hakutuloksia"
@@ -104,7 +104,7 @@ msgstr "Järjestä"
 msgid "Categories"
 msgstr "Kategoriat"
 
-#: models/page-artist.php:185 models/page-combined-events-list.php:330
+#: models/page-artist.php:185 models/page-combined-events-list.php:317
 #: models/page-festival.php:140
 msgid "All"
 msgstr "Kaikki"
@@ -137,27 +137,27 @@ msgid_plural "%1$1s results found"
 msgstr[0] "%1$1s hakutulos löytyi"
 msgstr[1] "%1$1s hakutulosta löytyi"
 
-#: models/page-combined-events-list.php:233
+#: models/page-combined-events-list.php:220
 msgid "Filter by day"
 msgstr "Rajaa päivän mukaan"
 
-#: models/page-combined-events-list.php:234
+#: models/page-combined-events-list.php:221
 msgid "Change order"
 msgstr "Muuta järjestystä"
 
-#: models/page-combined-events-list.php:235
+#: models/page-combined-events-list.php:222
 msgid "Order:"
 msgstr "Järjestys:"
 
-#: models/page-combined-events-list.php:291
+#: models/page-combined-events-list.php:278
 msgid "All days"
 msgstr "Kaikki päivät"
 
-#: models/page-combined-events-list.php:358
+#: models/page-combined-events-list.php:345
 msgid "Date"
 msgstr "Päivämäärä"
 
-#: models/page-combined-events-list.php:363
+#: models/page-combined-events-list.php:350
 msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
@@ -183,33 +183,37 @@ msgstr "Artisti"
 msgid "Year"
 msgstr "Vuosi"
 
-#: models/single-manual-event-cpt.php:111
+#: models/single-manual-event-cpt.php:112
 msgid "Free"
 msgstr "Ilmainen"
 
-#: models/single-manual-event-cpt.php:123
+#: models/single-manual-event-cpt.php:124
 msgid "Buy ticket"
 msgstr "Osta lippu"
 
-#: models/single-manual-event-cpt.php:124
+#: models/single-manual-event-cpt.php:125
 msgid "at"
 msgstr "klo"
 
-#: models/single-manual-event-cpt.php:125
+#: models/single-manual-event-cpt.php:126
 msgid "Composition"
 msgstr "Kokoonpano"
 
-#: models/single-manual-event-cpt.php:126
+#: models/single-manual-event-cpt.php:127
 msgid "Links"
 msgstr "Linkit"
 
-#: models/single-manual-event-cpt.php:127
+#: models/single-manual-event-cpt.php:128
 msgid "Watch"
 msgstr "Katso"
 
-#: models/single-manual-event-cpt.php:128
+#: models/single-manual-event-cpt.php:129
 msgid "Listen"
 msgstr "Kuuntele"
+
+#: models/single-manual-event-cpt.php:130
+msgid "Related events"
+msgstr "Samankaltaiset tapahtumat"
 
 #: wp-content/mu-plugins/acf-codifier/src/Field/FlexibleContent.php:67
 #: wp-content/mu-plugins/acf-codifier/src/Field/Repeater.php:60
