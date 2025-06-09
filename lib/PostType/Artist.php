@@ -74,9 +74,6 @@ class Artist implements PostType {
             'tms/base/breadcrumbs/after_prepare',
             Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
         );
-        \add_action( 'acf/save_post', [ $this, 'update_related_festival' ] );
-        \add_action( 'wp_trash_post', [ $this, 'delete_related_festival' ] );
-        \add_action( 'before_delete_post', [ $this, 'delete_related_festival' ] );
     }
 
     /**
