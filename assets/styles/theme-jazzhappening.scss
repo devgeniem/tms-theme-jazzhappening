@@ -38,7 +38,7 @@ $text: $color-tekstin-vari;
 $link: $primary;
 
 $colors-palette-primary: ($primary, $primary-invert, $primary-dark, $primary-light);
-$colors-palette-secondary: ($white, $black);
+$colors-palette-secondary: ($secondary, $secondary-invert, $secondary-dark, $secondary-light);
 
 $colors: (
     "primary": $colors-palette-primary,
@@ -111,9 +111,5 @@ $duet-color-border: $color-vaalean-harmaa;
 }
 
 .section {
-    padding: $theme-spacing-two $theme-spacing-oneandhalf;
-
-    @include from($desktop) {
-        padding: $theme-spacing-two;
-    }
+    padding: $theme-spacing-oneandhalf;
 }

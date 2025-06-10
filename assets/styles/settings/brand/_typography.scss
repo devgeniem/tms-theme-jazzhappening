@@ -11,7 +11,7 @@ $base-sizes: (
     "desktop": ("base_size": 18px, "scale_value": 1.1875, "break_point": $desktop)
 ) !default;
 
-$family-heading: "Special Elite", serif;
+$family-heading: "Cutive", serif;
 $family-serif: "Changa", serif;
 $family-secondary: $family-serif;
 $family-primary: "Space Grotesk", blinkmacsystemfont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -200,7 +200,7 @@ main {
         > h3 + h4,
         > h4 + h5,
         > h5 + h6 {
-            margin-top: 1em;
+            margin-top: .75em;
         }
     }
 }

@@ -1,9 +1,9 @@
 <div {?anchor}id="{anchor|attr}"{/anchor} class="section content-columns">
     <div class="container keep-vertical-spacing">
         {#rows}
-            <div class="content-columns__item mt-6 mb-6 columns {item_class|s}">
-                {?image}
-                    <div class="column p-0 {img_col_class|attr}">
+            <div class="content-columns__item mt-6 mb-6 columns {item_class|attr}">
+                <div class="column p-0 {img_col_class|attr} {background_color|attr}">
+                    {?image}
                         <div class="image has-height-100">
                             {@image id=image.id size="large" class="objectfit-image" /}
                         </div>
@@ -15,10 +15,10 @@
                         {?display_artist}
                             {>"ui/image/image-meta-minimal" /}
                         {/display_artist}
-                    </div>
-                {/image}
+                    {/image}
+                </div>
 
-                <div class="column p-7 {text_col_class|attr}">
+                <div class="column p-7 {text_col_class|attr} {background_color|attr}">
                     {?title}
                         <h2 class="content-columns__title h4 mt-0-desktop mb-0">
                             {title|html}

@@ -205,6 +205,9 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
             $item['text_col_class'] = implode( ' ', $item['text_col_class'] );
             $item['img_col_class']  = implode( ' ', $item['img_col_class'] );
 
+            // Add bg-color
+            $item['background_color'] = 'has-background-' . $item['background_color'];
+
             return $item;
         }, $data['rows'] );
 

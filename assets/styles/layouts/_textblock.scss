@@ -1,8 +1,45 @@
-.textblock {
+.textblock,
+.layout-textblock {
     &__inner {
         a {
             color: inherit;
             text-decoration: underline;
+        }
+    }
+
+    &.has-background-primary {
+        color: $primary-invert;
+
+        .button {
+            &,
+            &:hover,
+            &:focus {
+                border-color: $color-jazzhappening-button !important;
+                background-color: $primary-invert !important;
+                color: $color-jazzhappening-button !important;
+
+                .icon {
+                    fill: $color-jazzhappening-button !important;
+                }
+            }
+        }
+    }
+
+    &.has-background-secondary {
+        color: $secondary-invert;
+
+        .button {
+            &,
+            &:hover,
+            &:focus {
+                border-color: $secondary-invert !important;
+                background-color: $primary-invert !important;
+                color: $secondary-invert !important;
+
+                .icon {
+                    fill: $secondary-invert !important;
+                }
+            }
         }
     }
 }
