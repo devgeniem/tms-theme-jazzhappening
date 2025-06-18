@@ -1,14 +1,16 @@
 {?event.orig.event_custom_video_embed}
-    <div
-        class="video has-text-centered mt-6 mb-6 is-relative {@eq key=event.orig.event_custom_video_embed.align value="full"}is-align-full{:else}column is-offset-2 is-8{/eq}">
-        <h2>{event.video_title|html}</h2>
+    <div class="has-background-secondary pt-6 pb-6">
+        <div
+            class="video has-text-centered is-relative {@eq key=event.orig.event_custom_video_embed.align value="full"}is-align-full{:else}column is-offset-2 is-8{/eq}">
+            <h2>{event.video_title|html}</h2>
 
-        {?event.orig.event_custom_video_embed.alt_text}
-            <span class="is-sr-only">{event.orig.event_custom_video_embed.alt_text|html}</span>
-        {/event.orig.event_custom_video_embed.alt_text}
+            {?event.orig.event_custom_video_embed.alt_text}
+                <span class="is-sr-only">{event.orig.event_custom_video_embed.alt_text|html}</span>
+            {/event.orig.event_custom_video_embed.alt_text}
 
-        <div class="image is-16by9 is-embed-container">
-            {event.orig.event_custom_video_embed.video|s}
+            <div class="image is-16by9 is-embed-container">
+                {event.orig.event_custom_video_embed.video|s}
+            </div>
         </div>
     </div>
 {/event.orig.event_custom_video_embed}

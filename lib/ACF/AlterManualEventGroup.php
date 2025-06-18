@@ -5,6 +5,8 @@ namespace TMS\Theme\Jazzhappening\ACF;
 use Closure;
 use Geniem\ACF\Field;
 use TMS\Theme\Base\ACF\Fields\VideoFields;
+use TMS\Theme\Base\ACF\Fields\SomeLinkListFields;
+use TMS\Theme\Base\Logger;
 
 /**
  * Class AlterManualEventGroup
@@ -20,6 +22,13 @@ class AlterManualEventGroup {
             [ $this, 'remove_event_fields' ],
             10,
             1
+        );
+
+        \add_filter(
+            'tms/acf/group/fg_manual_event_fields/fields',
+            [ $this, 'alter_event_fields' ],
+            10,
+            2
         );
 
         \add_filter(
@@ -45,6 +54,24 @@ class AlterManualEventGroup {
         $fields[0]->remove_field( 'is_virtual_event' );
         $fields[0]->remove_field( 'virtual_event_link' );
 
+        return $fields;
+    }
+
+    /**
+     * Alter fields
+     *
+     * @param array $fields Array of ACF fields.
+     *
+     * @return array
+     */
+    public function alter_event_fields( array $fields ) : array {
+        try {
+            $short_desc_field = $fields[0]->get_field('short_description');
+            $short_desc_field->set_new_lines( 'br' );
+        }
+        catch ( Exception $e ) {
+            ( new Logger() )->error( $e->getMessage(), $e->getTrace() );
+        }
         return $fields;
     }
 
@@ -137,17 +164,6 @@ class AlterManualEventGroup {
                 ->disable_media_upload()
                 ->set_instructions( $strings['composition']['instructions'] );
 
-            $event_links_field = ( new Field\Repeater( $strings['links']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_links' )
-                ->set_name( 'event_custom_links' )
-                ->set_button_label( $strings['links']['button'] )
-                ->set_instructions( $strings['links']['instructions'] );
-
-            $event_link_field = ( new Field\Link( $strings['link']['label'] ) )
-                ->set_key( 'fg_manual_event_fields_event_custom_link' )
-                ->set_name( 'event_custom_link' )
-                ->set_instructions( $strings['link']['instructions'] );
-
             $event_logo_wall_field = ( new Field\Repeater( $strings['logo_wall']['label'] ) )
                 ->set_key( 'fg_manual_event_fields_event_custom_logo_wall' )
                 ->set_name( 'event_custom_logo_wall' )
@@ -177,17 +193,22 @@ class AlterManualEventGroup {
                 'event_custom_video_embed'
             );
 
+            $event_some_link_list_field = new SomeLinkListFields(
+                'Some-linkkilista',
+                'fg_manual_event_fields_event_custom_some_link_list',
+                'event_custom_some_link_list'
+            );
+
             $event_image_gallery_field->add_field( $event_image_field );
             $event_logo_wall_field->add_fields( [
                 $event_logo_field,
                 $event_logo_link_field,
             ] );
-            $event_links_field->add_field( $event_link_field );
 
             $tab->add_fields( [
                 $event_main_content_field,
                 $event_composition_field,
-                $event_links_field,
+                $event_some_link_list_field,
                 $event_video_embed_field,
                 $event_spotify_embed_field,
                 $event_logo_wall_field,

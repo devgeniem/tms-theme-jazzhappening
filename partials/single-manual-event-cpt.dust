@@ -55,23 +55,38 @@
                                     </div>
                                     <div class="info-group column is-4 mt-4 pl-6-desktop has-border-none">
                                         {?event.orig.event_custom_composition}
-                                            <div class="mb-4">
+                                            <div class="mb-5">
                                                 {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.composition_title template_classes=template_classes.info_group_title /}
                                                 {event.orig.event_custom_composition|kses}
                                             </div>
                                         {/event.orig.event_custom_composition}
-                                        {?event.orig.event_custom_links}
+
+                                        {?event.orig.event_custom_some_link_list}
                                             <div>
-                                                {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.links_title template_classes=template_classes.info_group_title /}
-                                                <div class="is-flex is-flex-direction-column is-align-items-flex-start">
-                                                    {#event.orig.event_custom_links}
-                                                        <a href="{event_custom_link.url|url}" target="{event_custom_link.target|attr}">
-                                                            {event_custom_link.title|html}
-                                                        </a>
-                                                    {/event.orig.event_custom_links}
-                                                </div>
+                                                {?event.orig.event_custom_some_link_list.title}
+                                                    {>"views/single-dynamic-event/single-dynamic-event-group-title" title=event.orig.event_custom_some_link_list.title template_classes=template_classes.info_group_title /}
+                                                {/event.orig.event_custom_some_link_list.title}
+
+                                                {?event.orig.event_custom_some_link_list.description}
+                                                    <div class="link-list__description mt-4">
+                                                        {event.orig.event_custom_some_link_list.description|kses}
+                                                    </div>
+                                                {/event.orig.event_custom_some_link_list.description}
+
+                                                {?event.orig.event_custom_some_link_list.links}
+                                                    <ul class="link-list__links is-unstyled mt-4 keep-vertical-spacing">
+                                                        {#event.orig.event_custom_some_link_list.links}
+                                                            <li class="mb-3">
+                                                                <a href="{link.url|url}" target="{link.target|attr}" class="is-flex is-align-items-center">
+                                                                    {>"ui/icon" icon=icon class="icon--xlarge is-primary mr-2" /}
+                                                                    <span>{link.title|html}</span>
+                                                                </a>
+                                                            </li>
+                                                        {/event.orig.event_custom_some_link_list.links}
+                                                    </ul>
+                                                {/event.orig.event_custom_some_link_list.links}
                                             </div>
-                                        {/event.orig.event_custom_links}
+                                        {/event.orig.event_custom_some_link_list}
                                     </div>
                                 </div>
 

@@ -1,4 +1,4 @@
-<div class="has-height-100 is-flex is-flex-direction-column is-justify-content-start is-align-items-center">
+<div class="has-height-100 is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
     <div class="is-flex is-flex-direction-row is-justify-content-center">
         <p class="mt-0 mb-3 h2 has-text-white is-family-secondary">
             {?event.normalized.date}

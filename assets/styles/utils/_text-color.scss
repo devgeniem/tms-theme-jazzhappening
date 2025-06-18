@@ -16,6 +16,12 @@
     color: $primary !important;
 }
 
+.has-background-secondary {
+    a {
+        color: $color-black !important;
+    }
+}
+
 strong {
     color: inherit;
 }
