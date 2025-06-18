@@ -127,7 +127,7 @@ class SingleManualEventCpt extends PageEvent {
             'links_title'              => \__( 'Links', 'tms-theme-jazzhappening' ),
             'video_title'              => \__( 'Watch', 'tms-theme-jazzhappening' ),
             'spotify_title'            => \__( 'Listen', 'tms-theme-jazzhappening' ),
-            'related_events_title'     => \__( 'Related events', 'tms-theme-jazzhappening' ),
+            'related_events_title'     => \__( 'At the same concert', 'tms-theme-jazzhappening' ),
             'weekday_prefix'           => $weekday_prefix,
             'location_price_separator' => $event_location ? ', ' : '',
             'gallery_id'               => \wp_unique_id( 'image-gallery-' ),

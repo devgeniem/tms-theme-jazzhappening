@@ -296,9 +296,23 @@ class Festival implements PostType {
         foreach ( $artists as $artist ) {
             $artist_title = \get_the_title( $artist->ID );
 
-            // Append the artist title to the meta field, separated by commas.
+            // Append the artist title to the meta field.
             if ( false === strpos( $artists_and_title_meta, $artist_title ) ) {
                 $artists_and_title_meta .= $artist_title . ' ';
+            }
+
+            // Get additional information repeater field.
+            $additional_info = \get_field( 'additional_information', $artist->ID );
+
+            if ( ! empty( $additional_info ) ) {
+                foreach ( $additional_info as $info ) {
+                    $info_text = $info['additional_information_text'] ?? '';
+
+                    // Append the additional information text.
+                    if ( ! empty( $info_text ) && false === strpos( $artists_and_title_meta, $info_text ) ) {
+                        $artists_and_title_meta .= $info_text . ' ';
+                    }
+                }
             }
         }
 

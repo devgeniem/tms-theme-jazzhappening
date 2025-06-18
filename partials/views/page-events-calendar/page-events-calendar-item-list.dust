@@ -9,13 +9,6 @@
                     <img src="{image|url}" alt="" class="objectfit-image">
                 </a>
             </div>
-
-            {?primary_keyword}
-                <span
-                    class="is-absolute has-top-1 has-left-1 pill is-bordered has-background-primary-invert has-text-primary">
-                    {primary_keyword|html}
-                </span>
-            {/primary_keyword}
         </div>
     {/image}
 
