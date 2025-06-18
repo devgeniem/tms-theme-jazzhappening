@@ -163,6 +163,7 @@ class Artist implements PostType {
         $allowed_blocks = [
             'acf/image',
             'acf/image-carousel',
+            'acf/image-gallery',
             'acf/video',
             'acf/quote',
             'core/embed',
