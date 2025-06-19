@@ -1,4 +1,4 @@
-{?event.orig.event_custom_video_embed}
+{?event.orig.event_custom_video_embed.video}
     <div class="has-background-secondary pt-6 pb-6">
         <div
             class="video has-text-centered is-relative {@eq key=event.orig.event_custom_video_embed.align value="full"}is-align-full{:else}column is-offset-2 is-8{/eq}">
@@ -13,4 +13,4 @@
             </div>
         </div>
     </div>
-{/event.orig.event_custom_video_embed}
+{/event.orig.event_custom_video_embed.video}
