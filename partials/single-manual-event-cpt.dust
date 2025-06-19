@@ -76,9 +76,9 @@
                                                 {?event.orig.event_custom_some_link_list.links}
                                                     <ul class="link-list__links is-unstyled mt-4 keep-vertical-spacing">
                                                         {#event.orig.event_custom_some_link_list.links}
-                                                            <li class="mb-3">
-                                                                <a href="{link.url|url}" target="{link.target|attr}" class="is-flex is-align-items-center">
-                                                                    {>"ui/icon" icon=icon class="icon--xlarge is-primary mr-2" /}
+                                                            <li class="mb-3 is-flex is-align-items-center">
+                                                                {>"ui/icon" icon=icon class="icon--xlarge is-primary mr-2" /}
+                                                                <a href="{link.url|url}" target="{link.target|attr}">
                                                                     <span>{link.title|html}</span>
                                                                 </a>
                                                             </li>
