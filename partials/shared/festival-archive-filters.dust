@@ -48,6 +48,10 @@
                                 </button>
                             </div>
 
+                            <a href="{clear_search_url|url}">
+                                {strings.search.clear_search|html}
+                            </a>
+
                             {?active_filter_data}
                                 <input type="hidden" name="{active_filter_data.name|attr}"
                                        value="{active_filter_data.value|attr}">

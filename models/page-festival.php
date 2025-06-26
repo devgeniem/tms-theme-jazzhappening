@@ -60,9 +60,10 @@ class PageFestival extends PageArtist {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => __( 'Search for festival or artist', 'tms-theme-jazzhappening' ),
+                'label'             => __( 'Search for an artist or band', 'tms-theme-jazzhappening' ),
                 'submit_value'      => __( 'Search', 'tms-theme-jazzhappening' ),
                 'input_placeholder' => __( 'Search query', 'tms-theme-jazzhappening' ),
+                'clear_search'      => __( 'Clear search', 'tms-theme-jazzhappening' ),
             ],
             'terms'          => [
                 'show_all' => __( 'Show All', 'tms-theme-jazzhappening' ),
@@ -90,6 +91,15 @@ class PageFestival extends PageArtist {
      */
     public function page_description(): string {
         return \get_field( 'description' ) ?? '';
+    }
+
+    /**
+     * Get clear search URL
+     *
+     * @return string
+     */
+    public function clear_search_url(): string {
+        return \get_the_permalink();
     }
 
     /**

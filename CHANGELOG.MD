@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1177: Add clear form link for festival-search, change search label
+
 ## [1.0.0] - 2025-05-15
 
 - TMS-1138:
