@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1178: Remove artist-pages image-gallery bottom-margin if the next block if text
+
 ## [1.0.0] - 2025-05-15
 
 - TMS-1138:
