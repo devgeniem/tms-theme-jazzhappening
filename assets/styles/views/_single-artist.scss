@@ -1,2 +1,6 @@
 .single-artist {
+    // If a paragraph is the next element from image-gallery, remove the image-gallerys margin-bottom
+    .image-gallery:has(+ p) {
+        margin-bottom: 0 !important;
+    }
 }
