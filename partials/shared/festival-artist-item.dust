@@ -17,7 +17,7 @@
             </h2>
             {?data.date}
                 <div class="entry__excerpt mt-2 mb-2 has-text-small">
-                    <p class="mt-0 mb-0">{data.date|html}</p>
+                    <p class="mt-0 mb-0">{@strtodate value=data.date /}</p>
                 </div>
             {/data.date}
             {?data.description}
