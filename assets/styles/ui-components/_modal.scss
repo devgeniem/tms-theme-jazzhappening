@@ -8,7 +8,7 @@
         }
 
         &:focus {
-            outline: 0.125rem dotted $white !important;
+            outline: 0.15rem dotted $white !important;
             outline-offset: 0.25rem !important;
             color: $black !important; // sass-lint:disable-line no-important
             .icon {
@@ -48,7 +48,7 @@
         }
 
         &:focus {
-            outline: 0.125rem dotted $white !important;
+            outline: 0.15rem dotted $white !important;
             outline-offset: 0.25rem !important;
         }
 
@@ -99,7 +99,7 @@
         .slick-current {
             &:focus {
                 .image-carousel__item {
-                    outline: 0.125rem dotted #fff;
+                    outline: 0.15rem dotted #fff;
                     outline-offset: 0.25rem;
                 }
             }
