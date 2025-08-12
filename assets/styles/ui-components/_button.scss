@@ -35,7 +35,7 @@ $button-secondary-border-color: $secondary;
     &:focus,
     &.is-focused {
         border-color: $button-primary-border-color !important;
-        outline: .125rem dotted $black !important;
+        outline: .15rem dotted $black !important;
         outline-offset: .25rem !important;
     }
 
@@ -52,6 +52,7 @@ $button-secondary-border-color: $secondary;
             background-color: $color-jazzhappening-button-hover !important;
             border-color: $color-jazzhappening-button-hover !important;
             color: $white !important;
+            outline-color: $black !important;
 
             &,
             .icon {
@@ -76,6 +77,7 @@ $button-secondary-border-color: $secondary;
             border-color: $color-jazzhappening-button !important;
             background-color: $primary-invert !important;
             color: $color-jazzhappening-button !important;
+            outline-color: $color-jazzhappening-button !important;
 
             .icon {
                 fill: $color-jazzhappening-button !important;
@@ -107,6 +109,7 @@ $button-secondary-border-color: $secondary;
             border-color: $secondary !important;
             background-color: $white !important;
             color: $secondary-invert !important;
+            outline-color: $secondary-invert !important;
 
             .icon {
                 fill: currentColor !important;
