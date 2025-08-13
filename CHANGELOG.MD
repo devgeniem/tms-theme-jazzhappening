@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1158: Remove micromodal close attribute from mobile-nav container
+
 ## [1.1.0] - 2025-08-11
 
 - TMS-1177: Add clear form link for festival-search, change search label
