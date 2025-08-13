@@ -15,7 +15,7 @@
                         <div class="column is-6-desktop entry__content entry__content--description keep-vertical-spacing">
                             {?content.fields.date}
                                 <p>
-                                    {content.fields.date|html}
+                                    {@strtodate value=content.fields.date /}
                                 </p>
                             {/content.fields.date}
 
