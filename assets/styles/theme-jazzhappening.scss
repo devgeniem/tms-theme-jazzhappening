@@ -111,5 +111,13 @@ $duet-color-border: $color-vaalean-harmaa;
 }
 
 .section {
-    padding: $theme-spacing-oneandhalf;
+    &:not(&.has-background-primary):not(&.has-background-secondary) {
+        padding: $theme-spacing-oneandhalf !important;
+    }
+
+    &.has-background-primary,
+    &.has-background-secondary {
+        margin-top: $theme-spacing-oneandhalf !important;
+        margin-bottom: $theme-spacing-oneandhalf !important;
+    }
 }
