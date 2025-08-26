@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1189: Remove margin from list-block
+- TMS-1184: Fix spacng between sections & components
 
 ## [1.1.1] - 2025-08-13
 
