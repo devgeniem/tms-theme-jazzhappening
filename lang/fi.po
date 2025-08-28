@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2025-06-27 10:22+0300\n"
-"PO-Revision-Date: 2025-06-27 10:23+0300\n"
+"POT-Creation-Date: 2025-08-28 14:24+0300\n"
+"PO-Revision-Date: 2025-08-28 14:24+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -199,7 +199,7 @@ msgid "at"
 msgstr "klo"
 
 #: models/single-manual-event-cpt.php:126
-msgid "Composition"
+msgid "Line-up"
 msgstr "Kokoonpano"
 
 #: models/single-manual-event-cpt.php:127
@@ -274,6 +274,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://hiondigital.com"
 msgstr ""
+
+#~ msgid "Composition"
+#~ msgstr "Kokoonpano"
 
 #~ msgid "Search for festival or artist"
 #~ msgstr "Etsi festivaalia tai artistia"
