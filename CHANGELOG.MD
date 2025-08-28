@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1189: Remove margin from list-block
 - TMS-1184: Fix spacng between sections & components
+- TMS-1190: Change hero height for wide monitors
 
 ## [1.1.1] - 2025-08-13
 
