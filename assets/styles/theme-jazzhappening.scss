@@ -114,14 +114,24 @@ $duet-color-border: $color-vaalean-harmaa;
     margin-top: 0;
 }
 
-.section {
-    &:not(&.has-background-primary):not(&.has-background-secondary) {
-        padding: $theme-spacing-oneandhalf !important;
-    }
+.main-content {
+    .section {
+        &:first-of-type {
+            margin-top: 0 !important;
+        }
 
-    &.has-background-primary,
-    &.has-background-secondary {
-        margin-top: $theme-spacing-oneandhalf !important;
-        margin-bottom: $theme-spacing-oneandhalf !important;
+        &:last-of-type {
+            margin-bottom: 0 !important;
+        }
+
+        &:not(&.has-background-primary):not(&.has-background-secondary) {
+            padding: $theme-spacing-oneandhalf !important;
+        }
+
+        &.has-background-primary,
+        &.has-background-secondary {
+            margin-top: $theme-spacing-oneandhalf !important;
+            margin-bottom: $theme-spacing-oneandhalf !important;
+        }
     }
 }
