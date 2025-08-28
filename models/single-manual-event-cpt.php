@@ -123,7 +123,7 @@ class SingleManualEventCpt extends PageEvent {
             'orig'                     => $event,
             'buy_ticket_string'        => \__( 'Buy ticket', 'tms-theme-jazzhappening' ),
             'time_prefix'              => \__( 'at', 'tms-theme-jazzhappening' ),
-            'composition_title'        => \__( 'Composition', 'tms-theme-jazzhappening' ),
+            'composition_title'        => \__( 'Line-up', 'tms-theme-jazzhappening' ),
             'links_title'              => \__( 'Links', 'tms-theme-jazzhappening' ),
             'video_title'              => \__( 'Watch', 'tms-theme-jazzhappening' ),
             'spotify_title'            => \__( 'Listen', 'tms-theme-jazzhappening' ),
