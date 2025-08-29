@@ -103,6 +103,14 @@ class SingleManualEventCpt extends PageEvent {
         $event->recurring_event = false;
         $event->end_datetime    = null;
 
+        // Format gallery images
+        $event->event_custom_image_gallery = array_map( static function ( $item ) {
+            $item['image'] = $item['event_custom_image'];
+            $item = ImageFormatter::format( $item );
+
+            return $item;
+        }, $event->event_custom_image_gallery );
+
         $normalized_event          = ManualEvent::normalize_event( $event );
         $event_location            = $normalized_event['location']['name'];
         $weekday_prefix            = \date_i18n( 'D', strtotime( $event->start_datetime ) );
@@ -132,6 +140,7 @@ class SingleManualEventCpt extends PageEvent {
             'location_price_separator' => $event_location ? ', ' : '',
             'gallery_id'               => \wp_unique_id( 'image-gallery-' ),
             'translations'             => ( new \Strings() )->s()['gallery'] ?? [],
+            'image_gallery'            => $event->event_custom_image_gallery,
         ];
     }
 
