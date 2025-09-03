@@ -62,7 +62,7 @@ class ProgramFormatter implements \TMS\Theme\Base\Interfaces\Formatter {
                         'id'       => $event_id,
                         'title'    => \get_the_title( $event_id ),
                         'link'     => \get_the_permalink( $event_id ),
-                        'image_id' => ( $thumbnail_id = \get_post_thumbnail_id( $event_id ) ) ? $thumbnail_id : false,
+                        'image_id' => \get_post_thumbnail_id( $event_id ),
                         'datetime' => $formatted_time,
                     ];
                 }

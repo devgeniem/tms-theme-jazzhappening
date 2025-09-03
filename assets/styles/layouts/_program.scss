@@ -42,14 +42,6 @@
         }
 
         a {
-            &.has-background-primary {
-                &:hover,
-                &:focus,
-                &:active {
-                    background-color: $primary !important;
-                }
-            }
-
             &::after {
                 content: '';
                 position: absolute;
