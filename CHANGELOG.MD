@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1185: Fix for program-layout if single post has no image
+
 ## [1.1.1] - 2025-08-13
 
 - TMS-1160: Fix elements focus outline thickness
