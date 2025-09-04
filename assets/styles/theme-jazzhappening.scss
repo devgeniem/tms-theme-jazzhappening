@@ -115,23 +115,23 @@ $duet-color-border: $color-vaalean-harmaa;
 }
 
 .main-content {
+    > *:nth-child(1):not(.section) + .section {
+        margin-top: 0 !important;
+    }
+
+    > .section:last-child {
+        margin-bottom: 0rem !important;
+    }
+
     .section {
-        &:first-of-type {
-            margin-top: 0 !important;
-        }
-
-        &:last-of-type {
-            margin-bottom: 0 !important;
-        }
-
         &:not(&.has-background-primary):not(&.has-background-secondary) {
             padding: $theme-spacing-oneandhalf !important;
         }
 
         &.has-background-primary,
         &.has-background-secondary {
-            margin-top: $theme-spacing-oneandhalf !important;
-            margin-bottom: $theme-spacing-oneandhalf !important;
+            margin-top: $theme-spacing-oneandhalf;
+            margin-bottom: $theme-spacing-oneandhalf;
         }
     }
 }

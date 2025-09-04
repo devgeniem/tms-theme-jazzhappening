@@ -25,7 +25,7 @@
                 </div>
                 <div class="program__images {events_class|attr} column is-12 is-9-desktop has-height-100">
                     {#events}
-                        <a href="{link|url}" class="is-block is-relative has-background-primary">
+                        <a href="{link|url}" class="is-block is-relative">
                             <div class="event-info is-absolute p-2 has-text-right has-text-white">
                                 <p class="m-0">
                                     {title|html}
