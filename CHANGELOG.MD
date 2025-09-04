@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TMS-1190: Change hero height for wide monitors
 - TMS-1193: Change string & translation
 - TMS-1192: Add image meta to manual-events image-gallery
+- TMS-1185: Fix for program-layout if single post has no image
 
 ## [1.1.1] - 2025-08-13
 
