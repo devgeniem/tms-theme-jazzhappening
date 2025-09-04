@@ -104,12 +104,14 @@ class SingleManualEventCpt extends PageEvent {
         $event->end_datetime    = null;
 
         // Format gallery images
-        $event->event_custom_image_gallery = array_map( static function ( $item ) {
-            $item['image'] = $item['event_custom_image'];
-            $item = ImageFormatter::format( $item );
+        $event->event_custom_image_gallery = is_array( $event->event_custom_image_gallery ) && ! empty( $event->event_custom_image_gallery )
+            ? array_map( static function ( $item ) {
+                $item['image'] = $item['event_custom_image'];
+                $item = ImageFormatter::format( $item );
 
-            return $item;
-        }, $event->event_custom_image_gallery );
+                return $item;
+            }, $event->event_custom_image_gallery )
+            : [];
 
         $normalized_event          = ManualEvent::normalize_event( $event );
         $event_location            = $normalized_event['location']['name'];
