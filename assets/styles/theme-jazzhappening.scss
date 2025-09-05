@@ -125,7 +125,7 @@ $duet-color-border: $color-vaalean-harmaa;
 
     .section {
         &:not(&.has-background-primary):not(&.has-background-secondary) {
-            padding: $theme-spacing-oneandhalf !important;
+            padding: $theme-spacing-oneandhalf;
         }
 
         &.has-background-primary,
