@@ -1,8 +1,8 @@
-<div {?anchor}id="{anchor|attr}"{/anchor} class="notice-banner">
+<div {?anchor}id="{anchor|attr}"{/anchor} class="layout-grid">
     <div class="container">
         <div class="columns">
             <div class="column">
-                {>"blocks/block-notice-banner" /}
+                {>"blocks/block-grid" /}
             </div>
         </div>
     </div>

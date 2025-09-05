@@ -1,5 +1,5 @@
 <div class="column is-6 is-4-desktop is-flex">
-    <div class="events__item entry mb-6 has-width-100 has-height-100">
+    <div class="events__item entry mb-5 has-width-100 has-height-100">
         <div class="image is-5by3 mb-3">
             {?image}
                 <a href="{url|url}" aria-hidden="true" tabindex="-1"
