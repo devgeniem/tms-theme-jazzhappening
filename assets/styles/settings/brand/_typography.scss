@@ -165,7 +165,7 @@ main {
         text-underline-offset: .125rem;
 
         &:focus {
-            outline: .125rem dotted $link-outline-color !important;
+            outline: .15rem dotted currentColor !important;
             outline-offset: .125rem;
             text-decoration: none !important;
         }
