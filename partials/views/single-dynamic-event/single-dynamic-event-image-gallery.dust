@@ -13,7 +13,6 @@
             data-caption="{caption|html}"
             data-author="{author_name|html}"
             data-image_title_and_artist="{image_title_and_artist|html}"
-            class="image-gallery__image image-gallery__link image is-square has-zoom-on-hover"
             aria-expanded="false"
             aria-label="{event.translations.open|html}"
         >
