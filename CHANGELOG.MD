@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1189: Remove margin from list-block
 - TMS-1163: Search results breadcrumbs accessibility fixes
 
 ## [1.1.1] - 2025-08-13
