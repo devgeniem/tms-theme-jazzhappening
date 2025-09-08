@@ -1,16 +1,21 @@
 .page {
     &__hero {
-        height: 35vh !important;
+        height: 35vh;
         background-position: top center;
 
         @include from($tablet) {
-            height: 50vh !important;
+            height: 50vh;
         }
 
         @include from($desktop) {
-            height: 80vh !important;
-            min-height: 500px !important;
-            max-height: 800px !important;
+            height: 80vh;
+            min-height: 500px;
+            max-height: 800px;
+        }
+
+        @media (min-width: 2200px) {
+            height: 38vw;
+            max-height: none;
         }
 
         .overlay {
