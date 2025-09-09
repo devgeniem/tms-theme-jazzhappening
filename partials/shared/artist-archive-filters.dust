@@ -60,11 +60,13 @@
                     </form>
                 </div>
 
-                <div class="column is-flex is-align-items-center">
-                    <a href="{festivals_button_link.url|url}" target="{festivals_button_link.target|attr}" class="button is-primary has-text-small">
-                        {festivals_button_link.title|html}
-                    </a>
-                </div>
+                {?festivals_button_link.url}
+                    <div class="column is-flex is-align-items-center">
+                        <a href="{festivals_button_link.url|url}" target="{festivals_button_link.target|attr}" class="button is-primary has-text-small">
+                            {festivals_button_link.title|html}
+                        </a>
+                    </div>
+                {/festivals_button_link.url}
             </div>
         </div>
     </div>
