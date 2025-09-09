@@ -60,6 +60,11 @@ class PageArtistGroup {
                     'title'        => 'Taitelijoiden kategoriat',
                     'instructions' => '',
                 ],
+                'festivals_page'    => [
+                    'title'        => 'Festivaalien listaussivun painike',
+                    'instructions' => 'Painike asetetaan suodattimien vierelle.
+                    Tyhjäksi jätetyn tekstin sijaan tulee oletusteksti "Selaa ja etsi festivaaleja".',
+                ],
             ];
 
             $description_field = ( new Field\Wysiwyg( $strings['description']['title'] ) )
@@ -77,12 +82,18 @@ class PageArtistGroup {
                 ->allow_null()
                 ->set_instructions( $strings['artist_categories']['instructions'] );
 
+            $festivals_page_field = ( new Field\Link( $strings['festivals_page']['title'] ) )
+                ->set_key( "{$key}festivals_page" )
+                ->set_name( 'festivals_page' )
+                ->set_instructions( $strings['festivals_page']['instructions'] );
+
             $field_group->add_fields(
                 apply_filters(
                     'tms/acf/group/' . $field_group->get_key() . '/fields',
                     [
                         $description_field,
                         $artist_category_field,
+                        $festivals_page_field,
                     ]
                 )
             );
