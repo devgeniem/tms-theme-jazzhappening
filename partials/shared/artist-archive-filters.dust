@@ -1,10 +1,10 @@
 <div class="columns is-multiline">
     <div class="column">
         <div class="pb-4 mb-4 mb-8-desktop has-border has-border-bottom-1 has-border-gray">
-            <div class="columns is-desktop filters is-flex-wrap-wrap">
+            <div class="columns filters">
                 {?filters}
                     {@gt key=filters.length value=2}
-                        <div class="column is-6-desktop is-4-fullhd">
+                        <div class="column {filters_container_classes|attr}">
                             <div class="mb-4">
                                 <h2 class="is-block h6 mb-3">
                                     {strings.filter|html}
@@ -27,7 +27,7 @@
                     {/gt}
                 {/filters}
 
-                <div class="column is-6-desktop is-4-fullhd">
+                <div class="column">
                     <form class="filters--search pt-2" action="{search.action|attr}" method="get"
                           role="search">
                         <div class="filters-wrapper">
@@ -59,9 +59,10 @@
                         </div>
                     </form>
                 </div>
-                <div class="column is-4-fullhd is-flex is-align-items-center">
-                    <a href="{artists_button_link.url|url}" target="{artists_button_link.target|attr}" class="button is-primary has-text-small">
-                        {artists_button_link.title|html}
+
+                <div class="column is-flex is-align-items-center">
+                    <a href="{festivals_button_link.url|url}" target="{festivals_button_link.target|attr}" class="button is-primary has-text-small">
+                        {festivals_button_link.title|html}
                     </a>
                 </div>
             </div>

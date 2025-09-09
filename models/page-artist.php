@@ -108,17 +108,18 @@ class PageArtist extends BaseModel {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => __( 'Search for artist', 'tms-theme-jazzhappening' ),
-                'submit_value'      => __( 'Search', 'tms-theme-jazzhappening' ),
-                'input_placeholder' => __( 'Search query', 'tms-theme-jazzhappening' ),
+                'label'             => \__( 'Search for an artist or group', 'tms-theme-jazzhappening' ),
+                'submit_value'      => \__( 'Search', 'tms-theme-jazzhappening' ),
+                'input_placeholder' => \__( 'Search query', 'tms-theme-jazzhappening' ),
+                'clear_search'      => \__( 'Clear search', 'tms-theme-jazzhappening' ),
             ],
             'terms'          => [
-                'show_all' => __( 'Show All', 'tms-theme-jazzhappening' ),
+                'show_all' => \__( 'Show All', 'tms-theme-jazzhappening' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-jazzhappening' ),
-            'filter'         => __( 'Filter', 'tms-theme-jazzhappening' ),
-            'sort'           => __( 'Sort', 'tms-theme-jazzhappening' ),
-            'art_categories' => __( 'Categories', 'tms-theme-jazzhappening' ),
+            'no_results'     => \__( 'No results', 'tms-theme-jazzhappening' ),
+            'filter'         => \__( 'Filter', 'tms-theme-jazzhappening' ),
+            'sort'           => \__( 'Sort', 'tms-theme-jazzhappening' ),
+            'art_categories' => \__( 'Categories', 'tms-theme-jazzhappening' ),
 
         ];
     }
@@ -189,32 +190,6 @@ class PageArtist extends BaseModel {
         );
 
         return $categories;
-    }
-
-    /**
-     * Sort options
-     *
-     * @return array
-     */
-    public function sort_options() {
-        $current = self::get_orderby_query_var();
-
-        $options = [
-            [
-                'label' => __( 'Name', 'tms-theme-jazzhappening' ),
-                'value' => '',
-            ],
-            [
-                'label' => __( 'Name, descending', 'tms-theme-jazzhappening' ),
-                'value' => 'desc',
-            ],
-        ];
-
-        return array_map( function ( $item ) use ( $current ) {
-            $item['is_selected'] = $item['value'] === $current ? 'selected' : '';
-
-            return $item;
-        }, $options );
     }
 
     /**
@@ -329,5 +304,38 @@ class PageArtist extends BaseModel {
         }
 
         return $results_text;
+    }
+
+    /**
+     * Get clear search URL
+     *
+     * @return string
+     */
+    public function clear_search_url(): string {
+        return \get_the_permalink();
+    }
+
+
+    /**
+     * Festivals-archive button contents
+     *
+     * @return array
+     */
+    public function festivals_button_link(): ?array {
+        $link = \get_field( 'festivals_page' );
+
+        if ( empty( $link ) ) {
+            return null;
+        }
+
+        if ( empty( $link['title'] ) ) {
+            $link['title'] = \__( 'Browse and search for festivals', 'tms-theme-jazzhappening' );
+        }
+
+        return [
+            'url'    => $link['url'],
+            'title'  => $link['title'],
+            'target' => $link['target'],
+        ];
     }
 }
