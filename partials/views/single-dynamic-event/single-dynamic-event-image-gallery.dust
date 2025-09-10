@@ -1,22 +1,24 @@
-{?event.orig.event_custom_image_gallery}
+{?event.image_gallery}
 <div
      class="image-gallery gallery js-image-gallery columns is-flex-wrap-wrap mt-6 mb-6"
      data-next="{event.translations.next|attr}"
      data-previous="{event.translations.previous|attr}">
-    {#event.orig.event_custom_image_gallery}
+    {#event.image_gallery}
         <a href="{event_custom_image.sizes.fullhd|url}"
             class="column is-3"
             data-preview="{event_custom_image.sizes.medium|url}"
             data-gallery="{event.gallery_id|attr}"
             data-modal-button
             aria-controls="{event.gallery_id|attr}"
-            class="image-gallery__image image-gallery__link image is-square has-zoom-on-hover"
+            data-caption="{caption|html}"
+            data-author="{author_name|html}"
+            data-image_title_and_artist="{image_title_and_artist|html}"
             aria-expanded="false"
             aria-label="{event.translations.open|html}"
         >
             {@image id=event_custom_image.id size="large" alt=event_custom_image.alt title=event_custom_image.alt class="objectfit-image" /}
         </a>
-    {/event.orig.event_custom_image_gallery}
+    {/event.image_gallery}
 
     <!-- Markup of the modal -->
     <div role="dialog" id="{event.gallery_id|attr}" class="modal" aria-modal="true" aria-labelledby="{event.gallery_id|attr}">
@@ -28,4 +30,4 @@
         <div class="modal-content"></div>
     </div>
 </div>
-{/event.orig.event_custom_image_gallery}
+{/event.image_gallery}

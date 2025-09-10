@@ -110,6 +110,10 @@ $duet-color-border: $color-vaalean-harmaa;
     height: auto !important;
 }
 
+.wp-block-list {
+    margin-top: 0;
+}
+
 .main-content {
     > *:nth-child(1):not(.section) + .section {
         margin-top: 0 !important;
