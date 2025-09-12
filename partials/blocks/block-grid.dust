@@ -1,0 +1,10 @@
+<div {?anchor}id="{anchor|attr}"{/anchor}
+     class="grid gallery is-gapless gallery-columns-1-tablet gallery-columns-1-desktop gallery-columns-2-widescreen gallery-columns-2-fullhd is-align-full mt-5 mb-5 keep-vertical-spacing">
+{#repeater}
+    {?featured}
+        {>"partials/blocks/block-grid-item--featured" /}
+    {:else}
+        {>"partials/blocks/block-grid-item" /}
+    {/featured}
+{/repeater}
+</div>

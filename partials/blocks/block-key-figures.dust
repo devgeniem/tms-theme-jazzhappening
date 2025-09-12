@@ -1,4 +1,4 @@
-<div {?anchor}id="{anchor|attr}"{/anchor} class="key-figures is-align-full has-text-centered mt-8 mb-8 mt-11-desktop mb-11-desktop">
+<div {?anchor}id="{anchor|attr}"{/anchor} class="key-figures is-align-full has-text-centered mt-5 mb-5">
     {#rows}
         <div class="key-figures__row columns is-multiline is-gapless mb-0">
             {#numbers}

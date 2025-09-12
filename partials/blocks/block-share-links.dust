@@ -1,0 +1,12 @@
+{?share_links}
+
+    <div {?anchor}id="{anchor|attr}"{/anchor} class="share-links mt-5 mb-5">
+        {?title}
+            <h2 class="h6 mt-0 mb-6">
+                {title|html}
+            </h2>
+        {/title}
+
+        {>"ui/share-links" li_class="mr-4" /}
+    </div>
+{/share_links}
