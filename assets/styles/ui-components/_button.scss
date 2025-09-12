@@ -5,12 +5,15 @@ $button-secondary-border-color: $secondary;
 
 
 .button {
-    font-size: 1.15rem !important;
     font-weight: $weight-normal !important;
     font-family: $family-primary !important;
     letter-spacing: .06rem !important;
     border-color: $primary !important;
     padding: .5rem 1.5rem;
+
+    &:not(.is-small):not(.has-text-small) {
+        font-size: 1.15rem !important;
+    }
 
     &:hover,
     &.is-hovered,

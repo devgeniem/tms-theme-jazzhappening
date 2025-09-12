@@ -60,18 +60,18 @@ class PageFestival extends PageArtist {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => __( 'Search for an artist or group', 'tms-theme-jazzhappening' ),
-                'submit_value'      => __( 'Search', 'tms-theme-jazzhappening' ),
-                'input_placeholder' => __( 'Search query', 'tms-theme-jazzhappening' ),
-                'clear_search'      => __( 'Clear search', 'tms-theme-jazzhappening' ),
+                'label'             => \__( "Search when a band or a musician has performed at the festival:", 'tms-theme-jazzhappening' ),
+                'submit_value'      => \__( 'Search', 'tms-theme-jazzhappening' ),
+                'input_placeholder' => \__( 'Search query', 'tms-theme-jazzhappening' ),
+                'clear_search'      => \__( 'Clear search', 'tms-theme-jazzhappening' ),
             ],
             'terms'          => [
-                'show_all' => __( 'Show All', 'tms-theme-jazzhappening' ),
+                'show_all' => \__( 'Show All', 'tms-theme-jazzhappening' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-jazzhappening' ),
-            'filter'         => __( 'Filter', 'tms-theme-jazzhappening' ),
-            'sort'           => __( 'Sort', 'tms-theme-jazzhappening' ),
-            'art_categories' => __( 'Categories', 'tms-theme-jazzhappening' ),
+            'no_results'     => \__( 'No results', 'tms-theme-jazzhappening' ),
+            'filter'         => \__( 'Filter', 'tms-theme-jazzhappening' ),
+            'sort'           => \__( 'Sort', 'tms-theme-jazzhappening' ),
+            'art_categories' => \__( 'Categories', 'tms-theme-jazzhappening' ),
         ];
     }
 
@@ -290,5 +290,28 @@ class PageFestival extends PageArtist {
         }
 
         return $map;
+    }
+
+    /**
+     * Artists-archive button contents
+     *
+     * @return array
+     */
+    public function artists_button_link(): ?array {
+        $link = \get_field( 'artists_page' );
+
+        if ( empty( $link ) ) {
+            return null;
+        }
+
+        if ( empty( $link['title'] ) ) {
+            $link['title'] = \__( 'Browse and search for artists and groups', 'tms-theme-jazzhappening' );
+        }
+
+        return [
+            'url'    => $link['url'],
+            'title'  => $link['title'],
+            'target' => $link['target'],
+        ];
     }
 }

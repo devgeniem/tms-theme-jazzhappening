@@ -64,7 +64,7 @@ class PageArtist extends BaseModel {
      * @return int|null
      */
     protected static function get_filter_query_var() {
-        $value = get_query_var( self::FILTER_QUERY_VAR, false );
+        $value = \get_query_var( self::FILTER_QUERY_VAR, false );
 
         return ! $value
             ? null
@@ -77,7 +77,7 @@ class PageArtist extends BaseModel {
      * @return string
      */
     protected static function get_orderby_query_var() {
-        $value = get_query_var( self::ORDERBY_QUERY_VAR );
+        $value = \get_query_var( self::ORDERBY_QUERY_VAR );
 
         return sanitize_text_field( $value );
     }
@@ -108,17 +108,18 @@ class PageArtist extends BaseModel {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => __( 'Search for artist', 'tms-theme-jazzhappening' ),
-                'submit_value'      => __( 'Search', 'tms-theme-jazzhappening' ),
-                'input_placeholder' => __( 'Search query', 'tms-theme-jazzhappening' ),
+                'label'             => \__( "Search by band name to find out when and with which line-ups they have performed at the festival. You can also search by an individual musician's name to find the bands they have performed with at the festival:", 'tms-theme-jazzhappening' ),
+                'submit_value'      => \__( 'Search', 'tms-theme-jazzhappening' ),
+                'input_placeholder' => \__( 'Search query', 'tms-theme-jazzhappening' ),
+                'clear_search'      => \__( 'Clear search', 'tms-theme-jazzhappening' ),
             ],
             'terms'          => [
-                'show_all' => __( 'Show All', 'tms-theme-jazzhappening' ),
+                'show_all' => \__( 'Show All', 'tms-theme-jazzhappening' ),
             ],
-            'no_results'     => __( 'No results', 'tms-theme-jazzhappening' ),
-            'filter'         => __( 'Filter', 'tms-theme-jazzhappening' ),
-            'sort'           => __( 'Sort', 'tms-theme-jazzhappening' ),
-            'art_categories' => __( 'Categories', 'tms-theme-jazzhappening' ),
+            'no_results'     => \__( 'No results', 'tms-theme-jazzhappening' ),
+            'filter'         => \__( 'Filter', 'tms-theme-jazzhappening' ),
+            'sort'           => \__( 'Sort', 'tms-theme-jazzhappening' ),
+            'art_categories' => \__( 'Categories', 'tms-theme-jazzhappening' ),
 
         ];
     }
@@ -130,12 +131,12 @@ class PageArtist extends BaseModel {
      */
     public function search(): array {
         $this->search_data        = new stdClass();
-        $this->search_data->query = get_query_var( self::SEARCH_QUERY_VAR );
+        $this->search_data->query = \get_query_var( self::SEARCH_QUERY_VAR );
 
         return [
             'input_search_name' => self::SEARCH_QUERY_VAR,
             'current_search'    => $this->search_data->query,
-            'action'            => \get_post_type_archive_link( Artist::SLUG ),
+            'action'            => \get_the_permalink(),
         ];
     }
 
@@ -161,7 +162,7 @@ class PageArtist extends BaseModel {
     public function filters() {
         $categories = \get_field( 'artist_categories' );
 
-        if ( empty( $categories ) || \is_wp_error( $categories ) ) {
+        if ( empty( $categories ) || \is_wp_error( $categories ) || 1 === count( $categories ) ) {
             return [];
         }
 
@@ -192,32 +193,6 @@ class PageArtist extends BaseModel {
     }
 
     /**
-     * Sort options
-     *
-     * @return array
-     */
-    public function sort_options() {
-        $current = self::get_orderby_query_var();
-
-        $options = [
-            [
-                'label' => __( 'Name', 'tms-theme-jazzhappening' ),
-                'value' => '',
-            ],
-            [
-                'label' => __( 'Name, descending', 'tms-theme-jazzhappening' ),
-                'value' => 'desc',
-            ],
-        ];
-
-        return array_map( function ( $item ) use ( $current ) {
-            $item['is_selected'] = $item['value'] === $current ? 'selected' : '';
-
-            return $item;
-        }, $options );
-    }
-
-    /**
      * View results
      *
      * @return array
@@ -225,13 +200,37 @@ class PageArtist extends BaseModel {
     public function results() {
         $args = [
             'post_type' => Artist::SLUG,
+            'orderby'   => 'title',
+            'order'     => 'DESC',
             'paged'     => ( \get_query_var( 'paged' ) ) ? \get_query_var( 'paged' ) : 1,
         ];
+
+        $categories = self::get_filter_query_var();
+
+        if ( empty( $categories ) ) {
+            $categories = \get_field( 'artist_categories' );
+            $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
+        }
+
+        if ( ! empty( $categories ) ) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => ArtistCategory::SLUG,
+                    'terms'    => $categories,
+                ],
+            ];
+        }
 
         $s = self::get_search_query_var();
 
         if ( ! empty( $s ) ) {
-            $args['s'] = $s;
+            $args['meta_query'] = [
+                'search_clause' => [
+                    'key'     => 'custom_artist_meta',
+                    'value'   => $s,
+                    'compare' => 'LIKE',
+                ],
+            ];
         }
 
         $the_query = new \WP_Query( $args );
@@ -242,8 +241,9 @@ class PageArtist extends BaseModel {
         $is_filtered   = $search_clause || self::get_filter_query_var();
 
         return [
-            'posts'   => $this->format_posts( $the_query->posts ),
-            'summary' => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
+            'posts'       => $this->format_posts( $the_query->get_posts() ),
+            'is_filtered' => $is_filtered,
+            'summary'     => $is_filtered ? $this->results_summary( $the_query->found_posts, $search_clause ) : false,
         ];
     }
 
@@ -329,5 +329,38 @@ class PageArtist extends BaseModel {
         }
 
         return $results_text;
+    }
+
+    /**
+     * Get clear search URL
+     *
+     * @return string
+     */
+    public function clear_search_url(): string {
+        return \get_the_permalink();
+    }
+
+
+    /**
+     * Festivals-archive button contents
+     *
+     * @return array
+     */
+    public function festivals_button_link(): ?array {
+        $link = \get_field( 'festivals_page' );
+
+        if ( empty( $link ) ) {
+            return null;
+        }
+
+        if ( empty( $link['title'] ) ) {
+            $link['title'] = \__( 'Browse and search for festivals', 'tms-theme-jazzhappening' );
+        }
+
+        return [
+            'url'    => $link['url'],
+            'title'  => $link['title'],
+            'target' => $link['target'],
+        ];
     }
 }
