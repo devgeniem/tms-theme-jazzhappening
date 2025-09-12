@@ -31,7 +31,7 @@
                     <form class="filters--search pt-2" action="{search.action|attr}" method="get"
                           role="search">
                         <div class="filters-wrapper">
-                            <label for="filters-search" class="h6 is-block mb-3">
+                            <label for="filters-search" class="h6 is-block mb-3 no-hyphens">
                                 {strings.search.label|html}
                             </label>
                             <div class="filters--inputs mb-2">
@@ -61,7 +61,7 @@
                 </div>
 
                 {?artists_button_link.url}
-                    <div class="column is-4-fullhd is-flex is-align-items-center">
+                    <div class="column is-4-fullhd is-flex is-align-items-end mb-7-tablet mb-4">
                         <a href="{artists_button_link.url|url}" target="{artists_button_link.target|attr}" class="button is-primary has-text-small">
                             {artists_button_link.title|html}
                         </a>

@@ -74,6 +74,8 @@ class Artist implements PostType {
             'tms/base/breadcrumbs/after_prepare',
             Closure::fromCallable( [ $this, 'format_archive_breadcrumbs' ] ),
         );
+
+        \add_action( 'acf/save_post', [ $this, 'update_artist_meta' ] );
     }
 
     /**
@@ -260,5 +262,42 @@ class Artist implements PostType {
         ] );
 
         return $the_query->posts;
+    }
+
+    /**
+     * Update artist meta for search results
+     *
+     * @param int $post_id \WP_Post ID.
+     */
+    public function update_artist_meta( $post_id ) {
+        // Ensure this is an artist post type.
+        if ( self::get_post_type() !== \get_post_type( $post_id ) ) {
+            return;
+        }
+
+        $artist_title = \get_the_title( $post_id );
+
+        // Initialize an empty string for the artist meta.
+        $artist_meta = '';
+
+        // Get additional information repeater field.
+        $additional_info = \get_field( 'additional_information', $post_id );
+
+        if ( ! empty( $additional_info ) ) {
+            foreach ( $additional_info as $info ) {
+                $info_text = $info['additional_information_text'] ?? '';
+
+                // Append the additional information text to the string.
+                if ( ! empty( $info_text ) && false === strpos( $artist_meta, $info_text ) ) {
+                    $artist_meta .= $info_text . ' ';
+                }
+            }
+        }
+
+        // Append the artist title to the meta field.
+        $artist_meta .= $artist_title;
+
+        // Save the concatenated string to the meta field.
+        \update_post_meta( $post_id, 'custom_artist_meta', $artist_meta );
     }
 }
