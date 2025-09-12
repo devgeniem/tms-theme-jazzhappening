@@ -2,31 +2,6 @@
     <div class="column">
         <div class="pb-4 mb-4 mb-8-desktop has-border has-border-bottom-1 has-border-gray">
             <div class="columns filters">
-                {?filters}
-                    {@gt key=filters.length value=2}
-                        <div class="column {filters_container_classes|attr}">
-                            <div class="mb-4">
-                                <h2 class="is-block h6 mb-3">
-                                    {strings.filter|html}
-                                </h2>
-
-                                <div class="filters__list">
-                                    {#filters}
-                                        <a href="{url|url}"
-                                        class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
-                                            {?is_active}
-                                                {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
-                                            {/is_active}
-
-                                            {name|html}
-                                        </a>
-                                    {/filters}
-                                </div>
-                            </div>
-                        </div>
-                    {/gt}
-                {/filters}
-
                 <div class="column">
                     <form class="filters--search pt-2" action="{search.action|attr}" method="get"
                           role="search">
