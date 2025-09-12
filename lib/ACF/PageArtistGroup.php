@@ -57,7 +57,7 @@ class PageArtistGroup {
                     'instructions' => '',
                 ],
                 'artist_categories' => [
-                    'title'        => 'Taitelijoiden kategoriat',
+                    'title'        => 'Artistien kategoriat',
                     'instructions' => '',
                 ],
                 'festivals_page'    => [
