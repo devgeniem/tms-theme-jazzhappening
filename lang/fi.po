@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2025-09-12 10:04+0300\n"
-"PO-Revision-Date: 2025-09-12 10:14+0300\n"
+"POT-Creation-Date: 2025-09-12 14:23+0300\n"
+"PO-Revision-Date: 2025-09-12 14:26+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -23,9 +23,32 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 "X-Poedit-SearchPathExcluded-2: node_modules\n"
 
-#: assets/dist/vendor.js:4630
-msgctxt "text direction"
-msgid "ltr"
+#: assets/dist/vendor.js:1
+msgid "entries"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "values"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "keys"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong index!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong offset!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "Wrong length!"
+msgstr ""
+
+#: assets/dist/vendor.js:1
+msgid "splide__track"
 msgstr ""
 
 #: lib/PostType/Artist.php:56 lib/PostType/Artist.php:97
@@ -51,11 +74,11 @@ msgstr "Lähetä kommentti"
 msgid ""
 "Search by band name to find out when and with which line-ups they have "
 "performed at the festival. You can also search by an individual musician's "
-"name to find the bands they have performed with at the festival"
+"name to find the bands they have performed with at the festival:"
 msgstr ""
 "Etsi yhtyeen nimellä, minä vuosina ja millaisilla kokoonpanoilla se on "
 "esiintynyt festivaalilla. Voit myös etsiä yksittäisen muusikon nimellä "
-"yhtyeitä, joissa hän on esiintynyt festivaalilla"
+"yhtyeitä, joissa hän on esiintynyt festivaalilla:"
 
 #: models/page-artist.php:112 models/page-festival.php:64
 msgid "Search"
@@ -144,8 +167,8 @@ msgid "Alphabetical"
 msgstr "Aakkosjärjestys"
 
 #: models/page-festival.php:63
-msgid "Search when a band or a musician has performed at the festival"
-msgstr "Etsi, minä vuosina yhtye tai muusikko on esiintynyt festivaalilla"
+msgid "Search when a band or a musician has performed at the festival:"
+msgstr "Etsi, minä vuosina yhtye tai muusikko on esiintynyt festivaalilla:"
 
 #: models/page-festival.php:308
 msgid "Browse and search for artists and groups"
