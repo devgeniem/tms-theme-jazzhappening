@@ -60,7 +60,7 @@ class PageFestival extends PageArtist {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => \__( "Search for an artist or group's festival years", 'tms-theme-jazzhappening' ),
+                'label'             => \__( "Search when a band or a musician has performed at the festival", 'tms-theme-jazzhappening' ),
                 'submit_value'      => \__( 'Search', 'tms-theme-jazzhappening' ),
                 'input_placeholder' => \__( 'Search query', 'tms-theme-jazzhappening' ),
                 'clear_search'      => \__( 'Clear search', 'tms-theme-jazzhappening' ),
