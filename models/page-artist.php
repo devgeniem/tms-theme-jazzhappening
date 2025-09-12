@@ -108,7 +108,7 @@ class PageArtist extends BaseModel {
     public function strings(): array {
         return [
             'search'         => [
-                'label'             => \__( "Search by band name to find out when and with which line-ups they have performed at the festival. You can also search by an individual musician's name to find the bands they have performed with at the festival", 'tms-theme-jazzhappening' ),
+                'label'             => \__( "Search by band name to find out when and with which line-ups they have performed at the festival. You can also search by an individual musician's name to find the bands they have performed with at the festival:", 'tms-theme-jazzhappening' ),
                 'submit_value'      => \__( 'Search', 'tms-theme-jazzhappening' ),
                 'input_placeholder' => \__( 'Search query', 'tms-theme-jazzhappening' ),
                 'clear_search'      => \__( 'Clear search', 'tms-theme-jazzhappening' ),
