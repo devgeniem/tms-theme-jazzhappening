@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1184: Fix spacng between sections & components
+
 ## [1.2.0] - 2025-09-08
 
 - TMS-1193: Change string & translation

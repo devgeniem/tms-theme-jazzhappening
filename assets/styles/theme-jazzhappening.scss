@@ -114,6 +114,24 @@ $duet-color-border: $color-vaalean-harmaa;
     margin-top: 0;
 }
 
-.section {
-    padding: $theme-spacing-oneandhalf;
+.main-content {
+    > *:nth-child(1):not(.section) + .section {
+        margin-top: 0 !important;
+    }
+
+    > .section:last-child {
+        margin-bottom: 0rem !important;
+    }
+
+    .section {
+        &:not(&.has-background-primary):not(&.has-background-secondary) {
+            padding: $theme-spacing-oneandhalf;
+        }
+
+        &.has-background-primary,
+        &.has-background-secondary {
+            margin-top: $theme-spacing-oneandhalf;
+            margin-bottom: $theme-spacing-oneandhalf;
+        }
+    }
 }
