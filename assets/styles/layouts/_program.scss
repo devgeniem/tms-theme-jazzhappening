@@ -42,6 +42,14 @@
         }
 
         a {
+            &.has-background-primary {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $primary !important;
+                }
+            }
+
             &::after {
                 content: '';
                 position: absolute;
@@ -71,25 +79,13 @@
         // Masonry layout styles
         @include until($tablet) {
             a {
-                grid-column: 1 / -1;
                 max-height: 280px;
             }
         }
 
-        @include from($tablet) {
-            a {
-                grid-column: span 1;
-                grid-row: span 1;
-                min-height: auto;
-            }
-
-            &.event-count--1 {
-                a {
-                    grid-column: 1 / -1;
-                    grid-row: 1 / -1;
-                    max-height: 450px;
-                }
-            }
+        a {
+            grid-column: 1 / -1;
+            max-height: 450px;
         }
     }
 }
