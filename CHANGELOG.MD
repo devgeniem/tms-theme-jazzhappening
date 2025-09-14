@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-09-14
+
 - TMS-1194: Festival & artist archive modifications
 - TMS-1185: Fix for program-layout if single post has no image
 - TMS-1184: Fix spacng between sections & components
