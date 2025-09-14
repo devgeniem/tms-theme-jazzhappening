@@ -21,7 +21,7 @@
         <div class="columns is-multiline">
             {#related.posts}
                 <div class="column is-6 is-4-widescreen is-flex">
-                    <article class="entry mb-6 has-width-100">
+                    <article class="entry mb-5 has-width-100">
                         <div class="image is-5by3 mb-5">
                             {?category}
                                 <a href="{category_link|url}" class="pill is-absolute has-top-0 has-left-0 m-4 is-family-secondary">
