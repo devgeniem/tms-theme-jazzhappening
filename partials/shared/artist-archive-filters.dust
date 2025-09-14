@@ -1,33 +1,8 @@
 <div class="columns is-multiline">
     <div class="column">
         <div class="pb-4 mb-4 mb-8-desktop has-border has-border-bottom-1 has-border-gray">
-            <div class="columns is-desktop filters is-flex-wrap-wrap">
-                {?filters}
-                    {@gt key=filters.length value=2}
-                        <div class="column is-6-desktop is-4-fullhd">
-                            <div class="mb-4">
-                                <h2 class="is-block h6 mb-3">
-                                    {strings.filter|html}
-                                </h2>
-
-                                <div class="filters__list">
-                                    {#filters}
-                                        <a href="{url|url}"
-                                        class="pill mr-2 mb-2 {?is_active}is-active{/is_active}">
-                                            {?is_active}
-                                                {>"ui/icon" icon="checkmark" class="icon--medium mr-2 is-primary-invert" /}
-                                            {/is_active}
-
-                                            {name|html}
-                                        </a>
-                                    {/filters}
-                                </div>
-                            </div>
-                        </div>
-                    {/gt}
-                {/filters}
-
-                <div class="column is-6-desktop is-4-fullhd">
+            <div class="columns filters">
+                <div class="column">
                     <form class="filters--search pt-2" action="{search.action|attr}" method="get"
                           role="search">
                         <div class="filters-wrapper">
@@ -60,13 +35,13 @@
                     </form>
                 </div>
 
-                {?artists_button_link.url}
-                    <div class="column is-4-fullhd is-flex is-align-items-end mb-7-tablet mb-4">
-                        <a href="{artists_button_link.url|url}" target="{artists_button_link.target|attr}" class="button is-primary has-text-small">
-                            {artists_button_link.title|html}
+                {?festivals_button_link.url}
+                    <div class="column is-flex is-align-items-end mb-7-tablet mb-4">
+                        <a href="{festivals_button_link.url|url}" target="{festivals_button_link.target|attr}" class="button is-primary has-text-small">
+                            {festivals_button_link.title|html}
                         </a>
                     </div>
-                {/artists_button_link.url}
+                {/festivals_button_link.url}
             </div>
         </div>
     </div>

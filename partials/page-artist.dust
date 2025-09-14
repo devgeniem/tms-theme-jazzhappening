@@ -5,7 +5,7 @@
         <main class="main-content section" id="main-content">
             <div class="container">
                 {>"shared/archive-view-title" /}
-                {>"shared/archive-filters" filters_container_classes="is-12-tablet is-4-desktop" /}
+                {>"shared/artist-archive-filters" filters_container_classes="is-12-tablet is-4-desktop" /}
 
                 {?results.summary}
                     <p role="status">{results.summary|html}</p>
@@ -27,12 +27,6 @@
                                                 {post_title|html}
                                             {/link}
                                         </h2>
-
-                                        {?years}
-                                            <div class="mt-1 has-text-small has-text-primary">
-                                                {years|html}
-                                            </div>
-                                        {/years}
                                     </div>
                                 </div>
                             </div>
