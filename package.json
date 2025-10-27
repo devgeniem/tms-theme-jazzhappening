@@ -14,7 +14,7 @@
     "@babel/polyfill": "^7.12.1",
     "@duetds/date-picker": "^1.4.0",
     "@splidejs/splide": "^4.1.4",
-    "@wordpress/keycodes": "^3.28.0",
+    "@wordpress/keycodes": "^4.32.0",
     "eslint": "^7.32.0",
     "eslint-loader": "^4.0.2",
     "indicate": "^2.4.0",
