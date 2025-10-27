@@ -1,4 +1,4 @@
-<section class="section related-posts has-background-secondary has-background-secondary--opaque pt-10 pb-10">
+<section class="section related-posts pt-10 pb-10">
     <div class="container">
         <div class="columns">
             {?related.title}
