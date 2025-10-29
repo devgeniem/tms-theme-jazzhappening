@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1211: Change single related-posts background class
+- TMS-1204: Add expand-icon for image gallery item if it is expandable
 
 ## [1.1.1] - 2025-08-13
 
