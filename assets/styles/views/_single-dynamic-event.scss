@@ -35,6 +35,14 @@
 
         .image-gallery {
             gap: 0;
+
+            .icon-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 2rem;
+                width: 2rem;
+            }
         }
 
         .logo-wall {
