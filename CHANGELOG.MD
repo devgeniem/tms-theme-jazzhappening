@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1212: Block spotify-embed and add a placeholder if cookies are not accepted
+- TMS-1217: Assign artist posts into a default category when published
 
 ## [1.1.1] - 2025-08-13
 

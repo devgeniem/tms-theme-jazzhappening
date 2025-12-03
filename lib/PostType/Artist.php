@@ -76,6 +76,7 @@ class Artist implements PostType {
         );
 
         \add_action( 'acf/save_post', [ $this, 'update_artist_meta' ] );
+        \add_action( 'wp_insert_post', [ $this, 'set_default_category' ], 10, 2 );
     }
 
     /**
@@ -151,6 +152,7 @@ class Artist implements PostType {
             'show_in_rest'    => true,
             'capability_type' => 'artist',
             'map_meta_cap'    => true,
+            'taxonomies'      => [ 'artist-category' ],
         ];
 
         \register_post_type( static::SLUG, $args );
@@ -299,5 +301,39 @@ class Artist implements PostType {
 
         // Save the concatenated string to the meta field.
         \update_post_meta( $post_id, 'custom_artist_meta', $artist_meta );
+    }
+
+    /**
+     * Set default category when artist is published
+     *
+     * @param int      $post_id Post ID.
+     * @param \WP_Post $post    Post object.
+     */
+    public function set_default_category( $post_id, $post ) {
+        if ( $post->post_type !== self::SLUG || $post->post_status !== 'publish' ) {
+            return;
+        }
+
+        // Check if categories are already set
+        $current_categories = \wp_get_object_terms( $post_id, 'artist-category', [ 'fields' => 'ids' ] );
+        if ( ! empty( $current_categories ) && ! \is_wp_error( $current_categories ) ) {
+            return;
+        }
+
+        // Get current post language
+        $post_language = function_exists( 'pll_get_post_language' ) ? \pll_get_post_language( $post_id ) : 'fi';
+
+        // Define category names per language
+        $category_names = [
+            'fi' => 'Artisti',
+            'en' => 'Artist',
+        ];
+
+        $category_name    = $category_names[ $post_language ] ?? 'Artisti';
+        $default_category = \get_term_by( 'name', $category_name, 'artist-category' );
+
+        if ( $default_category ) {
+            \wp_set_object_terms( $post_id, [ (int) $default_category->term_id ], 'artist-category' );
+        }
     }
 }
