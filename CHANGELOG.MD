@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1217: Assign artist posts into a default category when published
+
 ## [1.5.0] - 2025-11-05
 
 - TMS-1204: Add expand-icon for image gallery item if it is expandable
