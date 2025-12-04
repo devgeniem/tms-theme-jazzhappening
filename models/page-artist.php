@@ -207,11 +207,7 @@ class PageArtist extends BaseModel {
 
         $categories = self::get_filter_query_var();
 
-        if ( empty( $categories ) ) {
-            $categories = \get_field( 'artist_categories' );
-            $categories = ! empty( $categories ) ? array_map( fn( $c ) => $c->term_id, $categories ) : [];
-        }
-
+        // Apply taxonomy query if a category is selected
         if ( ! empty( $categories ) ) {
             $args['tax_query'] = [
                 [
