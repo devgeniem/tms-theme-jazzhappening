@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TMS Theme Tampere Jazz Happening\n"
-"POT-Creation-Date: 2025-09-12 14:23+0300\n"
+"POT-Creation-Date: 2025-11-19 14:20+0200\n"
 "PO-Revision-Date: 2022-01-12 16:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -167,7 +167,7 @@ msgstr ""
 msgid "Search when a band or a musician has performed at the festival:"
 msgstr ""
 
-#: models/page-festival.php:308
+#: models/page-festival.php:327
 msgid "Browse and search for artists and groups"
 msgstr ""
 
@@ -189,35 +189,43 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:122
+#. translators: 1: The URL to renew cookie consent 2: The consent type
+#: models/single-manual-event-cpt.php:125
+#, php-format
+msgid ""
+"Please <a href=\"%1$s\" class=\"cookiebot-helper__link\">accept "
+"marketing cookies</a> to view the embed."
+msgstr ""
+
+#: models/single-manual-event-cpt.php:141
 msgid "Free"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:134
+#: models/single-manual-event-cpt.php:153
 msgid "Buy ticket"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:135
+#: models/single-manual-event-cpt.php:154
 msgid "at"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:136
+#: models/single-manual-event-cpt.php:155
 msgid "Line-up"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:137
+#: models/single-manual-event-cpt.php:156
 msgid "Links"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:138
+#: models/single-manual-event-cpt.php:157
 msgid "Watch"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:139
+#: models/single-manual-event-cpt.php:158
 msgid "Listen"
 msgstr ""
 
-#: models/single-manual-event-cpt.php:140
+#: models/single-manual-event-cpt.php:159
 msgid "At the same concert"
 msgstr ""
 
