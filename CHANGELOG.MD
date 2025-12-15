@@ -7,14 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-- TMS-1212: Block spotify-embed and add a placeholder if cookies are not accepted
-- TMS-1217: Show all artists in page-artist if no category is selected
 - TMS-1226: Change focus order on events-search form
+- TMS-1229: Change spotify-embed string translation
 
 ## [1.1.1] - 2025-08-13
 
 - TMS-1158: Remove micromodal close attribute from mobile-nav container
 - TMS-1160: Fix elements focus outline thickness
+
+## [1.6.0] - 2025-12-10
+
+- TMS-1217: Show all artists in page-artist if no category is selected
+- TMS-1212: Block spotify-embed and add a placeholder if cookies are not accepted
 
 ## [1.5.0] - 2025-11-05
 
