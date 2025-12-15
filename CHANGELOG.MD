@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1229: Change spotify-embed string translation
+
 ## [1.6.0] - 2025-12-10
 
 - TMS-1217: Show all artists in page-artist if no category is selected
