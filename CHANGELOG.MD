@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1226: Change focus order on events-search form
 - TMS-1229: Change spotify-embed string translation
+- TMS-1164: Change button hover & focus styles
 
 ## [1.1.1] - 2025-08-13
 
