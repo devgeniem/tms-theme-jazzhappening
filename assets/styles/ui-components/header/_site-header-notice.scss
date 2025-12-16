@@ -1,13 +1,11 @@
 .site-header-notice {
     button {
-        &__close {
-            &,
-            &:hover,
-            &:focus,
-            &:active {
-                color: $primary-invert !important;
-                border-color: $primary-invert !important;
-            }
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: $primary-invert !important;
+            border-color: $primary-invert !important;
         }
 
         &:focus,
