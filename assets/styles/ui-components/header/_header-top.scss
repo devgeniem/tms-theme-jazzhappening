@@ -84,6 +84,10 @@
                     fill: $primary-invert !important;
                 }
             }
+
+            &:focus {
+                outline-color: $primary-invert !important;
+            }
         }
     }
 
