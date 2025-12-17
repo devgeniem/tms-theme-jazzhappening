@@ -113,13 +113,32 @@ class SingleManualEventCpt extends PageEvent {
             }, $event->event_custom_image_gallery )
             : [];
 
+        // Change spotify embed src and wrap with placeholder for cookie consent
+        if ( ! empty( $event->event_custom_spotify_embed ) ) {
+            // Replace the normal src so the iframe won't load before consent
+            $blocked_embed = str_replace( ' src=', ' data-cookieconsent="marketing" data-cookieblock-src=', $event->event_custom_spotify_embed );
+
+            // Create placeholder message for when cookies are not accepted
+            $renew_url   = 'javascript:Cookiebot.renew();';
+            $placeholder = sprintf(
+                /* translators: 1: The URL to renew cookie consent 2: The consent type */
+                \__( 'Please <a href="%1$s" class="cookiebot-helper__link">accept marketing cookies</a> to view the embed.', 'tms-theme-jazzhappening' ),
+                $renew_url
+            );
+
+            // Add the wrapper divs and placeholder
+            $event->event_custom_spotify_embed = '<div class="cookiebot-helper cookieconsent-optout-marketing">'
+                . '<div class="cookiebot-helper__wrapper">' . $placeholder . '</div></div>'
+                . $blocked_embed;
+        }
+
         $normalized_event          = ManualEvent::normalize_event( $event );
         $event_location            = $normalized_event['location']['name'];
         $weekday_prefix            = \date_i18n( 'D', strtotime( $event->start_datetime ) );
         $normalized_event['price'] = [
             [
                 'price'    => $event->price_is_free
-                    ? __( 'Free', 'tms-theme-base' )
+                    ? \__( 'Free', 'tms-theme-base' )
                     : $event->price['price_price'],
                 'info_url' => [
                     'url' => $event->price['price_info_url']['url'] ?? '',
