@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1229: Change spotify-embed string translation
+
+## [1.7.0] - 2025-12-17
+
 - TMS-1226: Change focus order on events-search form
 
 ## [1.6.0] - 2025-12-10
