@@ -6,7 +6,7 @@
         </div>
 
         <div class="site-header-notice__button-wrapper mt-4 mt-0-tablet ml-5-tablet mr-4-tablet mr-0-desktop">
-            <button class="button is-primary-invert is-outlined button--icon site-header-notice__close">
+            <button class="button is-primary-invert is-outlined-invert button--icon site-header-notice__close">
                 {Strings.s.header.exception_close_button|s}
                 {>"ui/icon" icon="close" class="ml-2 is-primary icon--large" /}
             </button>
