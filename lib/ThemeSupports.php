@@ -11,7 +11,7 @@ use TMS\Theme\Base\Interfaces\Controller;
 /**
  * Class ThemeSupports
  *
- * @package TMS\Theme\Sara_Hilden
+ * @package TMS\Theme\Jazzhappening
  */
 class ThemeSupports implements Controller {
 
@@ -47,8 +47,6 @@ class ThemeSupports implements Controller {
         $vars[] = PageCombinedEventsList::ORDER_QUERY_VAR;
 
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
-        $vars[] = PageArtist::FILTER_QUERY_VAR;
-        $vars[] = PageArtist::ORDERBY_QUERY_VAR;
 
         $vars[] = PageFestival::SEARCH_QUERY_VAR;
         $vars[] = PageFestival::FILTER_QUERY_VAR;

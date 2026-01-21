@@ -96,7 +96,7 @@ class ThemeCustomizationController implements \TMS\Theme\Base\Interfaces\Control
      */
     public function footer( array $classes ): array {
         $classes['container']   = '';
-        $classes['back_to_top'] = 'is-outlined';
+        $classes['back_to_top'] = 'is-outlined-invert';
         $classes['link']        = 'has-text-paragraph';
         $classes['link_icon']   = 'is-secondary';
 
