@@ -1,14 +1,5 @@
 .site-header-notice {
     button {
-        &.is-primary-invert {
-            border-color: $white !important;
-
-            &:hover,
-            &:focus {
-                border-color: $white !important;
-            }
-        }
-
         &:focus,
         .is-focus {
             outline: .15rem dotted $white !important;

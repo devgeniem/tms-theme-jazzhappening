@@ -5,7 +5,8 @@
         font-weight: 400;
     }
 
-    a {
+    a,
+    a.has-background-accent {
         background-color: $link;
         border: 1px solid $link;
 
@@ -17,10 +18,9 @@
         &.is-hovered,
         &:focus,
         &.is-focused {
-            background-color: $white !important;
 
             .icon {
-                fill: $link !important;
+                fill: $white !important;
             }
         }
     }

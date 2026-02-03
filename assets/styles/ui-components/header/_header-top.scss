@@ -71,6 +71,24 @@
             color: $white !important;
             font-size: $body-font-size;
         }
+
+        .button {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                color: $primary-invert !important;
+                border-color: $primary-invert !important;
+
+                .icon {
+                    fill: $primary-invert !important;
+                }
+            }
+
+            &:focus {
+                outline-color: $primary-invert !important;
+            }
+        }
     }
 
     &__popup {

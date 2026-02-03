@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1164: Change button hover & focus styles
+
 ## [1.7.1] - 2025-12-17
 
 - TMS-1229: Change spotify-embed string translation

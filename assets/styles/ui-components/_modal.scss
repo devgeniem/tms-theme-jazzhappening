@@ -18,11 +18,11 @@
 
         &:hover,
         &:focus {
-            background-color: $black !important;
-            color: $white !important;
+            background-color: $white !important;
+            color: $black !important;
             outline: 0;
             .icon {
-                fill: $white !important;
+                fill: $black !important;
             }
         }
     }
@@ -36,8 +36,10 @@
     }
 
     .slick-arrow {
+        background-color: $white;
+
         .icon {
-            fill: $white !important; // sass-lint:disable-line no-important
+            fill: $black !important; // sass-lint:disable-line no-important
         }
 
         &:hover {
