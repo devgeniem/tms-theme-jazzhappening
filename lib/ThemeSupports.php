@@ -47,6 +47,7 @@ class ThemeSupports implements Controller {
         $vars[] = PageCombinedEventsList::ORDER_QUERY_VAR;
 
         $vars[] = PageArtist::SEARCH_QUERY_VAR;
+        $vars[] = PageArtist::FILTER_QUERY_VAR;
 
         $vars[] = PageFestival::SEARCH_QUERY_VAR;
         $vars[] = PageFestival::FILTER_QUERY_VAR;
