@@ -31,7 +31,7 @@
             <div class="pb-4">
                 <div class="columns filters">
                     {?days}
-                        <div class="column is-6-tablet is-3-desktop is-offset-3-desktop">
+                        <div class="column event-filter-column is-6-tablet is-3-desktop is-offset-3-desktop">
                             <div class="event-filter-wrapper mr-3">
                                 <label for="event-day" class="is-block h6 mb-1 is-sr-only">
                                     {filter_strings.day|html}
@@ -52,7 +52,7 @@
                     {/days}
 
                     {?event_order}
-                        <div class="column is-6-tablet is-3-desktop">
+                        <div class="column event-filter-column is-6-tablet is-3-desktop">
                             <div class="event-filter-wrapper mr-3">
                                 <label for="event-order" class="is-block h6 mb-1 is-sr-only">
                                     {filter_strings.change_order|html}
