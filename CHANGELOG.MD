@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - TMS-1256: Add min-width for event filter select-elements
+- TMS-1257: Add info text for category filters
 
 ## [1.1.1] - 2025-08-13
 

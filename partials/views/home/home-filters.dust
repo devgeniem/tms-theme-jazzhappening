@@ -2,7 +2,7 @@
     <nav class="column has-text-centered is-12" aria-labelledby="filter">
         {?filters.categories}
             <div class="h6 mb-4 has-text-weight-normal" id="filter">
-                {Strings.s.home.filter_by_category|html}
+                {Strings.s.home.filter_by_category|html}. {Strings.s.home.description|html}
             </div>
 
             <div>

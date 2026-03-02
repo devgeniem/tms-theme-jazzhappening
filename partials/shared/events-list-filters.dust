@@ -4,7 +4,7 @@
         <nav class="column has-text-centered is-12" aria-labelledby="filter">
             {?categories}
                 <div class="h6 mb-4" id="filter">
-                    {Strings.s.home.filter_by_category|html}
+                    {Strings.s.home.filter_by_category|html}. {Strings.s.home.description|html}
                 </div>
 
                 <fieldset class="event-categories">
