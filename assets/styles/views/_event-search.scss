@@ -78,6 +78,12 @@
         }
     }
 
+    @include from($tablet) {
+        .event-filter-column {
+            min-width: 300px;
+        }
+    }
+
     .event-filter-wrapper {
         position: relative;
 
