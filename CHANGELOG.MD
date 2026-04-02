@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - TMS-1158: Remove micromodal close attribute from mobile-nav container
 - TMS-1160: Fix elements focus outline thickness
+- TMS-1265: Fix program-layout centering
+
+## [1.8.2] - 2026-03-16
+
+- TMS-1257: Add info text for category filters
+- TMS-1256: Add min-width for event filter select-elements
 
 ## [1.8.1] - 2026-02-22
 
