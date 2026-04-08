@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- TMS-1260: Add sr-only text for opening image-blocks modal
+
 ## [1.8.2] - 2026-03-16
 
 - TMS-1257: Add info text for category filters
