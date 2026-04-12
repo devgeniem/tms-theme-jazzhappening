@@ -1,4 +1,4 @@
-<div class="section program">
+<div class="section program ml-auto mr-auto">
     <div class="program__anchors mt-4 has-text-centered">
         {#day_names}
             <a href="#program-{day_name|attr}" class="program-anchor h5 mr-3 ml-3 has-text-weight-medium" aria-label="{full_day_name|html}">{day_name|html}</a>
