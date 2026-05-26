@@ -11,7 +11,7 @@ form {
 }
 
 select {
-    color: $primary;
+    color: $color-black;
 
     @include until($desktop) {
         font-size: 1em;
@@ -19,7 +19,7 @@ select {
 }
 
 .container .gform_wrapper {
-    color: $color-tekstin-vari;
+    color: $color-jazzhappening-white;
     background: transparent;
 
     select,
@@ -34,7 +34,7 @@ select {
         justify-content: space-between;
         background-color: $color-jazzhappening-button !important;
         border-color: $color-jazzhappening-button !important;
-        color: $white !important;
+        color: $color-jazzhappening-white !important;
 
         &:hover,
         &.is-hovered,
@@ -43,7 +43,7 @@ select {
         &:active {
             background-color: $color-jazzhappening-button-hover !important;
             border-color: $color-jazzhappening-button-hover !important;
-            color: $white !important;
+            color: $color-jazzhappening-white !important;
         }
     }
 
@@ -58,6 +58,17 @@ select {
         }
     }
 
+    input[type=radio] {
+        &,
+        &:hover,
+        &:focus {
+            & + label {
+                &::before {
+                    border-color: $color-jazzhappening-white !important;
+                }
+            }
+        }
+    }
 }
 
 .gfield_label {

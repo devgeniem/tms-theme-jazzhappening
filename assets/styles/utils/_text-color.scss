@@ -20,8 +20,20 @@
 }
 
 .has-background-secondary {
-    a {
+    h2,
+    h3,
+    h4
+    h5,
+    p {
         color: $secondary-invert !important;
+    }
+
+    a {
+        &,
+        &:hover,
+        &:focus {
+            color: $secondary-invert !important;
+        }
     }
 }
 
