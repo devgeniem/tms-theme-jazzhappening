@@ -47,7 +47,7 @@
 
         .icon {
             margin: 0 !important;
-            color: $color-jazzhappening-white !important;
+            color: $primary-invert !important;
         }
     }
 
@@ -58,7 +58,7 @@
     &__popup {
         bottom: 0 !important;
         box-shadow: 0 .0588rem .5rem rgba($black, .1);
-        background-color: $color-jazzhappening-red;
+        background-color: $primary;
     }
 
     .search-form {
@@ -92,7 +92,7 @@
     }
 
     &__popup {
-        background-color: $color-jazzhappening-red;
+        background-color: $primary;
     }
 
     .popup__label {

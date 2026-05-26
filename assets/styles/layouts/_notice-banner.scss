@@ -11,13 +11,13 @@
     }
 
     &.has-background-primary {
-        background-color: $color-jazzhappening-red !important;
+        background-color: $primary !important;
         color: $white !important;
     }
 
     &.has-background-secondary {
-        background-color: $color-jazzhappening-yellow !important;
-        color: $black !important;
+        background-color: $secondary !important;
+        color: $secondary-invert !important;
     }
 
     .icon {
@@ -28,13 +28,13 @@
 .notice-banner {
     &.has-background-primary {
         .icon.is-large {
-           fill: $white !important;
+           fill: $primary-invert !important;
         }
     }
 
     &.has-background-secondary {
         .icon.is-large {
-            fill: $black !important;
+            fill: $secondary-invert !important;
         }
     }
 }

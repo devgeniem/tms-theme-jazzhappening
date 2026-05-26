@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 - Update Node, webpack & dependency versions
+- TMS-1271: Change primary and secondary colors
 
 ## [1.8.3] - 2026-04-12
 
