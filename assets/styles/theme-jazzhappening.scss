@@ -4,28 +4,28 @@
 
 @import "themes/includes";
 
-$primary: $color-jazzhappening-red;
+$primary: $color-jazzhappening-blue;
 $primary-invert: $color-jazzhappening-white;
 $primary-light: bulmaLighten($primary, 15);
 $primary-light-invert: $color-white;
 $primary-dark: $color-black;
 $primary-dark-invert: $color-white;
 
-$secondary: $color-jazzhappening-yellow;
-$secondary-invert: $color-black;
+$secondary: $color-jazzhappening-darkred;
+$secondary-invert: $color-white;
 $secondary-light: $white;
 $secondary-light-invert: $color-black;
 $secondary-dark: $color-black;
 $secondary-dark-invert: $color-jazzhappening-white;
 
-$accent: $color-jazzhappening-yellow;
-$accent-invert: $color-black;
+$accent: $color-jazzhappening-darkred;
+$accent-invert: $color-white;
 $accent-light: $white;
 $accent-light-invert: $black;
 $accent-dark: $color-black;
 $accent-dark-invert: $white;
 
-$light: $color-jazzhappening-red;
+$light: $color-jazzhappening-blue;
 $light-invert: $color-jazzhappening-white;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
