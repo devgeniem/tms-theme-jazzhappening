@@ -15,7 +15,8 @@
                 justify-content: center;
             }
 
-            &.has-background-primary {
+            &.has-background-primary,
+            &.has-background-secondary {
                 &,
                 p,
                 p > a,
