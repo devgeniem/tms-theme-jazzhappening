@@ -4,7 +4,7 @@
 
 @import "themes/includes";
 
-$primary: $color-jazzhappening-blue;
+$primary: $color-jazzhappening-darkblue;
 $primary-invert: $color-jazzhappening-white;
 $primary-light: bulmaLighten($primary, 15);
 $primary-light-invert: $color-white;
@@ -25,7 +25,7 @@ $accent-light-invert: $black;
 $accent-dark: $color-black;
 $accent-dark-invert: $white;
 
-$light: $color-jazzhappening-blue;
+$light: $color-jazzhappening-darkblue;
 $light-invert: $color-jazzhappening-white;
 $dark: $primary-dark;
 $dark-invert: $primary-dark-invert;
