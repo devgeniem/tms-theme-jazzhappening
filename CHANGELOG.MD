@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Update Node, webpack & dependency versions
 - TMS-1271: Change primary and secondary colors
+- TMS-1284: Change single event logo styles
 
 ## [1.8.3] - 2026-04-12
 
