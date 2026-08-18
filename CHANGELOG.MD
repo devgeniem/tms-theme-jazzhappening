@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.9.0] - 2026-08-19
+
 - TMS-1284: Change single event logo styles
 - TMS-1271: Change primary and secondary colors
 
