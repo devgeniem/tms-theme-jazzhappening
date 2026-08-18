@@ -33,12 +33,12 @@
             &,
             &:hover,
             &:focus {
-                border-color: $secondary-invert !important;
+                border-color: $color-black !important;
                 background-color: $primary-invert !important;
-                color: $secondary-invert !important;
+                color: $color-black !important;
 
                 .icon {
-                    fill: $secondary-invert !important;
+                    fill: $color-black !important;
                 }
             }
         }
