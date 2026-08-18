@@ -47,8 +47,15 @@
 
         .logo-wall {
             &__item {
+                max-width: 14rem !important;
+
                 @include from($tablet) {
-                    max-width: 10rem !important;
+                    max-width: 20rem !important;
+                }
+
+                img {
+                    object-fit: contain !important;
+                    max-height: 10rem !important;
                 }
             }
         }
